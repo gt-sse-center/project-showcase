@@ -36,19 +36,19 @@ main.card9 {
 	}
 
 	& section.parallax0 {
-		background-image: url('./antarctica3.png');
+		background-image: url('antarctica3.png');
 	}
 
 	& section.parallax1 {
-		background-image: url('./protein.png');
+		background-image: url('protein.png');
 	}
 
 	& section.parallax2 {
-		background-image: url('./antarctica.png');
+		background-image: url('antarctica.png');
 	}
 
 	& section.parallax3 {
-		background-image: url('./dna.png');
+		background-image: url('dna.png');
 	}
 }
 
