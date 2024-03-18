@@ -6,10 +6,11 @@ import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
 
 export default defineConfig(() => {
-    return {
-        build: {
-            outDir: 'build'
-        },
-        plugins: [react(), eslint()]
-    };
+	return {
+		base: '/project-showcase/',
+		build: {
+			outDir: 'build'
+		},
+		plugins: [react(), eslint()]
+	};
 });

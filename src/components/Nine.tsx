@@ -1,4 +1,3 @@
-import React from 'react';
 import './Nine.css';
 import data from '../content.json';
 
