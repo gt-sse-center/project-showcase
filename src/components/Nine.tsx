@@ -35,7 +35,7 @@ function Nine() {
 					</section>
 					<section className="text-bloc">
 						<figure>
-							<img src={`/${item.cover}`} alt={item.title} />
+							<img src={`${item.cover}`} alt={item.title} />
 						</figure>
 						<div>
 							<h2>{item.title}</h2>

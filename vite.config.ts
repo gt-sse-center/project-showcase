@@ -9,7 +9,8 @@ export default defineConfig(() => {
 	return {
 		base: '/project-showcase/',
 		build: {
-			outDir: 'build'
+			outDir: 'build',
+			assetsDir: ''
 		},
 		plugins: [react(), eslint()]
 	};
