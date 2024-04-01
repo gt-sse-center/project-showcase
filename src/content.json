@@ -1,8 +1,8 @@
 [
 	{
-		"title": "Heller / Lohr",
+		"title": "How to target Intrinsically Disordered Proteins (IDPs) with therapeutic small molecules",
 		"description": "How to target Intrinsically Disordered Proteins (IDPs) with therapeutic small molecules",
-		"background": "protein.png",
+		"background": "proteins2.png",
 		"cover": "proteins.png",
 		"logos": [
 			{
@@ -23,10 +23,10 @@
 		]
 	},
 	{
-		"title": "Montelli",
+		"title": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
 		"description": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
 		"cover": "montelli.png",
-		"background": "antarctica.png",
+		"background": "antarctica3.png",
 		"takeaways": [
 			"Create a professionally tested Python library from Jupyter Notebook code with automated tests as part of multi-platform Continuous Integration workflow which also automatically deploys to PyPi",
 			"Improved performance of existing model by 20%",
@@ -34,10 +34,10 @@
 		]
 	},
 	{
-		"title": "FastANI",
+		"title": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
 		"description": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
 		"cover": "FastANI.png",
-		"background": "dna.png",
+		"background": "dna6.png",
 		"takeaways": [
 			"Develop tests and CI/CD to allow for future updates",
 			"Update Build System and Repository Clean Up",
