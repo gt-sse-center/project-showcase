@@ -7,7 +7,10 @@ function Nine() {
 			<section>
 				<section className="section-background parallax0">
 					<article>
-						<p>Scientific Software Engineering Center Showcase</p>
+						<a target="_blank" href="https://ssecenter.cc.gatech.edu/">
+							<img src="Center for Scientific Software Engineering_8383.png" />
+						</a>
+						<h1>Project Showcase</h1>
 					</article>
 				</section>
 				<section className="text-bloc">
@@ -15,14 +18,14 @@ function Nine() {
 						<img src="klaus.jpg" alt="photo" />
 					</figure>
 					<div>
-						<h3>
+						<p>
 							The Scientific Software Engineering (SSE) Center at Georgia Tech is a new effort that
 							is part of the Virtual Institute for Scientific Software (VISS). VISS was launched by
 							Schmidt Futures to address the need for training and educating software engineers, and
 							the SSE center at Georgia Tech is focused on developing new methodologies for
 							improving high-performance scientific codes and for training tomorrow’s software
 							engineers.
-						</h3>
+						</p>
 					</div>
 				</section>
 			</section>
@@ -35,11 +38,9 @@ function Nine() {
 					</section>
 					<section className="text-bloc">
 						<figure>
-							<img src={`${item.cover}`} alt={item.title} />
+							<img src={`${item.cover}`} alt={item.description} />
 						</figure>
 						<div>
-							<h2>{item.title}</h2>
-							<h3>{item.description}</h3>
 							{item.takeaways.map((takeaway, t_index) => (
 								<p key={t_index}>{takeaway}</p>
 							))}
