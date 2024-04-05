@@ -1,47 +1,71 @@
 [
 	{
-		"title": "How to target Intrinsically Disordered Proteins (IDPs) with therapeutic small molecules",
-		"description": "How to target Intrinsically Disordered Proteins (IDPs) with therapeutic small molecules",
+		"description": "Targetting Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"background": "proteins2.png",
 		"cover": "proteins.png",
 		"logos": [
 			{
 				"image": "https://www.gromacs.org/_static/gmx_logo_blue.png",
-				"alt": "A free and open-source software suite for high-performance molecular dynamics and output analysis",
+				"alt": "Gromacs, a free and open-source software suite for high-performance molecular dynamics and output analysis",
 				"url": "https://www.gromacs.org"
 			},
 			{
 				"url": "https://www.plumed.org/",
-				"alt": "The community-developed PLUgin for MolEcular Dynamics",
+				"alt": "Plumed, the community-developed PLUgin for MolEcular Dynamics",
 				"image": "https://www.plumed.org//pigeon.png"
 			}
 		],
 		"takeaways": [
-			"Improve efficiency of Metainference Simulations with PLUMED: 68% improvement over CPU baseline / 53% improvement over GPU baseline",
-			"Profiled multiple simulations, revealing PLUMED is not a significant bottleneck in these simulations and added documentation so that others can generate profile data",
-			"Ensure backwards compatibility for existing PLUMED simulations"
+			{
+				"description": "Improved the efficiency of metainference simulations with PLUMED",
+				"children": ["68% improvement over CPU baseline", "53% improvement over GPU baseline"]
+			},
+			{
+				"description": "Profiled multiple simulations, revealing PLUMED is not a significant bottleneck in these simulations and added documentation so that others can generate profile data"
+			},
+			{
+				"description": "Ensured backward compatibility for existing PLUMED simulations"
+			}
 		]
 	},
 	{
-		"title": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
 		"description": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
 		"cover": "montelli.png",
 		"background": "antarctica3.png",
 		"takeaways": [
-			"Create a professionally tested Python library from Jupyter Notebook code with automated tests as part of multi-platform Continuous Integration workflow which also automatically deploys to PyPi",
-			"Improved performance of existing model by 20%",
-			"Ensure the functionality is open to the science community"
+			{
+				"description": "Create a professionally tested Python library from Jupyter Notebook code",
+				"children": [
+					"multi-platform continuous integration (CI) workflow",
+					"automated tests",
+					"automatic deploys to PyPi"
+				]
+			},
+			{
+				"description": "Improved performance of existing model by 20%"
+			},
+			{
+				"description": "Ensured the functionality is open to the science community"
+			}
 		]
 	},
 	{
-		"title": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
 		"description": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
 		"cover": "FastANI.png",
 		"background": "dna6.png",
 		"takeaways": [
-			"Develop tests and CI/CD to allow for future updates",
-			"Update Build System and Repository Clean Up",
-			"Release a new version of FastANI"
+			{
+				"description": "Developed tests and CI/CD to facilitate future updates"
+			},
+			{
+				"description": "Released a new version of FastANI"
+			},
+			{
+				"description": "Updated build system"
+			},
+			{
+				"description": "Performed repository clean up"
+			}
 		]
 	}
 ]

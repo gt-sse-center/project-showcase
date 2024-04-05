@@ -68,4 +68,5 @@ body {
 a,
 a:any-link {
 	text-decoration: none;
+	color: var(--gt-navy);
 }
