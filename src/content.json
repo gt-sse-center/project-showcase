@@ -1,6 +1,7 @@
 [
 	{
 		"title": "Targeting Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
+		"description": "",
 		"background": "proteins10.png",
 		"cover": "proteins.png",
 		"logos": [
@@ -32,6 +33,7 @@
 	},
 	{
 		"title": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
+		"description": "",
 		"cover": "montelli.png",
 		"background": "icecore5.png",
 		"takeaways": [
@@ -55,6 +57,7 @@
 	},
 	{
 		"title": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
+		"description": "",
 		"cover": "FastANI.png",
 		"background": "dna10.png",
 		"takeaways": [
