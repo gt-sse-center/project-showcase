@@ -71,22 +71,6 @@ main.card9 {
 			}
 		}
 	}
-
-	& section.parallax0 {
-		background-image: url('gatech_research16.png');
-	}
-
-	& section.parallax1 {
-		background-image: url('proteins10.png');
-	}
-
-	& section.parallax2 {
-		background-image: url('icecore5.png');
-	}
-
-	& section.parallax3 {
-		background-image: url('dna10.png');
-	}
 }
 
 & section.text-bloc {
