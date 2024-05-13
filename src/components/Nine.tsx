@@ -5,7 +5,7 @@ function Nine() {
 	return (
 		<main className="card9">
 			<section>
-				<section className="section-background parallax0">
+				<section className="section-background" style={{backgroundImage: "url('gatech_research16.png')"}}>
 					<article>
 						<a target="_blank" href="https://ssecenter.cc.gatech.edu/">
 							<img src="Center for Scientific Software Engineering_8383.png" />
@@ -26,10 +26,10 @@ function Nine() {
 							is a new effort that is part of the{' '}
 							<a
 								target="_blank"
-								href="https://www.schmidtfutures.org/our-work-old/virtual-institute-for-scientific-software/">
+								href="https://www.schmidtsciences.org/viss/">
 								Virtual Institute for Scientific Software (VISS)
 							</a>
-							. VISS was launched by Schmidt Futures to address the need for training and educating
+							. VISS was launched by Schmidt Sciences to address the need for training and educating
 							software engineers. The SSE center at Georgia Tech is focused on developing new
 							methodologies for improving high-performance scientific code and for training
 							tomorrow’s software engineers.
@@ -40,15 +40,18 @@ function Nine() {
 			</section>
 			{data.map((item, index) => (
 				<section key={index}>
-					<section className={`section-background parallax${index + 1}`}>
+					<section className={`section-background`} style={{backgroundImage: `url(${item.background})` }}>
 						<article>
-							<p>{item.description}</p>
+							<p>{item.title}</p>
 						</article>
 					</section>
 					<section className="text-bloc">
 						<figure>
-							<img src={`${item.cover}`} alt={item.description} />
+							<img src={`${item.cover}`} alt={item.title} />
 						</figure>
+						<div>
+							{item.description}
+						</div>
 						<div>
 							{item.logos?.map((logo) => (
 								<a target="_blank" href={`${logo.url}`} aria-description={`link to ${logo.alt}`}>

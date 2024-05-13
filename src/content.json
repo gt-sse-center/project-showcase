@@ -1,7 +1,7 @@
 [
 	{
-		"description": "Targetting Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
-		"background": "proteins2.png",
+		"title": "Targeting Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
+		"background": "proteins10.png",
 		"cover": "proteins.png",
 		"logos": [
 			{
@@ -26,12 +26,14 @@
 			{
 				"description": "Ensured backward compatibility for existing PLUMED simulations"
 			}
-		]
+		],
+		"start_date": "May 2023",
+		"end_date": "September 2023"
 	},
 	{
-		"description": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
+		"title": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
 		"cover": "montelli.png",
-		"background": "antarctica3.png",
+		"background": "icecore5.png",
 		"takeaways": [
 			{
 				"description": "Create a professionally tested Python library from Jupyter Notebook code",
@@ -47,12 +49,14 @@
 			{
 				"description": "Ensured the functionality is open to the science community"
 			}
-		]
+		],
+		"start_date": "June 2023",
+		"end_date": "September 2023"
 	},
 	{
-		"description": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
+		"title": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
 		"cover": "FastANI.png",
-		"background": "dna6.png",
+		"background": "dna10.png",
 		"takeaways": [
 			{
 				"description": "Developed tests and CI/CD to facilitate future updates"
@@ -66,6 +70,8 @@
 			{
 				"description": "Performed repository clean up"
 			}
-		]
+		],
+		"start_date": "September 2022",
+		"end_date": "August 2023"
 	}
 ]
