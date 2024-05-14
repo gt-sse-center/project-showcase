@@ -1,11 +1,34 @@
 import './Nine.css';
 import data from '../content.json';
 
+type Takeaway = {
+	description?: string;
+	children?: string[];
+};
+type Logo = {
+	image: string;
+	alt: string;
+	url: string;
+};
+type ShowcaseItem = {
+	title: string;
+	description?: string;
+	background: string;
+	cover: string;
+	logos?: Logo[];
+	takeaways: Takeaway[];
+	start_date: string;
+	end_date: string;
+};
+
 function Nine() {
+	const items: ShowcaseItem[] = data;
 	return (
 		<main className="card9">
 			<section>
-				<section className="section-background" style={{backgroundImage: "url('gatech_research16.png')"}}>
+				<section
+					className="section-background"
+					style={{ backgroundImage: "url('gatech_research16.png')" }}>
 					<article>
 						<a target="_blank" href="https://ssecenter.cc.gatech.edu/">
 							<img src="Center for Scientific Software Engineering_8383.png" />
@@ -24,9 +47,7 @@ function Nine() {
 								The Scientific Software Engineering (SSE) Center at Georgia Tech
 							</a>{' '}
 							is a new effort that is part of the{' '}
-							<a
-								target="_blank"
-								href="https://www.schmidtsciences.org/viss/">
+							<a target="_blank" href="https://www.schmidtsciences.org/viss/">
 								Virtual Institute for Scientific Software (VISS)
 							</a>
 							. VISS was launched by Schmidt Sciences to address the need for training and educating
@@ -38,9 +59,11 @@ function Nine() {
 					</div>
 				</section>
 			</section>
-			{data.map((item, index) => (
+			{items.map((item: ShowcaseItem, index) => (
 				<section key={index}>
-					<section className={`section-background`} style={{backgroundImage: `url(${item.background})` }}>
+					<section
+						className={`section-background`}
+						style={{ backgroundImage: `url(${item.background})` }}>
 						<article>
 							<p>{item.title}</p>
 						</article>
@@ -49,16 +72,18 @@ function Nine() {
 						<figure>
 							<img src={`${item.cover}`} alt={item.title} />
 						</figure>
-						<div>
-							{item.description}
-						</div>
-						<div>
-							{item.logos?.map((logo) => (
-								<a target="_blank" href={`${logo.url}`} aria-description={`link to ${logo.alt}`}>
-									<img className="logo" alt={logo.alt} src={`${logo.image}`} />
-								</a>
-							))}
-						</div>
+						{item.description ? <div>{item.description}</div> : ''}
+						{item.logos ? (
+							<div>
+								{item.logos?.map((logo) => (
+									<a target="_blank" href={`${logo.url}`} aria-description={`link to ${logo.alt}`}>
+										<img className="logo" alt={logo.alt} src={`${logo.image}`} />
+									</a>
+								))}
+							</div>
+						) : (
+							''
+						)}
 						<div>
 							{item.takeaways.map((takeaway, t_index) => (
 								<p key={t_index}>
