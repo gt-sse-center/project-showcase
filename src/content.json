@@ -1,6 +1,7 @@
 [
 	{
-		"title": "Targeting Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
+		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
+		"description": "In this engagement, we evaluated the performance characteristics of simulations using GROMACS and PLUMED, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After this evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",
 		"cover": "proteins.png",
 		"logos": [
@@ -18,57 +19,51 @@
 		"takeaways": [
 			{
 				"description": "Improved the efficiency of metainference simulations with PLUMED",
-				"children": ["68% improvement over CPU baseline", "53% improvement over GPU baseline"]
-			},
-			{
-				"description": "Profiled multiple simulations, revealing PLUMED is not a significant bottleneck in these simulations and added documentation so that others can generate profile data"
-			},
-			{
-				"description": "Ensured backward compatibility for existing PLUMED simulations"
+				"children": [
+					"68% improvement over CPU baseline",
+					"53% improvement over GPU baseline",
+					"Profiled multiple simulations, revealing PLUMED is not a significant bottleneck in these simulations and added documentation so that others can generate profile data",
+					"Ensured backward compatibility for existing PLUMED simulations"
+				]
 			}
 		],
 		"start_date": "May 2023",
 		"end_date": "September 2023"
 	},
 	{
-		"title": "A numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica",
+		"title": "Icetemp: Converting a Jupyter Notebook to a Python Package",
+		"description": "Icetemp is a numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica. In this engagement, we converted this algorithm, written as a Jupyter Notebook, into a Python package available on PyPi, complete with automated testing and Continuous Integration / Delivery / Deployment.",
 		"cover": "montelli.png",
 		"background": "icecore5.png",
 		"takeaways": [
 			{
-				"description": "Create a professionally tested Python library from Jupyter Notebook code",
+				"description": "Created a professionally tested Python library from Jupyter Notebook code",
 				"children": [
 					"multi-platform continuous integration (CI) workflow",
 					"automated tests",
-					"automatic deploys to PyPi"
+					"automatic deploys to PyPi",
+					"Improved performance of existing model by 20%",
+					"Ensured the functionality is open to the science community"
 				]
-			},
-			{
-				"description": "Improved performance of existing model by 20%"
-			},
-			{
-				"description": "Ensured the functionality is open to the science community"
 			}
 		],
 		"start_date": "June 2023",
 		"end_date": "September 2023"
 	},
 	{
-		"title": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure",
+		"title": "FastANI: Improving the Quality of a Python Package",
+		"description": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure.",
 		"cover": "FastANI.png",
 		"background": "dna10.png",
 		"takeaways": [
 			{
-				"description": "Developed tests and CI/CD to facilitate future updates"
-			},
-			{
-				"description": "Released a new version of FastANI"
-			},
-			{
-				"description": "Updated build system"
-			},
-			{
-				"description": "Performed repository clean up"
+				"description": "Improved the quality of the FastANI Python package",
+				"children": [
+					"Developed tests and CI/CD to facilitate future updates",
+					"Released a new version of FastANI",
+					"Updated build system",
+					"Performed repository clean up"
+				]
 			}
 		],
 		"start_date": "September 2022",

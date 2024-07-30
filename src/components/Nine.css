@@ -75,20 +75,21 @@ main.card9 {
 
 & section.text-bloc {
 	& div {
-		padding: 4vh 0;
+		font-family: 'Figtree', serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1.4vw;
+		line-height: 1.5;
+		padding: 1vh 0;
+
 		& p {
 			margin: 0px;
 			padding: 1.2vh 20vw;
-			font-family: 'Figtree', serif;
-			font-weight: 400;
-			font-style: normal;
-			font-size: 1.4vw;
-			line-height: 1.5;
 		}
 	}
 
 	& figure {
-		margin: 5vh 0 0 0;
+		margin: 5vh 0 5vh 0;
 
 		& img {
 			max-width: 40vw;
