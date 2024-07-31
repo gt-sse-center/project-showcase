@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
-		"description": "In this engagement, we evaluated the performance characteristics of simulations using GROMACS and PLUMED, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After this evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
+		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",
 		"cover": "proteins.png",
 		"logos": [
@@ -32,7 +32,7 @@
 	},
 	{
 		"title": "Icetemp: Converting a Jupyter Notebook to a Python Package",
-		"description": "Icetemp is a numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica. In this engagement, we converted this algorithm, written as a Jupyter Notebook, into a Python package available on PyPi, complete with automated testing and Continuous Integration / Delivery / Deployment.",
+		"description": "<a href=https://github.com/sashamontelli/borehole_temperature_models target=_blank>Icetemp</a> is a numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica. During this engagement, we converted the Icetemp algorithm, written as a Jupyter Notebook, into a Python package available on PyPi, complete with automated testing and Continuous Integration / Delivery / Deployment.",
 		"cover": "montelli.png",
 		"background": "icecore5.png",
 		"takeaways": [
@@ -52,7 +52,7 @@
 	},
 	{
 		"title": "FastANI: Improving the Quality of a Python Package",
-		"description": "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure.",
+		"description": "<a href=https://github.com/ParBLiSS/FastANI target=_blank>FastANI</a> is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure. During this engagement, we improved the quality of the FastANI Python package.",
 		"cover": "FastANI.png",
 		"background": "dna10.png",
 		"takeaways": [

@@ -72,7 +72,7 @@ function Nine() {
 						<figure>
 							<img src={`${item.cover}`} alt={item.title} />
 						</figure>
-						{item.description ? <div>{item.description}</div> : ''}
+						{item.description ? <div dangerouslySetInnerHTML={{__html: item.description}} /> : ''}
 						{item.logos ? (
 							<div>
 								{item.logos?.map((logo) => (
