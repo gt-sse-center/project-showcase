@@ -1,5 +1,25 @@
 [
 	{
+		"title": "New Features for the Metadata Aggregator for Reusable / Reproducible Science (MARS)",
+		"description": "<a href=https://github.com/Brain-Development-and-Disorders-Lab/mars target=_blank>MARS</a> is an open-source and customizable data management tool for organizing, linking, and tracking metadata generated from scientific experiments. During this engagement, we added new functionality to MARS to increase its adoption across new scientific domains and with new research laboratories.",
+		"background": "mars-background.jpeg",
+		"cover": "mars.png",
+		"takeaways": [
+			{
+				"description": "New functionality to increase adoption of MARS across new scientific domains and with new research laboratories",
+				"children": [
+					"Entity Search Improvement - optimized and stabilized the search engine; also enabled more parameters in the search query.",
+					"User Interface Improvements - improved usability and visual appeal with professional-grade input fields and responsive buttons.",
+					"Server Security Enhancements - Strengthened server security by integrating ORCiD verification.",
+					"CI/CD Enhancements - Established a robust pipeline to automate testing and deployment processes.",
+					"Deployment Enhancements - Refactored environment-specific settings to streamline deployments across different stages (dev, test, prod)."
+				]
+			}
+		],
+		"start_date": "November 2023",
+		"end_date": "May 2024"
+	},
+	{
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",

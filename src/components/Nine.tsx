@@ -89,7 +89,7 @@ function Nine() {
 								<p key={t_index}>
 									{takeaway.description}
 									<br />
-									<ul>{takeaway.children?.map((child) => <li>{child}</li>)}</ul>
+									<ul>{takeaway.children?.map((child) => <li dangerouslySetInnerHTML={{__html: child }} />)}</ul>
 								</p>
 							))}
 						</div>
