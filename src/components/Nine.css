@@ -74,6 +74,9 @@ main.card9 {
 }
 
 & section.text-bloc {
+	padding-left: 1vw;
+	padding-right: 1vw;
+
 	& div {
 		font-family: 'Figtree', serif;
 		font-weight: 400;
