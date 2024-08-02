@@ -1,4 +1,4 @@
-import './Nine.css';
+import './Main.css';
 import data from '../content.json';
 
 type Takeaway = {
@@ -21,7 +21,7 @@ type ShowcaseItem = {
 	end_date: string;
 };
 
-function Nine() {
+function Main() {
 	const items: ShowcaseItem[] = data;
 	return (
 		<main className="card9">
@@ -100,4 +100,4 @@ function Nine() {
 	);
 }
 
-export default Nine;
+export default Main;
