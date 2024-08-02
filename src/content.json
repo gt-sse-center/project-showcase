@@ -31,14 +31,15 @@
 					"React web application that prompts users for polynomials",
 					"Integration with existing Ramanujan Machine algorithms",
 					"Integration with Wolfram Alpha API",
-					"Integration with MathJax to pretty print polynomial continued fractions entered by users",
+					"Integration with MathJax to pretty-print polynomial continued fractions entered by users",
 					"Custom d3.js charts"
 				]
 			},{
 				"description": "Automation of the deployment of new algorithms to the BOINC distributed computing platform",
 				"children": [
 					"Building Windows, Mac and Linux binaries from Python algorithms using cx_Freeze",
-					"Performing BOINC required code signing and packaging steps before deploying to BOINC server from GitHub repository using GitHub Actions"
+					"Creating BOINC-required xml files and peforming code-signing on deployment bundle",
+					"Deploying to BOINC server from GitHub repository using GitHub Actions"
 				]
 			}
 		],
