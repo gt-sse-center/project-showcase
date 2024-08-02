@@ -20,6 +20,33 @@
 		"end_date": "May 2024"
 	},
 	{
+		"title": "A Web Portal for the Ramanujan Machine & Automated Search Algorithm Deployment to the BOINC Distributed-Computing Platform via GitHub Actions",
+		"description": "<a href=https://www.ramanujanmachine.com/ target=_blank>The Ramanujan Machine</a> is a novel way to find new mathematical formulas relating fundamental constants, usually discovered sporadically by mathematical intuition or ingenuity, by harnessing computer algorithms. We built a user-friendly web application that invokes the Ramanujan Machine algorithms and returns potential discoveries to the user along with any results returned from an integration with Wolfram Alpha.",
+		"background": "ramanujan_background.jpeg",
+		"cover": "ramanujan_machine.png",
+		"takeaways": [
+			{
+				"description": "A web portal to make search algorithms accessible to the public",
+				"children": [
+					"React web application that prompts users for polynomials",
+					"Integration with existing Ramanujan Machine algorithms",
+					"Integration with Wolfram Alpha API",
+					"Integration with MathJax to pretty-print polynomial continued fractions entered by users",
+					"Custom d3.js charts"
+				]
+			},{
+				"description": "Automation of the deployment of new algorithms to the BOINC distributed computing platform",
+				"children": [
+					"Building Windows, Mac and Linux binaries from Python algorithms using cx_Freeze",
+					"Creating BOINC-required xml files and peforming code-signing on deployment bundle",
+					"Deploying to BOINC server from GitHub repository using GitHub Actions"
+				]
+			}
+		],
+		"start_date": "November 2023",
+		"end_date": "May 2024"
+	},
+	{
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",

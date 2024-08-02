@@ -87,7 +87,8 @@ main.card9 {
 
 		& p {
 			margin: 0px;
-			padding: 1.2vh 20vw;
+			text-align: left;
+			padding: 1.2vh 15vw;
 		}
 	}
 

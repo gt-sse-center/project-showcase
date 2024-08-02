@@ -1,8 +1,8 @@
 import './App.css';
-import Nine from './components/Nine';
+import Main from './components/Main';
 
 const App = () => {
-	return <Nine></Nine>;
+	return <Main></Main>;
 };
 
 export default App;
