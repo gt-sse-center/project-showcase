@@ -59,9 +59,7 @@
 			},
 			{
 				"image": "https://www.lammps.org/movies/logo.gif",
-				"alt": "LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
-
-.",
+				"alt": "LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.",
 				"url": "https://www.lammps.org/"
 			}
 		],
