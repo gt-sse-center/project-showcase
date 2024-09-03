@@ -119,6 +119,7 @@
 	{
 		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
 		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/gt-sse-center/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
+		"background": "autora-cover.jpg",
 		"cover": "musslick.jpeg",
 		"takeaways": [
 			{
