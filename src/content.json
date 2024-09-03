@@ -50,7 +50,6 @@
 		"title": "Kokkos Accelerated Machine Learned Interatomic Potential",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://arxiv.org/abs/2401.00096 target=_blank>foundational model</a> for machine learned inter-atomic potential jointly proposed by a team of 60 scientists . ",
 		"background": "sprint10.png",
-		"cover": "sprint.png",
 		"logos": [
 			{
 				"image": "https://kokkos.org/img/kokkos-logo.png",
