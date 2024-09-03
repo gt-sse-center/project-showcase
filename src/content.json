@@ -59,7 +59,9 @@
 			},
 			{
 				"image": "https://www.lammps.org/movies/logo.gif",
-				"alt": "The Kokkos C++ Performance Portability Ecosystem is a production level solution for writing modern C++ applications in a hardware agnostic way.",
+				"alt": "LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
+
+.",
 				"url": "https://www.lammps.org/"
 			}
 		],
