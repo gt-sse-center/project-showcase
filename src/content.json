@@ -47,6 +47,35 @@
 		"end_date": "May 2024"
 	},
 	{
+		"title": "Kokkos Accelerated Machine Learned Interatomic Potential",
+		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://arxiv.org/abs/2401.00096 target=_blank>foundational model</a> for machine learned inter-atomic potential jointly proposed by a team of 60 scientists . ",
+		"background": "sprint10.png",
+		"cover": "sprint.png",
+		"logos": [
+			{
+				"image": "https://kokkos.org/img/kokkos-logo.png",
+				"alt": "The Kokkos C++ Performance Portability Ecosystem is a production level solution for writing modern C++ applications in a hardware agnostic way.",
+				"url": "https://kokkos.org/"
+			},
+			{
+				"image": "https://www.lammps.org/movies/logo.gif",
+				"alt": "The Kokkos C++ Performance Portability Ecosystem is a production level solution for writing modern C++ applications in a hardware agnostic way.",
+				"url": "https://www.lammps.org/"
+			}
+		],
+		"takeaways": [
+			{
+				"description": "Profiling, Kokkosification and Performance Optimization of Sprint Library in LAMPPS",
+				"children": [
+					"8x improvement in standard C++ baseline implementation after initial profiling and improvement suggestions",
+					"(Ongoing) Implementation using Kokkos for inter-operatibility and profiling, performance optimizations for OpenMP, CUDA resulting in first-of-its kind GPU performance baselines"
+				]
+			}
+		],
+		"start_date": "June 2024",
+		"end_date": "TBD"
+	},
+	{
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",
