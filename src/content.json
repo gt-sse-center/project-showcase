@@ -47,6 +47,34 @@
 		"end_date": "May 2024"
 	},
 	{
+		"title": "Kokkos Accelerated Machine Learned Interatomic Potential",
+		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://arxiv.org/abs/2401.00096 target=_blank>foundational model</a> for machine learned inter-atomic potential jointly proposed by a team of 60 scientists . ",
+		"background": "sprint-kokkos-generated.png",
+		"logos": [
+			{
+				"image": "https://kokkos.org/img/kokkos-logo.png",
+				"alt": "The Kokkos C++ Performance Portability Ecosystem is a production level solution for writing modern C++ applications in a hardware agnostic way.",
+				"url": "https://kokkos.org/"
+			},
+			{
+				"image": "https://www.lammps.org/movies/logo.gif",
+				"alt": "LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.",
+				"url": "https://www.lammps.org/"
+			}
+		],
+		"takeaways": [
+			{
+				"description": "Profiling, Kokkosification and Performance Optimization of Sprint Library in LAMPPS",
+				"children": [
+					"8x improvement in standard C++ baseline implementation after initial profiling and improvement suggestions",
+					"(Ongoing) Implementation using Kokkos for inter-operatibility and profiling, performance optimizations for OpenMP, CUDA resulting in first-of-its kind GPU performance baselines"
+				]
+			}
+		],
+		"start_date": "June 2024",
+		"end_date": "TBD"
+	},
+	{
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",
@@ -120,7 +148,6 @@
 		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
 		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/gt-sse-center/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
 		"cover": "musslick.jpeg",
-		"background": "autora-cover.jpg",
 		"takeaways": [
 			{
 				"description": "Provided template for generating a web server to host behavioral experiments",
@@ -128,7 +155,7 @@
 					"Copier template for generating custom experiments",
 					"Optional local storage of experiment data",
 					"Automated tests",
-					"Github Actions and Docker for deployment"
+					"Github Actions and Docker for deployment",
 				]
 			}
 		],
