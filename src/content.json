@@ -1,4 +1,40 @@
-[
+[	
+	{
+		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
+		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/gt-sse-center/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
+		"cover": "autora_overview.png",
+		"logos": [
+			{
+				"image": "https://autoresearch.github.io/autora/img/logo.png",
+				"alt": "AutoRA (Automated Research Assistant) is an open-source framework for automating multiple stages of the empirical research process, including model discovery, experimental design, data collection, and documentation for open science",
+				"url": "https://autoresearch.github.io/autora/"
+			},
+			{
+				"image": "https://github.com/copier-org/copier/raw/master/img/copier-logotype.png",
+				"url": "https://copier.readthedocs.io/en/stable/",
+				"alt": "A library and CLI app for rendering project templates"
+			},
+			{
+				"image": "https://www.jspsych.org/7.0/img/jspsych-logo.jpg",
+				"url": "https://www.jspsych.org/",
+				"alt": "jsPsych is a JavaScript framework for creating behavioral experiments that run in a web browser"
+			}
+		],
+		"background": "musslick.jpeg",
+		"takeaways": [
+			{
+				"description": "Provided template for generating a web server to host behavioral experiments",
+				"children": [
+					"Copier template for generating custom experiments",
+					"Optional local storage of experiment data",
+					"Automated tests",
+					"Github Actions and Docker for deployment"
+				]
+			}
+		],
+		"start_date": "June 2024",
+		"end_date": "September 2024"
+	},
 	{
 		"title": "New Features for the Metadata Aggregator for Reusable / Reproducible Science (MARS)",
 		"description": "<a href=https://github.com/Brain-Development-and-Disorders-Lab/mars target=_blank>MARS</a> is an open-source and customizable data management tool for organizing, linking, and tracking metadata generated from scientific experiments. During this engagement, we added new functionality to MARS to increase its adoption across new scientific domains and with new research laboratories.",
@@ -144,24 +180,5 @@
 		],
 		"start_date": "September 2022",
 		"end_date": "August 2023"
-	},
-	{
-		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
-		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/gt-sse-center/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
-		"cover": "copier-screenshot.png",
-		"background": "musslick.jpeg",
-		"takeaways": [
-			{
-				"description": "Provided template for generating a web server to host behavioral experiments",
-				"children": [
-					"Copier template for generating custom experiments",
-					"Optional local storage of experiment data",
-					"Automated tests",
-					"Github Actions and Docker for deployment"
-				]
-			}
-		],
-		"start_date": "June 2024",
-		"end_date": "September 2024"
 	}
 ]
