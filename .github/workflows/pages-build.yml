@@ -1,0 +1,19 @@
+name: Build the site
+
+on:
+  pull_request:
+    branches: ['main']
+
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: ./.github/actions/build_impl
