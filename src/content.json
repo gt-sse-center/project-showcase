@@ -184,8 +184,8 @@
     {
         "title": "Faster, Scalable, Higher Fidelity RL2Grid",
         "description": "",
-        "cover": "png",
-        "background": ".png",
+        "cover": "grid2op-profiling.png",
+        "background": "",
 		"logos": [
 			{
 				"image": "https://github.com/Grid2op/grid2op/blob/master/logo/final_logo.png",
@@ -203,8 +203,8 @@
     {
         "title": "QCSchema v2: Next-Generation Structured Data for Quantum Chemistry",
         "description": "",
-        "cover": "png",
-        "background": ".png",
+        "cover": "qcschema-v1v2.png",
+        "background": "",
 		"logos": [
 			{
 				"image": "https://github.com/MolSSI/molssi-branding-guidelines/blob/master/logos/main_logo/molssi_main_horizontal.png",
