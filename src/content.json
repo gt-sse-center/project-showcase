@@ -180,5 +180,48 @@
 		],
 		"start_date": "September 2022",
 		"end_date": "August 2023"
-	}
+	},
+    {
+        "title": "Faster, Scalable, Higher Fidelity RL2Grid",
+        "description": "",
+        "cover": "png",
+        "background": ".png",
+		"logos": [
+			{
+				"image": "https://github.com/Grid2op/grid2op/blob/master/logo/final_logo.png",
+				"alt": "Grid2Op a testbed platform to model sequential decision making in power systems.",
+				"url": "https://grid2op.readthedocs.io/en/latest/"
+			}
+		],
+        "takeaways": [
+            {
+            }
+        ],
+        "start_date": "November 2024",
+        "end_date": "April 2025",
+    },
+    {
+        "title": "QCSchema v2: Next-Generation Structured Data for Quantum Chemistry",
+        "description": "",
+        "cover": "png",
+        "background": ".png",
+		"logos": [
+			{
+				"image": "https://github.com/MolSSI/molssi-branding-guidelines/blob/master/logos/main_logo/molssi_main_horizontal.png",
+				"url": "https://molssi.org/",
+				"alt": "The Molecular Sciences Software Institute (MolSSI): a nexus for science, education, and cooperation for the global computational molecular sciences community"
+			},
+			{
+				"image": "https://github.com/MolSSI/molssi-branding-guidelines/blob/master/logos/qcarchive/QCArchiveLogo.png",
+				"url": "https://molssi.org/software/qcarchive/",
+				"alt": "Large-scale computation and data management for quantum chemistry"
+			}
+		],
+        "takeaways": [
+            {
+            }
+        ],
+        "start_date": "August 2024",
+        "end_date": "December 2024",
+    },
 ]
