@@ -16,7 +16,7 @@
 				"description": "Provided a pipeline for performing topic modeling on unstructured data",
 				"children": [
 					"Topic modeling pipeline for identifying commonalities across patient experiences",
-					"Uncovered points of pain for patients and caregivers that were overlooked in past 1 on 1 interactions",
+					"Uncovered points of pain for patients and caregivers that were overlooked in past 1-on-1 interactions",
 					"Flexibility to run the topic modeling pipeline on custom datasets",
 					"Automated tests"
 				]
