@@ -207,5 +207,30 @@
 		],
 		"start_date": "September 2022",
 		"end_date": "August 2023"
-	}
+	},
+    {
+        "title": "Faster, Scalable, Higher Fidelity RL2Grid",
+        "description": "RL2Grid is a benchmark suite for realistic power grid operations. It employs the <a href=https://github.com/Grid2op/grid2op>Grid2op</a> machine learning framework to devise more flexible control strategies for modern power grids. In this engagement, we improved the performance, fidelity, and features of grid2op.",
+        "cover": "rl2grid-merged.png",
+        "background": "rl2grid-background.png",
+        "logos": [
+            {
+                "image": "https://raw.githubusercontent.com/Grid2op/grid2op/refs/heads/master/logo/final_logo.png",
+                "alt": "Grid2Op a testbed platform to model sequential decision making in power systems.",
+                "url": "https://grid2op.readthedocs.io/en/latest/"
+            }
+        ],
+        "takeaways": [
+            {
+                "description": "Improved performance and physics modeling for grid2op",
+                "children": [
+                    "Applied profiling to overcome memory bottlenecks, enabling 2.4x speedup in serial runs and heretofore inaccessible levels of parallel runs. Experiments now 'take days, not weeks!'",
+                    "Connected a higher-fidelity power computation backend in Julia to the Python-based machine learning software stack",
+                    "Facilitated code owner/user conversations that enabled a long-requested feature."
+                ]
+            }
+        ],
+        "start_date": "November 2024",
+        "end_date": "April 2025"
+    }
 ]
