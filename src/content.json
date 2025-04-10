@@ -232,5 +232,41 @@
         ],
         "start_date": "November 2024",
         "end_date": "April 2025"
+	},
+    {
+        "title": "QCSchema v2: Next-Generation Structured Data for Quantum Chemistry",
+        "description": "QCSchema is a data format for quantum chemistry computations and procedures developed by the <a href=https://molssi.org>Molecular Sciences Software Institute</a>. The QCSchema implementation and runners in <a href=https://github.com/MolSSI/QCElemental/>QCElemental</a> and <a href=https://github.com/MolSSI/QCEngine/>QCEngine</a> connect ~20 community codes and underlie several research projects. During this engagement, we modernized schema to prepare for future features.",
+        "cover": "qcschema-v1v2.png",
+        "background": "qcschema-background.png",
+        "logos": [
+            {
+                "image": "https://raw.githubusercontent.com/MolSSI/molssi-branding-guidelines/refs/heads/master/logos/main_logo/molssi_main_horizontal.png",
+                "url": "https://molssi.org/",
+                "alt": "The Molecular Sciences Software Institute (MolSSI): a nexus for science, education, and cooperation for the global computational molecular sciences community"
+            },
+            {
+                "image": "https://raw.githubusercontent.com/MolSSI/molssi-branding-guidelines/refs/heads/master/logos/qcarchive/QCArchiveLogo.png",
+                "url": "https://molssi.org/software/qcarchive/",
+                "alt": "Large-scale computation and data management for quantum chemistry"
+            },
+            {
+                "image": "https://raw.githubusercontent.com/pydantic/pydantic/refs/heads/main/docs/favicon.png",
+                "url": "https://docs.pydantic.dev/latest/",
+                "alt": "Data validation for Python"
+            }
+        ],
+        "takeaways": [
+            {
+                "description": "Modernized and un-froze QCSchema implementation",
+                "children": [
+                    "Updated schema expression from Pydantic v1 API to v2 to unblock downstream projects",
+                    "Implemented data layout changes to make schema more composable, reusable, and intuitive",
+                    "Made old and new schema concurrently tested and available from the same package to facilitate adoption and maintenance",
+                    "QCSchema is now ready to add community-requested features"
+                ]
+            }
+        ],
+        "start_date": "August 2024",
+        "end_date": "December 2024"
     }
 ]
