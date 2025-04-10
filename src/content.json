@@ -1,4 +1,30 @@
-[	
+[
+	{
+		"title": "PatientX.AI: Developing Dementia Journey Maps",
+		"description": "PatientX.AI is a tool designed to analyze and visualize patient experiences through the progression of different diseases. By scraping patient forums, running topic modeling algorithms, and constructing a 'Journey Map' based on these topics, PatientX.AI provides insights into common challenges, symptoms, and milestones that patients may encounter during their treatment. This tool aims to enhance both patient understanding of treatment processes and doctors' ability to provide timely support and resources.",
+		"cover": "patientx-run-help.png",
+		"logos": [
+			{
+				"image": "https://maartengr.github.io/BERTopic/logo.png",
+				"alt": "A library for topic modeling that leverages transformers and c-TF-IDF to create dense clusters allowing for easily interpretable topics",
+				"url": "https://maartengr.github.io/BERTopic/index.html"
+			}
+		],
+		"background": "patientx-background.png",
+		"takeaways": [
+			{
+				"description": "Provided a pipeline for performing topic modeling on unstructured data as well as guidance on how to run the pipeline on custom datasets.",
+				"children": [
+					"Topic modeling pipeline for identifying commonalities across patient experiences",
+					"Uncovered struggles and roadblocks for patients and caregivers that were overlooked in past 1-on-1 interactions",
+					"Flexibility to run the topic modeling pipeline on custom datasets",
+					"Automated tests"
+				]
+			}
+		],
+		"start_date": "Oct 2024",
+		"end_date": "April 2025"
+	},
 	{
 		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
 		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/AutoResearch/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
@@ -70,7 +96,8 @@
 					"Integration with MathJax to pretty-print polynomial continued fractions entered by users",
 					"Custom d3.js charts"
 				]
-			},{
+			},
+			{
 				"description": "Automation of the deployment of new algorithms to the BOINC distributed computing platform",
 				"children": [
 					"Building Windows, Mac and Linux binaries from Python algorithms using cx_Freeze",
