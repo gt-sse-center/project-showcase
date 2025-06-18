@@ -1,4 +1,5 @@
 import './Main.css';
+import Slideshow from './slideshow';
 import data from '../content.json';
 
 type Takeaway = {
@@ -14,7 +15,7 @@ type ShowcaseItem = {
 	title: string;
 	description?: string;
 	background: string;
-	cover: string;
+	cover: string[];
 	logos?: Logo[];
 	takeaways: Takeaway[];
 	start_date: string;
@@ -69,14 +70,12 @@ function Main() {
 						</article>
 					</section>
 					<section className="text-bloc">
-						<figure>
-							<img src={`${item.cover}`} alt={item.title} />
-						</figure>
+						<Slideshow slideImages={item.cover} alt={item.title} />
 						{item.description ? <div dangerouslySetInnerHTML={{__html: item.description}} /> : ''}
 						{item.logos ? (
 							<div>
-								{item.logos?.map((logo) => (
-									<a target="_blank" href={`${logo.url}`} aria-description={`link to ${logo.alt}`}>
+								{item.logos?.map((logo, logo_index) => (
+									<a key={logo_index} target="_blank" href={`${logo.url}`} aria-description={`link to ${logo.alt}`}>
 										<img className="logo" alt={logo.alt} src={`${logo.image}`} />
 									</a>
 								))}

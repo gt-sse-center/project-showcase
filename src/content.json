@@ -2,7 +2,7 @@
 	{
 		"title": "PatientX.AI: Developing Dementia Journey Maps",
 		"description": "PatientX.AI is a tool designed to analyze and visualize patient experiences through the progression of different diseases. By scraping patient forums, running topic modeling algorithms, and constructing a 'Journey Map' based on these topics, PatientX.AI provides insights into common challenges, symptoms, and milestones that patients may encounter during their treatment. This tool aims to enhance both patient understanding of treatment processes and doctors' ability to provide timely support and resources.",
-		"cover": "patientx-run-help.png",
+		"cover": ["patientx-run-help.png"],
 		"logos": [
 			{
 				"image": "https://maartengr.github.io/BERTopic/logo.png",
@@ -28,7 +28,7 @@
 	{
 		"title": "AutoRA: Closed-loop Behavioral Experiments Delivered Through an Online Experiment Server",
 		"description": "AutoRA provides those researchers performing behavioral experiments with tools to develop experiments and reason about the results of those experiments in a way that facilitates their evolution. In this engagement we developed a <a href=https://github.com/AutoResearch/AutoRA-experiment-server target=_blank>Copier project template</a> that allows researchers to stand up a web based behavioral experiment using jsPsych with integration into the Prolific participant recruitment platform and fully automated deployment via Docker and GitHub Actions.",
-		"cover": "autora_overview.png",
+		"cover": ["autora_overview.png"],
 		"logos": [
 			{
 				"image": "https://autoresearch.github.io/autora/img/logo.png",
@@ -65,7 +65,7 @@
 		"title": "New Features for the Metadata Aggregator for Reusable / Reproducible Science (MARS)",
 		"description": "<a href=https://github.com/Brain-Development-and-Disorders-Lab/mars target=_blank>MARS</a> is an open-source and customizable data management tool for organizing, linking, and tracking metadata generated from scientific experiments. During this engagement, we added new functionality to MARS to increase its adoption across new scientific domains and with new research laboratories.",
 		"background": "mars-background.jpeg",
-		"cover": "mars.png",
+		"cover": ["mars.png"],
 		"takeaways": [
 			{
 				"description": "New functionality to increase adoption of MARS across new scientific domains and with new research laboratories",
@@ -85,7 +85,7 @@
 		"title": "A Web Portal for the Ramanujan Machine & Automated Search Algorithm Deployment to the BOINC Distributed-Computing Platform via GitHub Actions",
 		"description": "<a href=https://www.ramanujanmachine.com/ target=_blank>The Ramanujan Machine</a> is a novel way to find new mathematical formulas relating fundamental constants, usually discovered sporadically by mathematical intuition or ingenuity, by harnessing computer algorithms. We built a user-friendly web application that invokes the Ramanujan Machine algorithms and returns potential discoveries to the user along with any results returned from an integration with Wolfram Alpha.",
 		"background": "ramanujan_background.jpeg",
-		"cover": "ramanujan_machine.png",
+		"cover": ["ramanujan_machine.png"],
 		"takeaways": [
 			{
 				"description": "A web portal to make search algorithms accessible to the public",
@@ -113,7 +113,7 @@
 		"title": "Kokkos Accelerated Machine Learned Interatomic Potential",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://arxiv.org/abs/2401.00096 target=_blank>foundational model</a> for machine learned inter-atomic potential jointly proposed by a team of 60 scientists . ",
 		"background": "sprint-kokkos-generated.png",
-		"cover": "neural-net-generated.jpg",
+		"cover": ["neural-net-generated.jpg"],
 		"logos": [
 			{
 				"image": "https://kokkos.org/img/kokkos-logo.png",
@@ -142,7 +142,7 @@
 		"title": "Performance Enhancements for Simulations that Target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules",
 		"description": "During this engagement, we evaluated the performance characteristics of simulations based on <a href=https://www.gromacs.orgheller target=_blank>GROMACS</a> and <a href=https://www.plumed.org/ target=_blank>PLUMED</a>, which target Intrinsically Disordered Proteins (IDPs) with Therapeutic Small Molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements.",
 		"background": "proteins10.png",
-		"cover": "proteins.png",
+		"cover": ["proteins.png"],
 		"logos": [
 			{
 				"image": "https://www.gromacs.org/_static/gmx_logo_blue.png",
@@ -172,7 +172,7 @@
 	{
 		"title": "Icetemp: Converting a Jupyter Notebook to a Python Package",
 		"description": "<a href=https://github.com/sashamontelli/borehole_temperature_models target=_blank>Icetemp</a> is a numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica. During this engagement, we converted the Icetemp algorithm, written as a Jupyter Notebook, into a Python package available on PyPi, complete with automated testing and Continuous Integration / Delivery / Deployment.",
-		"cover": "montelli.png",
+		"cover": ["montelli.png"],
 		"background": "icecore5.png",
 		"takeaways": [
 			{
@@ -192,7 +192,7 @@
 	{
 		"title": "FastANI: Improving the Quality of a Python Package",
 		"description": "<a href=https://github.com/ParBLiSS/FastANI target=_blank>FastANI</a> is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure. During this engagement, we improved the quality of the FastANI Python package.",
-		"cover": "FastANI.png",
+		"cover": ["FastANI.png"],
 		"background": "dna10.png",
 		"takeaways": [
 			{
@@ -211,7 +211,11 @@
     {
         "title": "Faster, Scalable, Higher Fidelity RL2Grid",
         "description": "RL2Grid is a benchmark suite for realistic power grid operations. It employs the <a href=https://github.com/Grid2op/grid2op>Grid2op</a> machine learning framework to devise more flexible control strategies for modern power grids. In this engagement, we improved the performance, fidelity, and features of grid2op.",
-        "cover": "rl2grid-merged.png",
+        "cover": [
+          "rl2grid-merged.png",
+          "grid2op-profiling.png",
+          "powergrid-software.png"
+        ],
         "background": "rl2grid-background.png",
         "logos": [
             {
@@ -236,7 +240,7 @@
     {
         "title": "QCSchema v2: Next-Generation Structured Data for Quantum Chemistry",
         "description": "QCSchema is a data format for quantum chemistry computations and procedures developed by the <a href=https://molssi.org>Molecular Sciences Software Institute</a>. The QCSchema implementation and runners in <a href=https://github.com/MolSSI/QCElemental/>QCElemental</a> and <a href=https://github.com/MolSSI/QCEngine/>QCEngine</a> connect ~20 community codes and underlie several research projects. During this engagement, we modernized schema to prepare for future features.",
-        "cover": "qcschema-v1v2.png",
+        "cover": ["qcschema-v1v2.png"],
         "background": "qcschema-background.png",
         "logos": [
             {
