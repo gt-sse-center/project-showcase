@@ -4,6 +4,7 @@ import { type VariantProps } from "class-variance-authority"
 
 import { buttonVariants } from "@/components/ui/buttonVariants"
 import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/buttonVariants"
 
 
 export interface ButtonProps

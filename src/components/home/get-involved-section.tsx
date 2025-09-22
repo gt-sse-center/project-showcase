@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { parseTextWithLinks } from '@/lib/utils';
 import { GitBranch, GraduationCap, Handshake } from 'lucide-react';
+import React from 'react';
 import { Link } from 'wouter';
 
 export default function GetInvolvedSection() {

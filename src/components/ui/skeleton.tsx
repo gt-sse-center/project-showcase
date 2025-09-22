@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import React from 'react';
 
 function Skeleton({
   className,
@@ -12,4 +13,5 @@ function Skeleton({
   )
 }
 
-export { Skeleton }
+export { Skeleton };
+

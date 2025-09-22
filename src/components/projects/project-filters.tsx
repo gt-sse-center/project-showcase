@@ -1,18 +1,17 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+/*eslint no-unused-vars: "off"*/
+
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import {
   getAllCategoriesFromProjects,
   getAllTechnologiesFromProjects,
-  getCategoryDisplayName,
-} from "@/lib/utils";
-import { ArrowUpDown, Check, Filter, Search, X } from "lucide-react";
-import { useState } from "react";
+  getCategoryDisplayName
+} from '@/lib/utils';
+import type { Project } from '@/schema';
+import { ArrowUpDown, Check, Filter, Search, X } from 'lucide-react';
+import React, { useState } from 'react';
 
 interface ProjectFiltersProps {
   activeFilter: string;
@@ -35,23 +34,22 @@ export default function ProjectFilters({
   setSelectedTechnologies,
   sortBy,
   setSortBy,
-  allProjects,
+  allProjects
 }: ProjectFiltersProps) {
   const [techFilterOpen, setTechFilterOpen] = useState(false);
   const [sortFilterOpen, setSortFilterOpen] = useState(false);
-  const { categorizedTechnologies } =
-    getAllTechnologiesFromProjects(allProjects);
+  const { categorizedTechnologies } = getAllTechnologiesFromProjects(allProjects);
   const projectCategories = getAllCategoriesFromProjects(allProjects);
 
   const toggleTechnology = (tech: string) => {
-    console.log("Toggling technology:", tech);
-    console.log("Current selected:", selectedTechnologies);
+    console.log('Toggling technology:', tech);
+    console.log('Current selected:', selectedTechnologies);
 
     const newSelected = selectedTechnologies.includes(tech)
       ? selectedTechnologies.filter((t) => t !== tech)
       : [...selectedTechnologies, tech];
 
-    console.log("New selected:", newSelected);
+    console.log('New selected:', newSelected);
     setSelectedTechnologies(newSelected);
   };
 
@@ -60,25 +58,25 @@ export default function ProjectFilters({
   };
 
   const categoryDisplayNames: { [key: string]: string } = {
-    frontend: "Frontend",
-    backend: "Backend",
-    ai: "AI & ML",
-    machineLearning: "Machine Learning",
-    framework: "Frameworks",
-    database: "Databases",
-    computing: "Computing",
-    simulation: "Simulation",
-    visualization: "Visualization",
-    cicd: "CI/CD",
-    development: "Development Tools",
-    profiling: "Profiling",
-    modeling: "Modeling",
-    bioinformatics: "Bioinformatics",
-    science: "Scientific Computing",
-    dataStructures: "Data Structures",
-    distribution: "Distribution",
-    optimization: "Optimization",
-    other: "Other",
+    frontend: 'Frontend',
+    backend: 'Backend',
+    ai: 'AI & ML',
+    machineLearning: 'Machine Learning',
+    framework: 'Frameworks',
+    database: 'Databases',
+    computing: 'Computing',
+    simulation: 'Simulation',
+    visualization: 'Visualization',
+    cicd: 'CI/CD',
+    development: 'Development Tools',
+    profiling: 'Profiling',
+    modeling: 'Modeling',
+    bioinformatics: 'Bioinformatics',
+    science: 'Scientific Computing',
+    dataStructures: 'Data Structures',
+    distribution: 'Distribution',
+    optimization: 'Optimization',
+    other: 'Other'
   };
 
   return (
@@ -88,15 +86,13 @@ export default function ProjectFilters({
         <FilterButton
           filter="all"
           activeFilter={activeFilter}
-          onClick={() => setActiveFilter("all")}
-        >
+          onClick={() => setActiveFilter('all')}>
           All Projects
         </FilterButton>
         <FilterButton
           filter="featured"
           activeFilter={activeFilter}
-          onClick={() => setActiveFilter("featured")}
-        >
+          onClick={() => setActiveFilter('featured')}>
           Featured
         </FilterButton>
         {projectCategories.map((category) => (
@@ -104,8 +100,7 @@ export default function ProjectFilters({
             key={category}
             filter={category}
             activeFilter={activeFilter}
-            onClick={() => setActiveFilter(category)}
-          >
+            onClick={() => setActiveFilter(category)}>
             {getCategoryDisplayName(category)}
           </FilterButton>
         ))}
@@ -131,22 +126,19 @@ export default function ProjectFilters({
         {/* Sort Dropdown */}
         <Popover open={sortFilterOpen} onOpenChange={setSortFilterOpen}>
           <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              className="w-full sm:w-auto min-w-[160px] justify-between"
-            >
+            <Button variant="outline" className="w-full sm:w-auto min-w-[160px] justify-between">
               <div className="flex items-center gap-2">
                 <ArrowUpDown className="h-4 w-4" />
                 <span>
-                  {sortBy === "newest"
-                    ? "Newest First"
-                    : sortBy === "oldest"
-                      ? "Oldest First"
-                      : sortBy === "alphabetical"
-                        ? "A-Z"
-                        : sortBy === "category"
-                          ? "By Category"
-                          : "Sort By"}
+                  {sortBy === 'newest'
+                    ? 'Newest First'
+                    : sortBy === 'oldest'
+                      ? 'Oldest First'
+                      : sortBy === 'alphabetical'
+                        ? 'A-Z'
+                        : sortBy === 'category'
+                          ? 'By Category'
+                          : 'Sort By'}
                 </span>
               </div>
             </Button>
@@ -154,24 +146,20 @@ export default function ProjectFilters({
           <PopoverContent className="w-[180px] p-2" align="start">
             <div className="space-y-1">
               {[
-                { value: "newest", label: "Newest First" },
-                { value: "oldest", label: "Oldest First" },
-                { value: "alphabetical", label: "A-Z" },
-                { value: "category", label: "By Category" },
+                { value: 'newest', label: 'Newest First' },
+                { value: 'oldest', label: 'Oldest First' },
+                { value: 'alphabetical', label: 'A-Z' },
+                { value: 'category', label: 'By Category' }
               ].map((option) => (
                 <div
                   key={option.value}
-                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${sortBy === option.value ? "bg-gray-100" : ""
-                    }`}
+                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${sortBy === option.value ? 'bg-gray-100' : ''}`}
                   onClick={() => {
                     setSortBy(option.value);
                     setSortFilterOpen(false);
-                  }}
-                >
+                  }}>
                   <div className="w-4 h-4 flex items-center justify-center">
-                    {sortBy === option.value && (
-                      <Check className="h-4 w-4 text-[#003057]" />
-                    )}
+                    {sortBy === option.value && <Check className="h-4 w-4 text-[#003057]" />}
                   </div>
                   <span className="text-sm">{option.label}</span>
                 </div>
@@ -183,15 +171,12 @@ export default function ProjectFilters({
         {/* Technology Filter Dropdown */}
         <Popover open={techFilterOpen} onOpenChange={setTechFilterOpen}>
           <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              className="w-full sm:w-auto min-w-[200px] justify-between"
-            >
+            <Button variant="outline" className="w-full sm:w-auto min-w-[200px] justify-between">
               <div className="flex items-center gap-2">
                 <Filter className="h-4 w-4" />
                 <span>
                   {selectedTechnologies.length === 0
-                    ? "Filter by Technology"
+                    ? 'Filter by Technology'
                     : `${selectedTechnologies.length} selected`}
                 </span>
               </div>
@@ -200,42 +185,36 @@ export default function ProjectFilters({
           <PopoverContent className="w-[400px] p-4" align="start">
             <div className="max-h-[300px] overflow-y-auto">
               <div className="mb-3">
-                <Input
-                  placeholder="Search technologies..."
-                  className="w-full"
-                />
+                <Input placeholder="Search technologies..." className="w-full" />
               </div>
 
-              {Object.entries(categorizedTechnologies).map(
-                ([category, techs]) => (
-                  <div key={category} className="mb-4">
-                    <h4 className="text-sm font-medium text-gray-700 mb-2">
-                      {categoryDisplayNames[category] || category}
-                    </h4>
-                    <div className="space-y-1">
-                      {techs.map((tech) => (
-                        <div
-                          key={tech}
-                          className="flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            console.log("Clicking tech:", tech);
-                            toggleTechnology(tech);
-                          }}
-                        >
-                          <div className="w-4 h-4 flex items-center justify-center">
-                            {selectedTechnologies.includes(tech) && (
-                              <Check className="h-4 w-4 text-[#003057]" />
-                            )}
-                          </div>
-                          <span className="flex-1 text-sm">{tech}</span>
+              {Object.entries(categorizedTechnologies).map(([category, techs]) => (
+                <div key={category} className="mb-4">
+                  <h4 className="text-sm font-medium text-gray-700 mb-2">
+                    {categoryDisplayNames[category] || category}
+                  </h4>
+                  <div className="space-y-1">
+                    {techs.map((tech) => (
+                      <div
+                        key={tech}
+                        className="flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          console.log('Clicking tech:', tech);
+                          toggleTechnology(tech);
+                        }}>
+                        <div className="w-4 h-4 flex items-center justify-center">
+                          {selectedTechnologies.includes(tech) && (
+                            <Check className="h-4 w-4 text-[#003057]" />
+                          )}
                         </div>
-                      ))}
-                    </div>
+                        <span className="flex-1 text-sm">{tech}</span>
+                      </div>
+                    ))}
                   </div>
-                ),
-              )}
+                </div>
+              ))}
             </div>
           </PopoverContent>
         </Popover>
@@ -249,8 +228,7 @@ export default function ProjectFilters({
               key={tech}
               variant="secondary"
               className="bg-[#003057] text-white hover:bg-[#003057]/90 cursor-pointer"
-              onClick={() => toggleTechnology(tech)}
-            >
+              onClick={() => toggleTechnology(tech)}>
               {tech}
               <X className="h-3 w-3 ml-1" />
             </Badge>
@@ -259,8 +237,7 @@ export default function ProjectFilters({
             variant="ghost"
             size="sm"
             onClick={clearTechnologyFilters}
-            className="text-gray-600 hover:text-gray-800"
-          >
+            className="text-gray-600 hover:text-gray-800">
             Clear all
           </Button>
         </div>
@@ -276,23 +253,16 @@ interface FilterButtonProps {
   children: React.ReactNode;
 }
 
-function FilterButton({
-  filter,
-  activeFilter,
-  onClick,
-  children,
-}: FilterButtonProps) {
+function FilterButton({ filter, activeFilter, onClick, children }: FilterButtonProps) {
   const isActive = filter === activeFilter;
 
   return (
     <Button
-      variant={isActive ? "default" : "outline"}
+      variant={isActive ? 'default' : 'outline'}
       className={`rounded-full ${isActive
-        ? "bg-[#B3A369] text-white hover:bg-[#E5D6A2] hover:text-[#003057]"
-        : "border-[#B3A369] text-[#003057] hover:bg-[#B3A369] hover:text-white"
-        }`}
-      onClick={onClick}
-    >
+        ? 'bg-[#B3A369] text-white hover:bg-[#E5D6A2] hover:text-[#003057]'
+        : 'border-[#B3A369] text-[#003057] hover:bg-[#B3A369] hover:text-white'}`}
+      onClick={onClick}>
       {children}
     </Button>
   );

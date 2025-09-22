@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'wouter';
 import imgGtLogoWhite from '/images/gt-logo-white.svg';
 
@@ -11,7 +12,7 @@ export default function Footer() {
               <img
                 src={imgGtLogoWhite}
                 alt="Georgia Tech Logo"
-                className="h-20"
+                className="h-15 mt-1"
               />
               <div className="font-sans font-bold text-xl">CSSE</div>
             </div>

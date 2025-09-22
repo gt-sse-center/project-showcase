@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation, useParams } from "wouter";
+import imgProjectHeaderBackground from '/images/project-header-bg.png';
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -66,12 +67,14 @@ export default function ProjectDetail() {
   // Add structured data for project
   useEffect(() => {
     if (!project) return;
+
     const projectStructuredData = generateProjectStructuredData(project);
     const breadcrumbStructuredData = generateBreadcrumbStructuredData([
       { name: "Home", url: "https://ssec-showcase.gatech.edu/" },
       { name: "Projects", url: "https://ssec-showcase.gatech.edu/projects" },
       { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` }
     ]);
+
     const projectScript = document.createElement('script');
     projectScript.type = 'application/ld+json';
     projectScript.text = JSON.stringify(projectStructuredData);
@@ -99,7 +102,7 @@ export default function ProjectDetail() {
           Project Not Found
         </h2>
         <p className="text-gray-600 mb-6">
-          We couldn't find the project you're looking for.
+          {"We couldn't find the project you're looking for."}
         </p>
         <Button onClick={() => navigate("/projects")}>
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
@@ -113,7 +116,7 @@ export default function ProjectDetail() {
       <PageHeader
         title={project.title}
         description={project.summary}
-        backgroundImage={project.imageUrl || "/images/project-header-bg.png"}
+        backgroundImage={project.imageUrl || imgProjectHeaderBackground}
       />
 
       <section className="py-12 bg-white">
@@ -131,43 +134,43 @@ export default function ProjectDetail() {
                     {/* Timeline Card */}
                     {(project.projectDetails.startDate ||
                       project.projectDetails.endDate ||
-                      project.projectDetails.source) && (
-                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                          <div className="flex items-center mb-3">
-                            <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                            <h3 className="font-semibold text-[#003057] flex items-center">
-                              <Calendar className="w-4 h-4 mr-2" />
-                              Timeline
-                            </h3>
-                          </div>
-                          <div className="space-y-2 text-sm">
-                            {project.projectDetails.startDate && (
-                              <p className="flex justify-between">
-                                <span className="text-gray-600">Start:</span>
-                                <span className="font-medium">
-                                  {project.projectDetails.startDate}
-                                </span>
-                              </p>
-                            )}
-                            {project.projectDetails.endDate && (
-                              <p className="flex justify-between">
-                                <span className="text-gray-600">End:</span>
-                                <span className="font-medium">
-                                  {project.projectDetails.endDate}
-                                </span>
-                              </p>
-                            )}
-                            {project.projectDetails.source && (
-                              <p className="flex justify-between">
-                                <span className="text-gray-600">Source:</span>
-                                <span className="font-medium">
-                                  {project.projectDetails.source}
-                                </span>
-                              </p>
-                            )}
-                          </div>
+                      project.projectDetails.source) &&
+                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                        <div className="flex items-center mb-3">
+                          <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                          <h3 className="font-semibold text-[#003057] flex items-center">
+                            <Calendar className="w-4 h-4 mr-2" />
+                            Timeline
+                          </h3>
                         </div>
-                      )}
+                        <div className="space-y-2 text-sm">
+                          {project.projectDetails.startDate && (
+                            <p className="flex justify-between">
+                              <span className="text-gray-600">Start:</span>
+                              <span className="font-medium">
+                                {project.projectDetails.startDate}
+                              </span>
+                            </p>
+                          )}
+                          {project.projectDetails.endDate && (
+                            <p className="flex justify-between">
+                              <span className="text-gray-600">End:</span>
+                              <span className="font-medium">
+                                {project.projectDetails.endDate}
+                              </span>
+                            </p>
+                          )}
+                          {project.projectDetails.source && (
+                            <p className="flex justify-between">
+                              <span className="text-gray-600">Source:</span>
+                              <span className="font-medium">
+                                {project.projectDetails.source}
+                              </span>
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    }
 
                     {/* Scientific Domain Card */}
                     {project.projectDetails.scientificDomain && (
@@ -187,75 +190,75 @@ export default function ProjectDetail() {
 
                     {/* Partners Card */}
                     {project.projectDetails.partners &&
-                      project.projectDetails.partners.length > 0 && (
-                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                          <div className="flex items-center mb-3">
-                            <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                            <h3 className="font-semibold text-[#003057] flex items-center">
-                              <Building className="w-4 h-4 mr-2" />
-                              Partners
-                            </h3>
-                          </div>
-                          <div className="space-y-1">
-                            {project.projectDetails.partners.map(
-                              (partner, index) => (
-                                <p key={index} className="text-sm font-medium">
-                                  {typeof partner === "string" ? (
-                                    partner
-                                  ) : partner.profileUrl ? (
-                                    <a
-                                      href={partner.profileUrl}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 underline"
-                                    >
-                                      {partner.name}
-                                    </a>
-                                  ) : (
-                                    partner.name
-                                  )}
-                                </p>
-                              ),
-                            )}
-                          </div>
+                      project.projectDetails.partners.length > 0 &&
+                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                        <div className="flex items-center mb-3">
+                          <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                          <h3 className="font-semibold text-[#003057] flex items-center">
+                            <Building className="w-4 h-4 mr-2" />
+                            Partners
+                          </h3>
                         </div>
-                      )}
+                        <div className="space-y-1">
+                          {project.projectDetails.partners.map(
+                            (partner, index) => (
+                              <p key={index} className="text-sm font-medium">
+                                {typeof partner === "string" ? (
+                                  partner
+                                ) : partner.profileUrl ? (
+                                  <a
+                                    href={partner.profileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 hover:text-blue-800 underline"
+                                  >
+                                    {partner.name}
+                                  </a>
+                                ) : (
+                                  partner.name
+                                )}
+                              </p>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    }
 
                     {/* Software Engineers Card */}
                     {project.projectDetails.softwareEngineers &&
-                      project.projectDetails.softwareEngineers.length > 0 && (
-                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                          <div className="flex items-center mb-3">
-                            <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                            <h3 className="font-semibold text-[#003057] flex items-center">
-                              <Users className="w-4 h-4 mr-2" />
-                              Software Engineers
-                            </h3>
-                          </div>
-                          <div className="space-y-1">
-                            {project.projectDetails.softwareEngineers.map(
-                              (engineer, index) => (
-                                <p key={index} className="text-sm font-medium">
-                                  {typeof engineer === "string" ? (
-                                    engineer
-                                  ) : engineer.profileUrl ? (
-                                    <a
-                                      href={engineer.profileUrl}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 underline"
-                                    >
-                                      {engineer.name}
-                                    </a>
-                                  ) : (
-                                    engineer.name
-                                  )}
-                                </p>
-                              ),
-                            )}
-                          </div>
+                      project.projectDetails.softwareEngineers.length > 0 &&
+                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                        <div className="flex items-center mb-3">
+                          <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                          <h3 className="font-semibold text-[#003057] flex items-center">
+                            <Users className="w-4 h-4 mr-2" />
+                            Software Engineers
+                          </h3>
                         </div>
-                      )}
+                        <div className="space-y-1">
+                          {project.projectDetails.softwareEngineers.map(
+                            (engineer, index) => (
+                              <p key={index} className="text-sm font-medium">
+                                {typeof engineer === "string" ? (
+                                  engineer
+                                ) : engineer.profileUrl ? (
+                                  <a
+                                    href={engineer.profileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 hover:text-blue-800 underline"
+                                  >
+                                    {engineer.name}
+                                  </a>
+                                ) : (
+                                  engineer.name
+                                )}
+                              </p>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    }
                   </div>
                 </div>
               </div>
