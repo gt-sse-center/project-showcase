@@ -1,5 +1,5 @@
 import { projects } from "@/data/projects";
-import { countUniqueTechnologies, countUniqueCollaborators } from "@/lib/utils";
+import { countUniqueCollaborators, countUniqueTechnologies } from "@/lib/utils";
 
 export default function StatsSection() {
   const projectCount = projects.length;

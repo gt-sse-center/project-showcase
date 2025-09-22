@@ -1,5 +1,5 @@
-import { type Project } from "@/schema";
 import { parseTextWithLinks } from "@/lib/utils";
+import { type Project } from "@/schema";
 
 interface ProjectOnePagerProps {
   project: Project;
