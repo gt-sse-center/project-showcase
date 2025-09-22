@@ -109,14 +109,16 @@ export default function Projects() {
             projects={filteredProjects}
           />
 
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <h3 className="text-xl font-medium text-gray-600">No projects match your criteria</h3>
-              <p className="mt-2 text-gray-500">Try adjusting your filters or search term</p>
-            </div>
-          )}
-        </div>
-      </section>
-    </div>
+          {
+            filteredProjects.length === 0 && (
+              <div className="text-center py-16">
+                <h3 className="text-xl font-medium text-gray-600">No projects match your criteria</h3>
+                <p className="mt-2 text-gray-500">Try adjusting your filters or search term</p>
+              </div>
+            )
+          }
+        </div >
+      </section >
+    </div >
   );
 }

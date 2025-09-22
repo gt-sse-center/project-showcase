@@ -1,4 +1,4 @@
-import { Switch, Route, useLocation } from "wouter";
+import { Router, Switch, Route, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
@@ -10,7 +10,7 @@ import ProjectDetail from "@/pages/project-detail";
 
 import { useState, useEffect } from "react";
 
-function Router() {
+function RouterLocationHook() {
   const [location] = useLocation();
 
   // Scroll to top when route changes
@@ -31,22 +31,27 @@ function Router() {
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <div>
-      <div className="flex flex-col min-h-screen">
-        <Header toggleMobileMenu={toggleMobileMenu} />
-        <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
-        <main className="grow">
-          <Router />
-        </main>
-        <Footer />
-      </div>
-      <Toaster />
+      {/* Read the `base` set in the vite.config.ts.
+          Needed for Github project pages.
+      */}
+      <Router base={import.meta.env.BASE_URL}>
+        <div className="flex flex-col min-h-screen">
+          <Header toggleMobileMenu={toggleMobileMenu} />
+          <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+          <main className="grow">
+            <RouterLocationHook />
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
+      </Router>
     </div>
   );
 }

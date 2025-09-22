@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import eslint from 'vite-plugin-eslint';
+import eslintPlugin from "@nabla/vite-plugin-eslint";
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from "path";
@@ -10,10 +10,11 @@ dns.setDefaultResultOrder('ipv4first');
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/project-showcase",
   plugins: [
     react(),
     tailwindcss(),
-    eslint(),
+    eslintPlugin(),
   ],
   resolve: {  // resolve path aliases
     alias: {
@@ -22,7 +23,6 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "."),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
-    emptyOutDir: true,
+    outDir: path.resolve(__dirname, "dist/"),
   },
 })

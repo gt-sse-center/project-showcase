@@ -66,14 +66,12 @@ export default function ProjectDetail() {
   // Add structured data for project
   useEffect(() => {
     if (!project) return;
-
     const projectStructuredData = generateProjectStructuredData(project);
     const breadcrumbStructuredData = generateBreadcrumbStructuredData([
       { name: "Home", url: "https://ssec-showcase.gatech.edu/" },
       { name: "Projects", url: "https://ssec-showcase.gatech.edu/projects" },
       { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` }
     ]);
-
     const projectScript = document.createElement('script');
     projectScript.type = 'application/ld+json';
     projectScript.text = JSON.stringify(projectStructuredData);
@@ -354,32 +352,35 @@ export default function ProjectDetail() {
                       >
                         <SiGithub className="mr-2 h-4 w-4" />
                         {Array.isArray(project.githubUrl) && project.githubUrl.length > 1 ? `GitHub ${index + 1}` : 'View on GitHub'}
-                      </a>
-                    </Button>
-                  ))}
+                      </a >
+                    </Button >
+                  ))
+                  }
                 </>
               )}
 
-              {project.demoUrl && (
-                <>
-                  {(Array.isArray(project.demoUrl) ? project.demoUrl : [project.demoUrl]).map((url, index) => (
-                    <Button
-                      key={index}
-                      className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057]"
-                      asChild
-                    >
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+              {
+                project.demoUrl && (
+                  <>
+                    {(Array.isArray(project.demoUrl) ? project.demoUrl : [project.demoUrl]).map((url, index) => (
+                      <Button
+                        key={index}
+                        className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057]"
+                        asChild
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        {Array.isArray(project.demoUrl) && project.demoUrl.length > 1 ? `Demo ${index + 1}` : 'Live Demo'}
-                      </a>
-                    </Button>
-                  ))}
-                </>
-              )}
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          {Array.isArray(project.demoUrl) && project.demoUrl.length > 1 ? `Demo ${index + 1}` : 'Live Demo'}
+                        </a >
+                      </Button >
+                    ))
+                    }
+                  </>
+                )}
 
               <Button
                 variant="outline"
@@ -388,10 +389,10 @@ export default function ProjectDetail() {
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+            </div >
+          </div >
+        </div >
+      </section >
+    </div >
   );
 }

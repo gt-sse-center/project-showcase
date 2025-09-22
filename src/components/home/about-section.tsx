@@ -1,5 +1,9 @@
 import { parseTextWithLinks } from '@/lib/utils';
 import { Code, FlaskRound, GraduationCap } from 'lucide-react';
+import imgAtlanta from '/images/atlanta.png';
+import imgBuilding from '/images/building.png';
+import imgCollaboration from '/images/collaboration.png';
+import imgTechTower from '/images/tech-tower.png';
 
 export default function AboutSection() {
   return (
@@ -17,49 +21,49 @@ export default function AboutSection() {
               Our team consists of professional software engineers, computer scientists, and domain experts who collaborate with researchers across disciplines to create sustainable, reusable, and efficient research software.
             </p>
             <div className="flex flex-wrap gap-4">
-              <FeatureItem 
-                icon={<Code className="h-5 w-5 text-[#003057]" />} 
-                title="Software Engineering" 
-                description="Best practices & methodologies" 
+              <FeatureItem
+                icon={<Code className="h-5 w-5 text-[#003057]" />}
+                title="Software Engineering"
+                description="Best practices & methodologies"
               />
-              <FeatureItem 
-                icon={<FlaskRound className="h-5 w-5 text-[#003057]" />} 
-                title="Research Collaboration" 
-                description="Cross-disciplinary partnerships" 
+              <FeatureItem
+                icon={<FlaskRound className="h-5 w-5 text-[#003057]" />}
+                title="Research Collaboration"
+                description="Cross-disciplinary partnerships"
               />
-              <FeatureItem 
-                icon={<GraduationCap className="h-5 w-5 text-[#003057]" />} 
-                title="Education" 
-                description="Training & skill development" 
+              <FeatureItem
+                icon={<GraduationCap className="h-5 w-5 text-[#003057]" />}
+                title="Education"
+                description="Training & skill development"
               />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden">
-              <img 
-                src="/images/building.png" 
-                alt="Georgia Tech College of Computing" 
+              <img
+                src={imgBuilding}
+                alt="Georgia Tech College of Computing"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden mt-8">
-              <img 
-                src="/images/collaboration.png" 
-                alt="Software engineering collaboration" 
+              <img
+                src={imgCollaboration}
+                alt="Software engineering collaboration"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden">
-              <img 
-                src="/images/tech-tower.png" 
-                alt="Georgia Tech Tower with blossoms" 
+              <img
+                src={imgTechTower}
+                alt="Georgia Tech Tower with blossoms"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden mt-8">
-              <img 
-                src="/images/atlanta.png" 
-                alt="Atlanta tech skyline" 
+              <img
+                src={imgAtlanta}
+                alt="Atlanta tech skyline"
                 className="object-cover h-full w-full"
               />
             </div>
