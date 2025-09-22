@@ -103,7 +103,6 @@ function extractProgrammingLanguages(project: Project): string[] {
       }
     });
   }
-
   return Array.from(new Set(programmingLanguages));
 }
 
@@ -120,7 +119,6 @@ export function generateProjectSlug(title: string): string {
 export function generateProjectMetaDescription(project: Project): string {
   const technologies = extractProgrammingLanguages(project).slice(0, 3).join(', ');
   const domain = project.projectDetails.scientificDomain;
-
   return `${project.summary} Built with ${technologies} for ${domain}. Explore this innovative research project from Georgia Tech's SSEC.`;
 }
 
