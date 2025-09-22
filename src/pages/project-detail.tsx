@@ -1,8 +1,6 @@
 import { useParams, useLocation } from "wouter";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Github,
   ExternalLink,
   ArrowLeft,
   Calendar,
@@ -10,6 +8,7 @@ import {
   Building,
   Target,
 } from "lucide-react";
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import PageHeader from "@/components/ui/page-header";
 import ProjectOnePager from "@/components/projects/project-one-pager";
 import { projects } from "@/data/projects";
@@ -353,7 +352,7 @@ export default function ProjectDetail() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Github className="mr-2 h-4 w-4" /> 
+                        <SiGithub className="mr-2 h-4 w-4" /> 
                         {Array.isArray(project.githubUrl) && project.githubUrl.length > 1 ? `GitHub ${index + 1}` : 'View on GitHub'}
                       </a>
                     </Button>
