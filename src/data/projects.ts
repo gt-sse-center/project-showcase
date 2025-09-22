@@ -1,6 +1,6 @@
 import { type Project } from "@/schema";
 
-// Projects data extracted from the Georgia Tech SSEC website
+// Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
   {
     id: 1,

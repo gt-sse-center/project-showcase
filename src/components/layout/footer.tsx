@@ -6,16 +6,16 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-1">
               <img
-                src="/project-images/gt-logo-white.png"
+                src="/project-images/gt-logo-white-oneline.svg"
                 alt="Georgia Tech Logo"
-                className="h-10 mr-3"
+                className="h-20"
               />
-              <div className="font-sans font-bold text-xl">SSEC</div>
+              <div className="font-sans font-bold text-xl">CSSE</div>
             </div>
             <p className="text-gray-300 mb-4">
-              The Scientific Software Engineering Center at Georgia Tech, part of the <a href="https://www.schmidtsciences.org/viss/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-white">Virtual Institute for Scientific Software (VISS)</a>, advances research through professional software engineering practices.
+              The Center for Scientific Software Engineering at Georgia Tech, part of the <a href="https://www.schmidtsciences.org/viss/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-white">Virtual Institute for Scientific Software (VISS)</a>, advances research through professional software engineering practices.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="https://twitter.com/georgiatech" icon="fab fa-twitter" />
@@ -80,7 +80,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Scientific Software Engineering Center, Georgia Institute of Technology. All rights reserved.
+            &copy; {new Date().getFullYear()} Center for Scientific Software Engineering, Georgia Institute of Technology. All rights reserved.
           </div>
           <div className="flex space-x-4 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition duration-150 ease-in-out">Privacy Policy</a>

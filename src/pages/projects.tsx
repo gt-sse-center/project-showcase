@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
-import ProjectGrid from '@/components/projects/project-grid';
 import ProjectFilters from '@/components/projects/project-filters';
+import ProjectGrid from '@/components/projects/project-grid';
 import PageHeader from '@/components/ui/page-header';
 import { projects as allProjects } from '@/data/projects';
-import { extractTechnologiesFromDetailed, sortProjects } from '@/lib/utils';
 import { useSEO } from "@/hooks/use-seo";
+import { extractTechnologiesFromDetailed, sortProjects } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 export default function Projects() {
   // SEO setup for projects page
   useSEO({
-    title: 'Research Projects | SSEC Project Showcase',
-    description: 'Browse all research projects from Georgia Tech\'s Scientific Software Engineering Center. Filter by category, technology, and domain to find innovative software solutions.',
-    keywords: 'Georgia Tech, SSEC, Research Projects, Scientific Software, AI, Machine Learning, Computational Science, Data Science',
+    title: 'Research Projects | CSSE Project Showcase',
+    description: 'Browse all research projects from Georgia Tech\'s Center for Scientific Software Engineering. Filter by category, technology, and domain to find innovative software solutions.',
+    keywords: 'Georgia Tech, CSSE, Research Projects, Scientific Software, AI, Machine Learning, Computational Science, Data Science',
     canonical: 'https://ssec-showcase.gatech.edu/projects',
-    ogTitle: 'Research Projects | SSEC Project Showcase',
-    ogDescription: 'Browse all research projects from Georgia Tech\'s Scientific Software Engineering Center.',
+    ogTitle: 'Research Projects | CSSE Project Showcase',
+    ogDescription: 'Browse all research projects from Georgia Tech\'s Center for Scientific Software Engineering.',
     ogUrl: 'https://ssec-showcase.gatech.edu/projects',
   });
 

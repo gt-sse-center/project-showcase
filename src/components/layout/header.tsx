@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'wouter';
 
 interface HeaderProps {
   toggleMobileMenu: () => void;
@@ -32,8 +32,8 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
                 className="h-10 mr-3"
               />
               <div>
-                <div className="text-[#003057] font-sans font-bold text-xl">Scientific Software</div>
-                <div className="text-[#54585A] font-sans text-sm">Engineering Center</div>
+                <div className="text-[#003057] font-sans font-bold text-xl">Center for Scientific</div>
+                <div className="text-[#003057] font-sans font-bold text-xl">Software Engineering</div>
               </div>
             </Link>
           </div>

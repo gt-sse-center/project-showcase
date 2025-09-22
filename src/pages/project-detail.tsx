@@ -50,15 +50,15 @@ export default function ProjectDetail() {
 
   // SEO setup for project detail page
   useSEO(project ? {
-    title: `${project.title} | SSEC Project Showcase`,
+    title: `${project.title} | CSSE Project Showcase`,
     description: generateProjectMetaDescription(project),
     keywords: generateProjectKeywords(project),
     canonical: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
-    ogTitle: `${project.title} | SSEC Project Showcase`,
+    ogTitle: `${project.title} | CSSE Project Showcase`,
     ogDescription: project.summary,
     ogImage: project.imageUrl,
     ogUrl: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
-    twitterTitle: `${project.title} | SSEC`,
+    twitterTitle: `${project.title} | CSSE`,
     twitterDescription: project.summary,
     twitterImage: project.imageUrl,
   } : {});

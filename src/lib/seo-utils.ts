@@ -10,7 +10,7 @@ export function generateProjectStructuredData(project: Project) {
     "applicationCategory": "ResearchSoftware",
     "creator": {
       "@type": "Organization",
-      "name": "Scientific Software Engineering Center",
+      "name": "Center for Scientific Software Engineering",
       "url": "https://ssecenter.cc.gatech.edu/",
       "parentOrganization": {
         "@type": "EducationalOrganization",
@@ -37,11 +37,11 @@ export function generateOrganizationStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "ResearchOrganization",
-    "name": "Scientific Software Engineering Center",
-    "alternateName": "SSEC",
+    "name": "Center for Scientific Software Engineering",
+    "alternateName": "CSSE",
     "url": "https://ssec-showcase.gatech.edu/",
     "logo": "https://ssec-showcase.gatech.edu/project-images/gt-logo-color.png",
-    "description": "The Scientific Software Engineering Center (SSEC) at Georgia Tech develops cutting-edge software solutions for scientific research, specializing in AI/ML, computational science, and data visualization.",
+    "description": "The Center for Scientific Software Engineering (CSSE) at Georgia Tech develops cutting-edge software solutions for scientific research, specializing in AI/ML, computational science, and data visualization.",
     "parentOrganization": {
       "@type": "EducationalOrganization",
       "name": "Georgia Institute of Technology",
@@ -119,13 +119,14 @@ export function generateProjectSlug(title: string): string {
 export function generateProjectMetaDescription(project: Project): string {
   const technologies = extractProgrammingLanguages(project).slice(0, 3).join(', ');
   const domain = project.projectDetails.scientificDomain;
-  return `${project.summary} Built with ${technologies} for ${domain}. Explore this innovative research project from Georgia Tech's SSEC.`;
+  
+  return `${project.summary} Built with ${technologies} for ${domain}. Explore this innovative research project from Georgia Tech's CSSE.`;
 }
 
 // Generate keywords for project pages
 export function generateProjectKeywords(project: Project): string {
-  const baseKeywords = ['Georgia Tech', 'SSEC', 'Scientific Software Engineering', 'Research Project'];
-  const categoryKeywords = project.category.map(cat =>
+  const baseKeywords = ['Georgia Tech', 'CSSE', 'Scientific Software Engineering', 'Research Project'];
+  const categoryKeywords = project.category.map(cat => 
     cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
   );
   const techKeywords = extractProgrammingLanguages(project);
