@@ -1,15 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function HeroSection() {
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative bg-[#003057] text-white">
       {/* Background Pattern */}

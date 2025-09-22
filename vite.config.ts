@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // eslint(),  //TODO(Varun): Enable and clean up errors
+    eslint(),
   ],
   resolve: {  // resolve path aliases
     alias: {

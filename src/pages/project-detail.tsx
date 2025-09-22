@@ -1,21 +1,21 @@
-import { useParams, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import {
-  ExternalLink,
-  ArrowLeft,
-  Calendar,
-  Users,
-  Building,
-  Target,
-} from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons';
-import PageHeader from "@/components/ui/page-header";
 import ProjectOnePager from "@/components/projects/project-one-pager";
+import { Button } from "@/components/ui/button";
+import PageHeader from "@/components/ui/page-header";
 import { projects } from "@/data/projects";
-import { parseTextWithLinks } from "@/lib/utils";
 import { useSEO } from "@/hooks/use-seo";
-import { generateProjectStructuredData, generateProjectMetaDescription, generateProjectKeywords, generateBreadcrumbStructuredData } from "@/lib/seo-utils";
+import { generateBreadcrumbStructuredData, generateProjectKeywords, generateProjectMetaDescription, generateProjectStructuredData } from "@/lib/seo-utils";
+import { parseTextWithLinks } from "@/lib/utils";
+import { SiGithub } from '@icons-pack/react-simple-icons';
+import {
+  ArrowLeft,
+  Building,
+  Calendar,
+  ExternalLink,
+  Target,
+  Users,
+} from "lucide-react";
 import { useEffect } from "react";
+import { useLocation, useParams } from "wouter";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -66,24 +66,24 @@ export default function ProjectDetail() {
   // Add structured data for project
   useEffect(() => {
     if (!project) return;
-    
+
     const projectStructuredData = generateProjectStructuredData(project);
     const breadcrumbStructuredData = generateBreadcrumbStructuredData([
       { name: "Home", url: "https://ssec-showcase.gatech.edu/" },
       { name: "Projects", url: "https://ssec-showcase.gatech.edu/projects" },
       { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` }
     ]);
-    
+
     const projectScript = document.createElement('script');
     projectScript.type = 'application/ld+json';
     projectScript.text = JSON.stringify(projectStructuredData);
     document.head.appendChild(projectScript);
-    
+
     const breadcrumbScript = document.createElement('script');
     breadcrumbScript.type = 'application/ld+json';
     breadcrumbScript.text = JSON.stringify(breadcrumbStructuredData);
     document.head.appendChild(breadcrumbScript);
-    
+
     return () => {
       if (document.head.contains(projectScript)) {
         document.head.removeChild(projectScript);
@@ -134,42 +134,42 @@ export default function ProjectDetail() {
                     {(project.projectDetails.startDate ||
                       project.projectDetails.endDate ||
                       project.projectDetails.source) && (
-                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                        <div className="flex items-center mb-3">
-                          <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[#003057] flex items-center">
-                            <Calendar className="w-4 h-4 mr-2" />
-                            Timeline
-                          </h3>
+                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                          <div className="flex items-center mb-3">
+                            <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                            <h3 className="font-semibold text-[#003057] flex items-center">
+                              <Calendar className="w-4 h-4 mr-2" />
+                              Timeline
+                            </h3>
+                          </div>
+                          <div className="space-y-2 text-sm">
+                            {project.projectDetails.startDate && (
+                              <p className="flex justify-between">
+                                <span className="text-gray-600">Start:</span>
+                                <span className="font-medium">
+                                  {project.projectDetails.startDate}
+                                </span>
+                              </p>
+                            )}
+                            {project.projectDetails.endDate && (
+                              <p className="flex justify-between">
+                                <span className="text-gray-600">End:</span>
+                                <span className="font-medium">
+                                  {project.projectDetails.endDate}
+                                </span>
+                              </p>
+                            )}
+                            {project.projectDetails.source && (
+                              <p className="flex justify-between">
+                                <span className="text-gray-600">Source:</span>
+                                <span className="font-medium">
+                                  {project.projectDetails.source}
+                                </span>
+                              </p>
+                            )}
+                          </div>
                         </div>
-                        <div className="space-y-2 text-sm">
-                          {project.projectDetails.startDate && (
-                            <p className="flex justify-between">
-                              <span className="text-gray-600">Start:</span>
-                              <span className="font-medium">
-                                {project.projectDetails.startDate}
-                              </span>
-                            </p>
-                          )}
-                          {project.projectDetails.endDate && (
-                            <p className="flex justify-between">
-                              <span className="text-gray-600">End:</span>
-                              <span className="font-medium">
-                                {project.projectDetails.endDate}
-                              </span>
-                            </p>
-                          )}
-                          {project.projectDetails.source && (
-                            <p className="flex justify-between">
-                              <span className="text-gray-600">Source:</span>
-                              <span className="font-medium">
-                                {project.projectDetails.source}
-                              </span>
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    )}
+                      )}
 
                     {/* Scientific Domain Card */}
                     {project.projectDetails.scientificDomain && (
@@ -352,7 +352,7 @@ export default function ProjectDetail() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <SiGithub className="mr-2 h-4 w-4" /> 
+                        <SiGithub className="mr-2 h-4 w-4" />
                         {Array.isArray(project.githubUrl) && project.githubUrl.length > 1 ? `GitHub ${index + 1}` : 'View on GitHub'}
                       </a>
                     </Button>
@@ -373,7 +373,7 @@ export default function ProjectDetail() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" /> 
+                        <ExternalLink className="mr-2 h-4 w-4" />
                         {Array.isArray(project.demoUrl) && project.demoUrl.length > 1 ? `Demo ${index + 1}` : 'Live Demo'}
                       </a>
                     </Button>
@@ -394,17 +394,4 @@ export default function ProjectDetail() {
       </section>
     </div>
   );
-}
-
-// We don't need a skeleton component anymore since we're using static data
-
-function getCategoryLabel(category: string): string {
-  const categories: Record<string, string> = {
-    "computational-science": "Computational Science",
-    "data-science": "Data Science",
-    "ai-ml": "AI & Machine Learning",
-    visualization: "Visualization",
-  };
-
-  return categories[category] || "Research";
 }

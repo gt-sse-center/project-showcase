@@ -16,7 +16,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     if (isOpen) {
       onClose();
     }
-  }, [location]);
+  }, [location, isOpen, onClose]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {

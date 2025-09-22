@@ -23,7 +23,7 @@ interface ProjectFiltersProps {
   setSelectedTechnologies: (technologies: string[]) => void;
   sortBy: string;
   setSortBy: (sort: string) => void;
-  allProjects: any[];
+  allProjects: Project[];
 }
 
 export default function ProjectFilters({
@@ -39,7 +39,7 @@ export default function ProjectFilters({
 }: ProjectFiltersProps) {
   const [techFilterOpen, setTechFilterOpen] = useState(false);
   const [sortFilterOpen, setSortFilterOpen] = useState(false);
-  const { allTechnologies, categorizedTechnologies } =
+  const { categorizedTechnologies } =
     getAllTechnologiesFromProjects(allProjects);
   const projectCategories = getAllCategoriesFromProjects(allProjects);
 
@@ -161,9 +161,8 @@ export default function ProjectFilters({
               ].map((option) => (
                 <div
                   key={option.value}
-                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${
-                    sortBy === option.value ? "bg-gray-100" : ""
-                  }`}
+                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${sortBy === option.value ? "bg-gray-100" : ""
+                    }`}
                   onClick={() => {
                     setSortBy(option.value);
                     setSortFilterOpen(false);
@@ -287,12 +286,11 @@ function FilterButton({
 
   return (
     <Button
-      variant={isActive ? "default" : "outline-solid"}
-      className={`rounded-full ${
-        isActive
-          ? "bg-[#B3A369] text-white hover:bg-[#E5D6A2] hover:text-[#003057]"
-          : "border-[#B3A369] text-[#003057] hover:bg-[#B3A369] hover:text-white"
-      }`}
+      variant={isActive ? "default" : "outline"}
+      className={`rounded-full ${isActive
+        ? "bg-[#B3A369] text-white hover:bg-[#E5D6A2] hover:text-[#003057]"
+        : "border-[#B3A369] text-[#003057] hover:bg-[#B3A369] hover:text-white"
+        }`}
       onClick={onClick}
     >
       {children}
