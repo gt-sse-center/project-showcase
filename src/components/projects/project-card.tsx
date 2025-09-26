@@ -18,33 +18,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       "computational-science": "Computational Science",
       "data-science": "Data Science",
       "ai-ml": "AI & Machine Learning",
-      visualization: "Visualization",
+      "visualization": "Visualization",
       "biomedical-engineering": "Biomedical Engineering",
-      psychology: "Psychology",
+      "psychology": "Psychology",
       "computer-science": "Computer Science",
-      mathematics: "Mathematics",
+      "mathematics": "Mathematics",
       "material-science": "Material Science",
       "chemistry-biochemistry": "Chemistry & Biochemistry",
       "earth-atmospheric-sciences": "Earth & Atmospheric Sciences",
-      bioinformatics: "Bioinformatics",
+      "bioinformatics": "Bioinformatics",
       "electrical-engineering": "Electrical Engineering",
-      chemistry: "Chemistry",
+      "chemistry": "Chemistry",
       "human-computer-interaction": "Human-Computer Interaction",
     };
 
-    // Use the first category as the primary label
-    const primaryCategory = categories[0] || "research";
-
-    // If we have a mapping, use it
-    if (categoryLabels[primaryCategory]) {
-      return categoryLabels[primaryCategory];
+    let labels = categories.map((category: string) => { return categoryLabels[category] || "Research"; })
+    if (labels.length > 2) {
+      labels = [labels[0], labels[1], "..."];
     }
-
-    // Otherwise, convert kebab-case to Title Case
-    return primaryCategory
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
+    return labels.join(", ");
   };
 
   return (
@@ -67,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
         <div className="p-6 flex flex-col grow">
-          <h3 className="text-xl font-bold text-[#003057] mb-2 hover:text-[#B3A369] transition-colors">
+          <h3 className="text-xl font-bold text-[#003057] mb-2">
             {project.title}
           </h3>
           <p className="text-gray-600 mb-4 grow">
