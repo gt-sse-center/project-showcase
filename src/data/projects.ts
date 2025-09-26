@@ -32,7 +32,7 @@ export const projects: Project[] = [
       "Machine learning system that analyzes patient forum data to identify shared experiences and challenges in neurodegenerative diseases",
     imageUrl: imgPatientX,
     category: ["ai-ml", "biomedical-engineering"],
-    githubUrl: ["https://github.com/varun646/PatientX.AI"],
+    githubUrl: "https://github.com/varun646/PatientX.AI",
     demoUrl: [],
     featured: true,
     achievements: [
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "Python package for automating behavioral psychology experiments using active learning techniques",
     imageUrl: imgAutoRA,
     category: ["data-science", "psychology"],
-    githubUrl: ["https://github.com/AutoResearch/AutoRA-experiment-server"],
+    githubUrl: "https://github.com/AutoResearch/AutoRA-experiment-server",
     demoUrl: [],
     featured: false,
     achievements: [
@@ -180,7 +180,7 @@ export const projects: Project[] = [
       "Open-source web platform for scientific metadata management with advanced search and collaboration features",
     imageUrl: imgMars,
     category: ["data-science", "computer-science"],
-    githubUrl: ["https://github.com/Brain-Development-and-Disorders-Lab/mars"],
+    githubUrl: "https://github.com/Brain-Development-and-Disorders-Lab/mars",
     demoUrl: ["https://metadatify.com/"],
     featured: false,
     achievements: [
@@ -271,7 +271,7 @@ export const projects: Project[] = [
       "Algorithmic approach to discovering new mathematical formulas and conjectures related to fundamental constants",
     imageUrl: imgRamanujanMachine,
     category: ["computational-science", "mathematics"],
-    githubUrl: ["https://github.com/RamanujanMachine/ramanujan-machine-web"],
+    githubUrl: "https://github.com/RamanujanMachine/ramanujan-machine-web",
     demoUrl: [],
 
     featured: false,
@@ -352,7 +352,7 @@ export const projects: Project[] = [
       "Development of Sprint-Kokkos, a high-performance library for inter-atomic force field calculations using Kokkos for portable CPU-GPU computing",
     imageUrl: imgKokkosMaceMaterials,
     category: ["computational-science", "material-science"],
-    githubUrl: ["https://github.com/wcwitt/symmetrix"],
+    githubUrl: "https://github.com/wcwitt/symmetrix",
     demoUrl: [],
 
     featured: false,
@@ -434,7 +434,7 @@ export const projects: Project[] = [
       "Performance optimization of GROMACS/PLUMED simulations for drug discovery research targeting intrinsically disordered proteins",
     imageUrl: imgProteinComparison,
     category: ["computational-science", "chemistry-biochemistry"],
-    githubUrl: ["https://github.com/plumed/plumed2"],
+    githubUrl: "https://github.com/plumed/plumed2",
     demoUrl: [],
 
     featured: false,
@@ -519,7 +519,7 @@ export const projects: Project[] = [
       "Created a professionally tested Python library from Jupyter Notebook code",
     imageUrl: imgIcetempAnalysis,
     category: ["data-science", "earth-atmospheric-sciences"],
-    githubUrl: ["https://github.com/sashamontelli/borehole_temperature_models"],
+    githubUrl: "https://github.com/sashamontelli/borehole_temperature_models",
     demoUrl: [],
 
     featured: false,
@@ -592,7 +592,7 @@ export const projects: Project[] = [
       "Enhanced build system, testing infrastructure, and CI/CD for widely-used genomic analysis tool with 4000+ citations",
     imageUrl: imgFastani,
     category: ["computational-science", "bioinformatics"],
-    githubUrl: ["https://github.com/ParBLiSS/FastANI"],
+    githubUrl: "https://github.com/ParBLiSS/FastANI",
     demoUrl: [],
     featured: false,
     achievements: [
@@ -684,7 +684,7 @@ export const projects: Project[] = [
       "Optimized RL2Grid simulations through performance profiling and high-fidelity power models, achieving 2x+ speed improvements and 20x scalability",
     imageUrl: imgRl2Grid,
     category: ["computational-science", "electrical-engineering"],
-    githubUrl: ["https://github.com/Grid2op/grid2op"],
+    githubUrl: "https://github.com/Grid2op/grid2op",
     demoUrl: ["https://grid2op.readthedocs.io/en/latest/"],
 
     featured: false,
@@ -778,7 +778,7 @@ export const projects: Project[] = [
       "Modernized data schema for quantum chemistry computations and procedures",
     imageUrl: imgQcSchema,
     category: ["computational-science", "chemistry"],
-    githubUrl: ["https://github.com/MolSSI/QCElemental/"],
+    githubUrl: "https://github.com/MolSSI/QCElemental/",
     demoUrl: ["https://molssi.org/software/qcarchive/"],
     featured: false,
     achievements: [
@@ -864,7 +864,7 @@ export const projects: Project[] = [
       "Intelligent writing assistant that recognizes behavioral patterns and serves as a research platform for studying cognitive behavior through digital text interaction",
     imageUrl: imgCoAuthorScreenshot,
     category: ["ai-ml", "human-computer-interaction"],
-    githubUrl: ["https://github.com/gt-sse-center/coauthor-interface"],
+    githubUrl: "https://github.com/gt-sse-center/coauthor-interface",
     demoUrl: ["https://coauthor.stanford.edu/"],
     featured: false,
     achievements: [
@@ -954,7 +954,7 @@ export const projects: Project[] = [
       "Official release of Psi4 v1.10 quantum chemistry package with new methods, bug fixes, and improved interfaces",
     imageUrl: imgPsi4,
     category: ["chemistry", "computational-science"],
-    githubUrl: ["https://github.com/psi4/psi4"],
+    githubUrl: "https://github.com/psi4/psi4",
     demoUrl: [],
     featured: false,
     achievements: [
@@ -1035,7 +1035,7 @@ export const projects: Project[] = [
       "Performance optimization and software engineering improvements for landslide simulation achieving 2x speedup",
     imageUrl: imgXtribsScreenshot,
     category: ["computational-science", "earth-atmospheric-sciences"],
-    githubUrl: ["https://github.com/mevrens/tRIBS-GT-SSE"],
+    githubUrl: "https://github.com/mevrens/tRIBS-GT-SSE",
     demoUrl: [],
     featured: false,
     achievements: [
@@ -1113,7 +1113,7 @@ export const projects: Project[] = [
       "BOINC integration for distributed mathematical computation enabling volunteer computing for integer relation discovery",
     imageUrl: imgLirec,
     category: ["data-science", "computational-science"],
-    githubUrl: ["https://github.com/gt-sse-center/LIReC"],
+    githubUrl: "https://github.com/gt-sse-center/LIReC",
     demoUrl: [],
     featured: false,
     achievements: [

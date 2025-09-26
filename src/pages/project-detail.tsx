@@ -344,23 +344,16 @@ export default function ProjectDetail() {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              {project.githubUrl && (
-                <>
-                  {(Array.isArray(project.githubUrl) ? project.githubUrl : [project.githubUrl]).map((url, index) => (
-                    <Button key={index} className="bg-[#003057] hover:bg-[#004F87]" asChild>
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <SiGithub className="mr-2 h-4 w-4" />
-                        {Array.isArray(project.githubUrl) && project.githubUrl.length > 1 ? `GitHub ${index + 1}` : 'View on GitHub'}
-                      </a >
-                    </Button >
-                  ))
-                  }
-                </>
-              )}
+              <Button className="bg-[#003057] hover:bg-[#004F87] text-white" asChild>
+                <a // TODO(Varun): Make ExternalLink
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiGithub className="mr-2 h-4 w-4" />
+                  View on GitHub
+                </a>
+              </Button>
 
               {
                 project.demoUrl && (

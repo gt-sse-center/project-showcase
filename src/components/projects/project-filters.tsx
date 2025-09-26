@@ -9,7 +9,7 @@ import {
   getAllTechnologiesFromProjects,
   getCategoryDisplayName
 } from '@/lib/utils';
-import type { Project } from '@/schema';
+import { type Project } from '@/schema';
 import { ArrowUpDown, Check, Filter, Search, X } from 'lucide-react';
 import React, { useState } from 'react';
 
