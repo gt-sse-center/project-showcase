@@ -6,7 +6,7 @@ import { Link } from 'wouter';
 
 export default function GetInvolvedSection() {
   return (
-    <section className="py-16 bg-[#003057] text-white">
+    <section className="py-16 bg-[var(--gt-navy)] text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold font-sans mb-6">Get Involved</h2>
@@ -43,7 +43,7 @@ export default function GetInvolvedSection() {
           <div className="mt-12">
             <Button
               size="lg"
-              className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057] text-white"
+              className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white"
               asChild
             >
               <Link href="/contact">Contact Us</Link>
@@ -66,14 +66,14 @@ interface InvolvementCardProps {
 function InvolvementCard({ icon, title, description, linkText, linkUrl }: InvolvementCardProps) {
   return (
     <div className="bg-white/10 p-6 rounded-lg backdrop-blur-xs hover:bg-white/20 transition-colors duration-300">
-      <div className="w-16 h-16 mx-auto bg-[#B3A369] rounded-full flex items-center justify-center mb-4">
+      <div className="w-16 h-16 mx-auto bg-[var(--gt-gold)] rounded-full flex items-center justify-center mb-4">
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(description) }}></p>
       <Link
         href={linkUrl}
-        className="text-[#B3A369] hover:text-[#E5D6A2] font-medium inline-flex items-center"
+        className="text-[var(--gt-gold)] hover:text-[var(--gt-tech-light-gold)] font-medium inline-flex items-center"
       >
         {linkText} →
       </Link>

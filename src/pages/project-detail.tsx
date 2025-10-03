@@ -98,7 +98,7 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <h2 className="text-2xl font-bold text-[#003057] mb-4">
+        <h2 className="text-2xl font-bold text-[var(--gt-navy)] mb-4">
           Project Not Found
         </h2>
         <p className="text-gray-600 mb-6">
@@ -126,8 +126,8 @@ export default function ProjectDetail() {
             {project.projectDetails && (
               <div className="mb-8">
                 <div className="bg-linear-to-r from-gray-50 to-blue-50 p-5 rounded-lg border border-gray-200">
-                  <h2 className="text-[#003057] text-2xl font-bold mb-6 flex items-center">
-                    <span className="w-2 h-6 bg-[#B3A369] rounded-full mr-3"></span>
+                  <h2 className="text-[var(--gt-navy)] text-2xl font-bold mb-6 flex items-center">
+                    <span className="w-2 h-6 bg-[var(--gt-gold)] rounded-full mr-3"></span>
                     Project Details
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -138,7 +138,7 @@ export default function ProjectDetail() {
                       <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
                         <div className="flex items-center mb-3">
                           <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[#003057] flex items-center">
+                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
                             <Calendar className="w-4 h-4 mr-2" />
                             Timeline
                           </h3>
@@ -177,7 +177,7 @@ export default function ProjectDetail() {
                       <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
                         <div className="flex items-center mb-3">
                           <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[#003057] flex items-center">
+                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
                             <Target className="w-4 h-4 mr-2" />
                             Scientific Domain
                           </h3>
@@ -194,7 +194,7 @@ export default function ProjectDetail() {
                       <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
                         <div className="flex items-center mb-3">
                           <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[#003057] flex items-center">
+                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
                             <Building className="w-4 h-4 mr-2" />
                             Partners
                           </h3>
@@ -230,7 +230,7 @@ export default function ProjectDetail() {
                       <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
                         <div className="flex items-center mb-3">
                           <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[#003057] flex items-center">
+                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
                             <Users className="w-4 h-4 mr-2" />
                             Software Engineers
                           </h3>
@@ -265,7 +265,7 @@ export default function ProjectDetail() {
             )}
 
             <div className="prose max-w-none mb-8">
-              <h2 className="text-[#003057]">About this Project</h2>
+              <h2 className="text-[var(--gt-navy)]">About this Project</h2>
               <p
                 dangerouslySetInnerHTML={{
                   __html: parseTextWithLinks(project.description),
@@ -275,7 +275,7 @@ export default function ProjectDetail() {
               {/* Goals section between About this Project and Key Achievements */}
               {project.goals && (
                 <>
-                  <h3 className="text-[#003057]">Goals</h3>
+                  <h3 className="text-[var(--gt-navy)]">Goals</h3>
                   <ul>
                     {project.goals.map((goal, index) => (
                       <li
@@ -292,7 +292,7 @@ export default function ProjectDetail() {
               {/* Software Solution section after Goals */}
               {project.softwareSolution && (
                 <>
-                  <h3 className="text-[#003057]">Software Solution</h3>
+                  <h3 className="text-[var(--gt-navy)]">Software Solution</h3>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: parseTextWithLinks(project.softwareSolution),
@@ -303,7 +303,7 @@ export default function ProjectDetail() {
 
               {project.achievements && project.achievements.length > 0 && (
                 <>
-                  <h3 className="text-[#003057]">Key Achievements</h3>
+                  <h3 className="text-[var(--gt-navy)]">Key Achievements</h3>
                   <ul>
                     {project.achievements.map((achievement, index) => (
                       <li
@@ -330,12 +330,12 @@ export default function ProjectDetail() {
 
               {/* Add special section for IDPs protein comparison image */}
 
-              <h3 className="text-[#003057]">Categories</h3>
+              <h3 className="text-[var(--gt-navy)]">Categories</h3>
               <div className="flex flex-wrap gap-2">
                 {project.category.map((cat, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-[#E5D6A2] text-[#003057] rounded-full text-sm"
+                    className="px-3 py-1 bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] rounded-full text-sm"
                   >
                     {getCategoryLabel(cat)}
                   </span>
@@ -344,7 +344,7 @@ export default function ProjectDetail() {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              <Button className="bg-[#003057] hover:bg-[#004F87] text-white" asChild>
+              <Button className="bg-[var(--gt-navy)] hover:bg-[var(--gt-blue)]] text-white" asChild>
                 <a href={project.githubUrls[0]}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -360,7 +360,7 @@ export default function ProjectDetail() {
                     {(Array.isArray(project.demoUrl) ? project.demoUrl : [project.demoUrl]).map((url, index) => (
                       <Button
                         key={index}
-                        className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057]"
+                        className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)]"
                         asChild
                       >
                         <a
@@ -379,7 +379,7 @@ export default function ProjectDetail() {
 
               <Button
                 variant="outline"
-                className="border-[#003057] text-[#003057]"
+                className="border-[var(--gt-navy)] text-[var(--gt-navy)]"
                 onClick={() => navigate("/projects")}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects

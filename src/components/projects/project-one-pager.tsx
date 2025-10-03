@@ -12,7 +12,7 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
       {project.screenshots &&
         project.screenshots.map((screenshot, index) => (
           <div key={index}>
-            <h3 className="text-[#003057] text-xl font-semibold mb-4">
+            <h3 className="text-[var(--gt-navy)] text-xl font-semibold mb-4">
               {index === 0
                 ? "Project Visualization"
                 : `Additional Visualization ${index + 1}`}
@@ -41,7 +41,7 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
       {/* Impact */}
       {project.impact && (
         <div>
-          <h3 className="text-[#003057] text-xl font-semibold mb-4">Impact</h3>
+          <h3 className="text-[var(--gt-navy)] text-xl font-semibold mb-4">Impact</h3>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
             {project.impact.map((impact, index) => (
               <li
@@ -56,8 +56,8 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
       {/* Technologies */}
       {project.detailedTechnologies && (
         <div className="bg-linear-to-r from-gray-50 to-blue-50 pb-6 px-6 rounded-lg border border-gray-200">
-          <div className="text-[#003057] text-xl pb-2 pt-4 font-semibold mb-3 flex items-center">
-            <span className="w-2 h-6 bg-[#B3A369] rounded-full mr-3"></span>
+          <div className="text-[var(--gt-navy)] text-xl pb-2 pt-4 font-semibold mb-3 flex items-center">
+            <span className="w-2 h-6 bg-[var(--gt-gold)] rounded-full mr-3"></span>
             Technologies
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -128,7 +128,7 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
                     key={categoryKey}
                     className="bg-white pb-4 px-4 rounded-lg shadow-xs border border-gray-100"
                   >
-                    <div className="font-semibold text-[#003057] my-3 flex items-center">
+                    <div className="font-semibold text-[var(--gt-navy)] my-3 flex items-center">
                       <span
                         className={`w-3 h-3 ${colorScheme.dot} rounded-full mr-2`}
                       ></span>
@@ -178,8 +178,8 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
       {/* References Section */}
       {project.references && (
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-[#003057] mb-4 flex items-center">
-            <span className="w-3 h-3 bg-[#B3A369] rounded-full mr-3"></span>
+          <h3 className="text-xl font-semibold text-[var(--gt-navy)] mb-4 flex items-center">
+            <span className="w-3 h-3 bg-[var(--gt-gold)] rounded-full mr-3"></span>
             References
           </h3>
           <div className="space-y-2">

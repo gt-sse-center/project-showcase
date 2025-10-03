@@ -54,12 +54,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             alt={`Project: ${project.title}`}
             className="w-full h-full object-contain p-2"
           />
-          <div className="absolute top-0 right-0 bg-[#003057] text-white text-xs font-bold px-3 py-1 m-2 rounded">
+          <div className="absolute top-0 right-0 bg-[var(--gt-navy)] text-white text-xs font-bold px-3 py-1 m-2 rounded">
             {getCategoryLabel(project.category)}
           </div>
         </div>
         <div className="p-6 flex flex-col grow">
-          <h3 className="text-xl font-bold text-[#003057] mb-2">
+          <h3 className="text-xl font-bold text-[var(--gt-navy)] mb-2">
             {project.title}
           </h3>
           <p className="text-gray-600 mb-4 grow">
@@ -77,7 +77,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="bg-[#E5D6A2] text-[#003057] hover:bg-[#E5D6A2] hover:text-[#003057] cursor-default"
+                    className="bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] cursor-default"
                   >
                     {tech}
                   </Badge>
@@ -85,7 +85,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               })()}
             </div>
             <div className="flex justify-end items-center">
-              <span className="text-[#003057] hover:text-[#B3A369] font-medium flex items-center transition-colors">
+              <span className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] font-medium flex items-center transition-colors">
                 View Project <ArrowRight className="ml-2 h-4 w-4" />
               </span>
             </div>

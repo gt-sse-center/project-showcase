@@ -4,7 +4,7 @@ import imgGtLogoWhite from '/images/gt-logo-white.svg';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#003057] text-white pt-12 pb-6">
+    <footer className="bg-[var(--gt-navy)] text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>

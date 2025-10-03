@@ -39,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <Button
           variant="ghost"
           onClick={onClose}
-          className="text-[#003057]"
+          className="text-[var(--gt-navy)]"
           aria-label="Close menu"
         >
           <X className="h-6 w-6" />
@@ -53,7 +53,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           href="https://ssecenter.cc.gatech.edu/people/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#003057] hover:text-[#B3A369] text-xl transition duration-150 ease-in-out"
+          className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
           onClick={onClose}
         >
           Team
@@ -63,7 +63,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           href="https://ssecenter.cc.gatech.edu/events/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#003057] hover:text-[#B3A369] text-xl transition duration-150 ease-in-out"
+          className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
           onClick={onClose}
         >
           Events
@@ -73,7 +73,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           href="https://ssecenter.cc.gatech.edu/contact/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#003057] hover:text-[#B3A369] text-xl transition duration-150 ease-in-out"
+          className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
           onClick={onClose}
         >
           Contact
@@ -96,8 +96,8 @@ function MobileNavLink({ href, current, onClick, children }: MobileNavLinkProps)
       href={href}
       onClick={onClick}
       className={`${current
-        ? 'text-[#B3A369] font-medium'
-        : 'text-[#003057] hover:text-[#B3A369]'}
+        ? 'text-[var(--gt-gold)] font-medium'
+        : 'text-[var(--gt-navy)] hover:text-[var(--gt-gold)]'}
         text-xl transition duration-150 ease-in-out`}
     >
       {children}

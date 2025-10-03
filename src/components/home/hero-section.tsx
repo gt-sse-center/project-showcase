@@ -3,10 +3,10 @@ import { Link } from 'wouter';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#003057] text-white">
+    <section className="relative bg-[var(--gt-navy)] text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 bg-pattern">
-        <div className="absolute inset-0 bg-linear-to-r from-[#003057]/95 via-[#003057]/90 to-[#002545]/95"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-[var(--gt-navy)]/95 via-[var(--gt-navy)]/90 to-[var(--gt-navy)]/95"></div>
       </div>
       
       {/* Decorative Elements */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <Button
               size="lg"
-              className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057] text-white transition-colors text-lg px-6 py-6"
+              className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white transition-colors text-lg px-6 py-6"
               asChild
             >
               <Link href="/projects">Explore Projects</Link>
