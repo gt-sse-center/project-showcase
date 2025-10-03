@@ -1,13 +1,12 @@
-import { type Project } from "@/schema";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
 import {
-  parseTextWithLinks,
   extractTechnologiesFromDetailed,
   stripHtmlTags,
-  truncate,
+  truncate
 } from "@/lib/utils";
+import { type Project } from "@/schema";
+import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 interface ProjectCardProps {
   project: Project;

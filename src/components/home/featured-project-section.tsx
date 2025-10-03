@@ -1,8 +1,8 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { parseTextWithLinks } from '@/lib/utils';
 import { type Project } from '@/schema';
 import { Link } from 'wouter';
-import { parseTextWithLinks } from '@/lib/utils';
 
 interface FeaturedProjectSectionProps {
   project: Project;

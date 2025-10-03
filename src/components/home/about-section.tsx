@@ -1,5 +1,5 @@
-import { Code, FlaskRound, GraduationCap } from 'lucide-react';
 import { parseTextWithLinks } from '@/lib/utils';
+import { Code, FlaskRound, GraduationCap } from 'lucide-react';
 
 export default function AboutSection() {
   return (

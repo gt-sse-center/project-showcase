@@ -1,26 +1,18 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { Search, Filter, X, Check, ArrowUpDown } from "lucide-react";
-import { useState } from "react";
-import {
-  getAllTechnologiesFromProjects,
   getAllCategoriesFromProjects,
+  getAllTechnologiesFromProjects,
   getCategoryDisplayName,
 } from "@/lib/utils";
+import { ArrowUpDown, Check, Filter, Search, X } from "lucide-react";
+import { useState } from "react";
 
 interface ProjectFiltersProps {
   activeFilter: string;
