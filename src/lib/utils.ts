@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-
+import sanitizeHtml from 'sanitize-html';
 import { type Partner, type Project, type SoftwareEngineer, type Technology } from "@/schema";
 
 export function cn(...inputs: ClassValue[]) {
@@ -20,8 +20,8 @@ export function parseTextWithLinks(text: string): string {
 }
 
 export function stripHtmlTags(text: string): string {
-  // Remove HTML tags but keep the content
-  return text.replace(/<[^>]*>/g, '');
+  // Use sanitize-html to strip all HTML tags, returning only safe text
+  return sanitizeHtml(text, { allowedTags: [], allowedAttributes: {} });
 }
 
 /**
