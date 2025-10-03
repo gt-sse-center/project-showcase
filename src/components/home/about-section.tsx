@@ -8,10 +8,10 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold text-[#003057] font-sans mb-6">
-              About the Scientific Software Engineering Center
+              About Us
             </h2>
             <p className="text-lg text-gray-700 mb-4">
-              The Scientific Software Engineering Center (SSEC) at Georgia Tech is part of the <a href="https://www.schmidtsciences.org/viss/" target="_blank" rel="noopener noreferrer" className="text-[#003057] hover:text-[#B3A369] font-medium">Virtual Institute for Scientific Software (VISS)</a>, launched by Schmidt Sciences to address the need for training and educating software engineers. SSEC helps researchers build and maintain high-quality software for scientific discovery. We partner with scientists to apply software engineering best practices to scientific software development.
+              The Center for Scientific Software Engineering (CSSE) at Georgia Tech is part of the <a href="https://www.schmidtsciences.org/viss/" target="_blank" rel="noopener noreferrer" className="text-[#003057] hover:text-[#B3A369] font-medium">Virtual Institute for Scientific Software (VISS)</a>, launched by Schmidt Sciences to address the need for training and educating software engineers. CSSE helps researchers build and maintain high-quality software for scientific discovery. We partner with scientists to apply software engineering best practices to scientific software development.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               Our team consists of professional software engineers, computer scientists, and domain experts who collaborate with researchers across disciplines to create sustainable, reusable, and efficient research software.

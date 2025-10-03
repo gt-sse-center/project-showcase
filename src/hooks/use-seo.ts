@@ -94,15 +94,15 @@ export function useSEO(seoData: SEOData) {
 
 // Default SEO data for the site
 export const defaultSEOData: SEOData = {
-  title: 'SSEC Project Showcase | Scientific Software Engineering Center',
-  description: 'Explore cutting-edge research projects from Georgia Tech\'s Scientific Software Engineering Center (SSEC). Discover innovative software solutions in AI/ML, computational science, and data visualization.',
-  keywords: 'Georgia Tech, SSEC, Scientific Software Engineering, Research Projects, AI, Machine Learning, Computational Science, Data Visualization, Open Source',
+  title: 'CSSE Project Showcase | Center for Scientific Software Engineering',
+  description: 'Explore cutting-edge research projects from Georgia Tech\'s Center for Scientific Software Engineering (CSSE). Discover innovative software solutions in AI/ML, computational science, and data visualization.',
+  keywords: 'Georgia Tech, CSSE, Scientific Software Engineering, Research Projects, AI, Machine Learning, Computational Science, Data Visualization, Open Source',
   canonical: 'https://ssec-showcase.gatech.edu/',
-  ogTitle: 'SSEC Project Showcase | Scientific Software Engineering Center',
-  ogDescription: 'Explore cutting-edge research projects from Georgia Tech\'s Scientific Software Engineering Center (SSEC). Discover innovative software solutions in AI/ML, computational science, and data visualization.',
+  ogTitle: 'CSSE Project Showcase | Center for Scientific Software Engineering',
+  ogDescription: 'Explore cutting-edge research projects from Georgia Tech\'s Center for Scientific Software Engineering (CSSE). Discover innovative software solutions in AI/ML, computational science, and data visualization.',
   ogImage: 'https://ssec-showcase.gatech.edu/project-images/gt-logo-color.png',
   ogUrl: 'https://ssec-showcase.gatech.edu/',
-  twitterTitle: 'SSEC Project Showcase | Scientific Software Engineering Center',
-  twitterDescription: 'Explore cutting-edge research projects from Georgia Tech\'s Scientific Software Engineering Center (SSEC).',
+  twitterTitle: 'CSSE Project Showcase | Center for Scientific Software Engineering',
+  twitterDescription: 'Explore cutting-edge research projects from Georgia Tech\'s Center for Scientific Software Engineering (CSSE).',
   twitterImage: 'https://ssec-showcase.gatech.edu/project-images/gt-logo-color.png',
 };
