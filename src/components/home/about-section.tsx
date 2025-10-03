@@ -1,5 +1,6 @@
 import { parseTextWithLinks } from '@/lib/utils';
 import { Code, FlaskRound, GraduationCap } from 'lucide-react';
+import React from 'react';
 import imgAtlanta from '/images/atlanta.png';
 import imgBuilding from '/images/building.png';
 import imgCollaboration from '/images/collaboration.png';

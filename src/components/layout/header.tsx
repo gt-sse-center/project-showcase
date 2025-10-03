@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import imgGtLogoColor from '/images/gt-logo-color.svg';
 
@@ -93,8 +93,8 @@ function NavLink({ href, current, children }: NavLinkProps) {
       href={href}
       className={`${current
         ? 'text-[#B3A369] font-medium'
-        : 'text-[#003057] hover:text-[#B3A369]'
-        } transition duration-150 ease-in-out`}
+        : 'text-[#003057] hover:text-[#B3A369]'}
+        transition duration-150 ease-in-out`}
     >
       {children}
     </Link>

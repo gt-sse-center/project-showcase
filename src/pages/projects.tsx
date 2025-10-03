@@ -5,6 +5,7 @@ import { projects as allProjects } from '@/data/projects';
 import { useSEO } from "@/hooks/use-seo";
 import { extractTechnologiesFromDetailed, sortProjects } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+import imgProjectHeaderBackground from '/images/project-header-bg.png';
 
 export default function Projects() {
   // SEO setup for projects page
@@ -88,7 +89,7 @@ export default function Projects() {
       <PageHeader
         title="Projects"
         description="Explore our diverse portfolio of scientific software engineering projects across multiple disciplines"
-        backgroundImage="/images/project-header-bg.png"
+        backgroundImage={imgProjectHeaderBackground}
       />
 
       <section className="py-16 bg-white">
@@ -114,8 +115,7 @@ export default function Projects() {
               <div className="text-center py-16">
                 <h3 className="text-xl font-medium text-gray-600">No projects match your criteria</h3>
                 <p className="mt-2 text-gray-500">Try adjusting your filters or search term</p>
-              </div>
-            )
+              </div>)
           }
         </div >
       </section >

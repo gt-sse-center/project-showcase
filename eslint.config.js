@@ -1,5 +1,6 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import react from "eslint-plugin-react";
+import stylisticJs from "@stylistic/eslint-plugin";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -23,11 +24,13 @@ export default defineConfig([
 
         plugins: {
             react,
+            "@stylistic/js": stylisticJs,
         },
 
         languageOptions: {
             globals: {
                 ...globals.browser,
+                ...globals.node,
             },
 
             parser: tsParser,
@@ -51,5 +54,8 @@ export default defineConfig([
             "key-spacing": ["error", {
                 afterColon: true,
             }],
+
+            "@stylistic/js/indent": ["error", 2],
+            "react/react-in-jsx-scope": "off",
         },
     }]);

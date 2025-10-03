@@ -149,7 +149,6 @@ export function getAllTechnologiesFromProjects(projects: Project[]): {
         }
       });
     }
-
   });
 
   // Sort categories and technologies
