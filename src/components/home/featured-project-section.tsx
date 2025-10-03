@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { parseTextWithLinks } from '@/lib/utils';
 import { type Project } from '@/schema';
 import { Link } from 'wouter';
+import imgProjectHeaderBackground from '/images/project-header-bg.png';
 
 interface FeaturedProjectSectionProps {
   project: Project;
@@ -14,7 +15,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
         <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden shadow-lg">
           <div className="md:w-1/2">
             <img
-              src={project.imageUrl || "/images/project-header-bg.png"}
+              src={project.imageUrl || imgProjectHeaderBackground}
               alt={`Featured project: ${project.title}`}
               className="w-full h-full object-cover"
             />

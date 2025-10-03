@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import imgGtLogoWhite from '/images/gt-logo-white.svg';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-1">
               <img
-                src="/project-images/gt-logo-white-oneline.svg"
+                src={imgGtLogoWhite}
                 alt="Georgia Tech Logo"
                 className="h-20"
               />
@@ -32,7 +33,7 @@ export default function Footer() {
               <FooterLink href="/projects">Projects</FooterLink>
               <li>
                 <a
-                  href="https://ssecenter.cc.gatech.edu/people/"
+                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/people/`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
@@ -42,7 +43,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://ssecenter.cc.gatech.edu/events/"
+                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/events/`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
@@ -52,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://ssecenter.cc.gatech.edu/contact/"
+                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact/`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition duration-150 ease-in-out"

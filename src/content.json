@@ -193,7 +193,7 @@
 		"title": "FastANI: Improving the Quality of a Python Package",
 		"description": "<a href=https://github.com/ParBLiSS/FastANI target=_blank>FastANI</a> is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure. During this engagement, we improved the quality of the FastANI Python package.",
 		"cover": ["FastANI.png"],
-		"background": "dna10.png",
+		"background": "fastani-background.png",
 		"takeaways": [
 			{
 				"description": "Improved the quality of the FastANI Python package",

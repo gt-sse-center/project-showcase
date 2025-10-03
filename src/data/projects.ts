@@ -1,4 +1,25 @@
 import { type Project } from "@/schema";
+import imgPatientX from '/project-images/patientx-screenshot.png';
+import imgAutoRA from '/project-images/autora-overview.png';
+import imgAutoRAScreenshot from '/project-images/autora-screenshot.png';
+import imgMars from '/project-images/mars.png';
+import imgMarsScreenshot from '/project-images/mars-screenshot.png';
+import imgRamanujanMachine from '/project-images/ramanujan_machine.png';
+import imgRamanujanMachineScreenshot from '/project-images/ramanujan-screenshot.png';
+import imgKokkosMaceMaterials from '/project-images/kokkos-mace-materials.png';
+import imgProteinComparison from '/project-images/protein-comparison.png';
+import imgIcetempAnalysis from '/project-images/icetemp-analysis.png';
+import imgFastani from '/project-images/fastani-visualization.png';
+import imgRl2Grid from '/project-images/rl2grid.png';
+import imgRl2GridPerformance from '/project-images/rl2grid-performance.png';
+import imgQcSchema from '/project-images/qcschema-v1v2.png';
+import imgCoAuthorScreenshot from '/project-images/coauthor-screenshot.png';
+import imgPsi4 from '/project-images/psi4.png';
+import imgPsi4Screenshot from '/project-images/psi4-screenshot.png';
+import imgXtribsScreenshot from '/project-images/xtribs-screenshot.png';
+import imgLirec from '/project-images/lirec.png';
+import imgLirecScreenshot from '/project-images/lirec-screenshot.png';
+
 
 // Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
@@ -9,7 +30,7 @@ export const projects: Project[] = [
       "PatientX.AI is a machine learning-powered system designed to surface shared experiences among patients and caregivers navigating neurodegenerative diseases such as dementia. By analyzing thousands of posts from online health forums, the platform identifies frequently discussed topics—ranging from early symptoms to caregiving challenges—helping illuminate the typical patient journey. These insights empower caregivers, healthcare professionals, and patients themselves with clear understanding of what to expect. By bridging the gap between lived experiences and clinical care, PatientX.AI enhances communication between communities and care providers. The system brings transparency to the healthcare journey, uncovering patterns that can inform both individual decision-making and broader resource planning.",
     summary:
       "Machine learning system that analyzes patient forum data to identify shared experiences and challenges in neurodegenerative diseases",
-    imageUrl: "/project-images/patientx-screenshot.png",
+    imageUrl: imgPatientX,
     category: ["ai-ml", "biomedical-engineering"],
     githubUrl: ["https://github.com/varun646/PatientX.AI"],
     demoUrl: [],
@@ -31,7 +52,7 @@ export const projects: Project[] = [
       "The project refined PatientX.AI's topic modeling pipeline using BERTopic, which proved effective for understanding colloquial and context-rich language in patient forums. We evaluated multiple modeling strategies and ultimately integrated LLMs to improve interpretability. These models were used to generate high-quality summaries of representative posts, making the discovered topics more accessible and easier to act upon. The overall solution focused on extracting and presenting meaningful, human-readable narratives from noisy, real-world forum data—making PatientX.AI more useful for its target audience.",
     screenshots: [
       {
-        url: "/project-images/patientx-screenshot.png",
+        url: imgPatientX,
         alt: "PatientX Command-line Interface",
         caption:
           "Command-line interface for the PatientX.AI tool showing available options",
@@ -83,7 +104,7 @@ export const projects: Project[] = [
       "AutoRA is a Python package designed to automate the design and evolution of behavioral psychology experiments. It leverages active learning techniques to identify the most informative parameters for each experimental trial, allowing researchers to iteratively refine their understanding of human behavior. By guiding experimenters toward the most insightful data, AutoRA accelerates discovery in cognitive and behavioral sciences. The tool reduces the overhead of experiment design while enhancing scientific rigor. Researchers can deploy customizable, automated experiments that adapt over time—making AutoRA particularly valuable for exploring complex hypotheses or dynamic behavioral models.",
     summary:
       "Python package for automating behavioral psychology experiments using active learning techniques",
-    imageUrl: "/project-images/autora-screenshot.png",
+    imageUrl: imgAutoRA,
     category: ["data-science", "psychology"],
     githubUrl: ["https://github.com/AutoResearch/AutoRA-experiment-server"],
     demoUrl: [],
@@ -119,7 +140,7 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        url: "/project-images/autora-screenshot.png",
+        url: imgAutoRAScreenshot,
         alt: "AutoRA Experiment Server Interface",
         caption:
           "AutoRA experiment setup and response interface showing the experiment template configuration",
@@ -157,7 +178,7 @@ export const projects: Project[] = [
       "Metadatify, formerly known as MARS (Metadata Aggregation for Reproducible Science), is an open-source, web-based platform that streamlines the creation, management, and discovery of scientific metadata. Researchers often struggle with fragmented datasets, ad hoc spreadsheets, or bespoke tools that hinder data sharing and reproducibility. Metadatify provides a unified interface for rich metadata entry (including CSV/JSON imports), advanced full-text and attribute-based search, and collaborative workspace management. The platform facilitates collaboration through ORCID-driven invitations and project workspaces, while guaranteeing data integrity through uniqueness constraints, audit trails, and timestamped records. The development pipeline was fortified with Jest unit tests, Cypress end-to-end tests, and GitHub Actions workflows, ensuring every merge passes through client, server, and integration test suites.",
     summary:
       "Open-source web platform for scientific metadata management with advanced search and collaboration features",
-    imageUrl: "/project-images/image_1752521002421.png",
+    imageUrl: imgMars,
     category: ["data-science", "computer-science"],
     githubUrl: ["https://github.com/Brain-Development-and-Disorders-Lab/mars"],
     demoUrl: ["https://metadatify.com/"],
@@ -201,7 +222,7 @@ export const projects: Project[] = [
       "We built a full-stack application with a Node.js/Express backend and a React/TypeScript frontend. Key features include a dynamic Query Builder that lets scientists compose complex filters via drag-and-drop UI, JSON and CSV import/export routines that map existing entities by ID and allow 'save as template' workflows, and a relationship explorer that visualizes links between metadata entries. To support team-based science, we integrated [ORCID-powered](https://orcid.org/oauth) collaborator management and workspace sharing.",
     screenshots: [
       {
-        url: "/project-images/mars-screenshot.png",
+        url: imgMarsScreenshot,
         alt: "MARS Dashboard Interface",
         caption:
           "MARS dashboard interface showing collections, entities, and recent activity tracking",
@@ -248,7 +269,7 @@ export const projects: Project[] = [
       "The Ramanujan Machine is a novel way to find new mathematical formulas related to fundamental constants like π (pi), e, and the Riemann zeta function, traditionally discovered through intuition or ingenuity. Using an algorithmic approach, the Ramanujan Machine generates new mathematical conjectures (a statement or hypothesis believed to be true based on evidence or patterns, but not yet rigorously proven) that mathematicians can then attempt to prove. The Ramanujan Machine was developed with the goal of automating the discovery of mathematical formulas and making this process accessible to the broader mathematical community.",
     summary:
       "Algorithmic approach to discovering new mathematical formulas and conjectures related to fundamental constants",
-    imageUrl: "/project-images/ramanujan-screenshot.png",
+    imageUrl: imgRamanujanMachine,
     category: ["computational-science", "mathematics"],
     githubUrl: ["https://github.com/RamanujanMachine/ramanujan-machine-web"],
     demoUrl: [],
@@ -281,7 +302,7 @@ export const projects: Project[] = [
       "During this engagement, we developed a web application that enables contributing mathematicians to submit continued fractions for analysis. The application assesses whether these fractions converge to established conjectures or theorems and evaluates their potential for algorithmic exploration. To identify relevant similarities, well-known conjecture databases are queried using the Wolfram Alpha API and LIReC. The results are then presented in the expected format with the MathJax library for mathematical notation rendering. We improved the Ramanujan Machine BOINC infrastructure (a platform enabling users to donate idle computing resources to scientific research) to maximize the value of contributed computational power. Previously, functionality was limited to donated Linux machines, the Ramanujan packages remained outdated due to missing private keys, domain knowledge was lost following team turnover, and executed jobs frequently crashed without providing diagnostic feedback. During our engagement, we addressed these challenges by creating binary packages using cx_Freeze for Linux, macOS, and Windows, rebuilding the build pipeline as GitHub Actions, and refining BOINC configuration files to generate meaningful diagnostic information when errors occurred.",
     screenshots: [
       {
-        url: "/project-images/ramanujan-screenshot.png",
+        url: imgRamanujanMachineScreenshot,
         alt: "Ramanujan Machine Interface",
         caption:
           "The Ramanujan Machine web interface for polynomial continued fraction exploration",
@@ -329,7 +350,7 @@ export const projects: Project[] = [
       "Quickly calculating accurate inter-atomic force fields is a primary bottleneck for many molecular dynamics simulations in the chemistry and materials science fields. State-of-the-art approaches like Message Passing Neural Networks (MPNNs) can greatly speed up these types of force field calculations by reducing communication overheads during simulation intervals. However, recent implementations of MPNN, such as MACE, are not fully available to GPU-enabled molecular dynamics simulations. This project focused on a collaborative profiling and porting effort starting with the PI's existing software library for calculations of inter-atomic force fields with MACE/MPNN optimizations, 'sprint C++'. The ideal solution for this project would make use of industry standard libraries and APIs for heterogeneous CPU and GPU computing, such as the Sandia Labs-developed Kokkos performance portability programming model.",
     summary:
       "Development of Sprint-Kokkos, a high-performance library for inter-atomic force field calculations using Kokkos for portable CPU-GPU computing",
-    imageUrl: "/project-images/kokkos-mace-materials.png",
+    imageUrl: imgKokkosMaceMaterials,
     category: ["computational-science", "material-science"],
     githubUrl: ["https://github.com/wcwitt/symmetrix"],
     demoUrl: [],
@@ -394,7 +415,7 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        url: "/project-images/kokkos-mace-materials.png",
+        url: imgKokkosMaceMaterials,
         alt: "MACE-MP-0 Equivariant Graph Tensor Network materials science diagram",
         caption:
           "MACE-MP-0 Equivariant Graph Tensor Network showing comprehensive materials coverage",
@@ -411,7 +432,7 @@ export const projects: Project[] = [
       "Meta inferencing is one of the key computational simulation techniques to advance the understanding of treating incurable diseases through understanding interactions of intrinsically disordered proteins (IDPs) with small drug-like molecules. During this engagement, we evaluated the performance characteristics of simulations based on <a href='https://www.gromacs.org/' target='_blank' rel='noopener noreferrer' class='text-[#003057] hover:text-[#B3A369] underline'>GROMACS</a> and <a href='https://www.plumed.org/' target='_blank' rel='noopener noreferrer' class='text-[#003057] hover:text-[#B3A369] underline'>PLUMED</a>, which target IDPs with therapeutic small molecules. After the evaluation, we worked with the PLUMED team to introduce changes that resulted in significant performance improvements for drug discovery research.",
     summary:
       "Performance optimization of GROMACS/PLUMED simulations for drug discovery research targeting intrinsically disordered proteins",
-    imageUrl: "/project-images/protein-comparison.png",
+    imageUrl: imgProteinComparison,
     category: ["computational-science", "chemistry-biochemistry"],
     githubUrl: ["https://github.com/plumed/plumed2"],
     demoUrl: [],
@@ -455,7 +476,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/protein-comparison.png",
+        url: imgProteinComparison,
         alt: "Comparison of structured and disordered proteins",
         caption:
           "Comparison between a structured protein (left) with a well-defined 3D conformation and an intrinsically disordered protein (right) with multiple possible conformations",
@@ -496,7 +517,7 @@ export const projects: Project[] = [
       "Icetemp is a numerical heat flow model that infers long-term climate and glacial history using Bayesian inversion of in-situ borehole temperature measurements previously taken in Antarctica. During this engagement, we converted the Icetemp algorithm, written as a Jupyter Notebook, into a Python package available on PyPi, complete with automated testing and Continuous Integration / Delivery / Deployment.",
     summary:
       "Created a professionally tested Python library from Jupyter Notebook code",
-    imageUrl: "/project-images/icetemp-analysis.png",
+    imageUrl: imgIcetempAnalysis,
     category: ["data-science", "earth-atmospheric-sciences"],
     githubUrl: ["https://github.com/sashamontelli/borehole_temperature_models"],
     demoUrl: [],
@@ -535,7 +556,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/icetemp-analysis.png",
+        url: imgIcetempAnalysis,
         alt: "Icetemp Bayesian analysis visualization",
         caption:
           "Visualization of Bayesian analysis from Icetemp showing various parameter distributions and relationships",
@@ -569,7 +590,7 @@ export const projects: Project[] = [
       "FastANI is an HPC-oriented Python package to perform whole-genome Average Nucleotide Identity (ANI). FastANI allows for quickly comparing two genomes to find matches in their genetic structure, and the related paper for this package has been cited over 4000 times. During this engagement, center leadership collaborated with Dr. Chockingalim, a research scientist in Dr. Aluru's lab, to improve the quality of the FastANI Python package.",
     summary:
       "Enhanced build system, testing infrastructure, and CI/CD for widely-used genomic analysis tool with 4000+ citations",
-    imageUrl: "/project-images/fastani-visualization.png",
+    imageUrl: imgFastani,
     category: ["computational-science", "bioinformatics"],
     githubUrl: ["https://github.com/ParBLiSS/FastANI"],
     demoUrl: [],
@@ -620,7 +641,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/fastani-visualization.png",
+        url: imgFastani,
         alt: "FastANI genomic comparison visualization",
         caption:
           "Visualization of genome comparison between two bacterial strains (B. quintana and B. henselae) using FastANI",
@@ -661,7 +682,7 @@ export const projects: Project[] = [
       "Applying Reinforcement Learning (RL) to automate operations and drive discoveries in power grids is an important area of research that has a direct impact on power delivery across world's power grids. However, applying RL in power grid systems is especially challenging given the large-scale nature of power-grid data. The scale of these data sets causes scalability and performance challenges for RL approaches. RL2Grid is a suite that simulates the use of RL in realistic power-grid systems by using a software stack that includes the <a href='https://github.com/Grid2op/grid2op' target='_blank' rel='noopener noreferrer' class='text-[#003057] hover:text-[#B3A369] underline'>Grid2Op</a> power control framework running with Gymnasium, an open source framework for RL research.",
     summary:
       "Optimized RL2Grid simulations through performance profiling and high-fidelity power models, achieving 2x+ speed improvements and 20x scalability",
-    imageUrl: "/project-images/rl2grid-performance.png",
+    imageUrl: imgRl2Grid,
     category: ["computational-science", "electrical-engineering"],
     githubUrl: ["https://github.com/Grid2op/grid2op"],
     demoUrl: ["https://grid2op.readthedocs.io/en/latest/"],
@@ -705,7 +726,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/rl2grid-performance.png",
+        url: imgRl2GridPerformance,
         alt: "RL2Grid power grid simulation interface",
         caption:
           "Left: Performance profiling visualization showing execution times for different components. Right: Architecture diagram showing the integration of Grid2op with PowerModels.jl, pandapower, and other related libraries.",
@@ -755,7 +776,7 @@ export const projects: Project[] = [
       "QCSchema is a standardized data format for representing quantum chemistry computations, originally developed by the Molecular Sciences Software Institute (MolSSI). It facilitates interoperability across software by defining structured input and output for basic computations such as total energy or gradients and by tracking software provenance. QCSchema is implemented as Pydantic classes in the Python module QCElemental. Another module, QCEngine, is a QCSchema I/O runner for over twenty full-featured or specialized computational molecular sciences codes. Together, these serve as part of the software stack for several research projects.  ",
     summary:
       "Modernized data schema for quantum chemistry computations and procedures",
-    imageUrl: "/project-images/qcschema-v1v2.png",
+    imageUrl: imgQcSchema,
     category: ["computational-science", "chemistry"],
     githubUrl: ["https://github.com/MolSSI/QCElemental/"],
     demoUrl: ["https://molssi.org/software/qcarchive/"],
@@ -797,7 +818,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/qcschema-v1v2.png",
+        url: imgQcSchema,
         alt: "QCSchema v1 vs v2 architecture visualization",
         caption:
           "Side-by-side comparison of QCSchema v1 and v2 architecture, showing the improved structure and organization in v2",
@@ -841,7 +862,7 @@ export const projects: Project[] = [
       "CoAuthor is an intelligent writing assistant designed to go beyond traditional autocomplete tools by recognizing and responding to user behavioral and cognitive patterns during the writing process. By analyzing how individuals write—such as pauses, edits, and revision styles—CoAuthor provides more personalized and context-aware writing support. In addition to assisting writers, CoAuthor serves as a research platform. It allows behavioral scientists and HCI researchers to define custom patterns of interest and specify corresponding interventions. This flexibility enables experiments on how different types of feedback affect the writing process, offering a new tool for studying cognitive behavior through digital text interaction.",
     summary:
       "Intelligent writing assistant that recognizes behavioral patterns and serves as a research platform for studying cognitive behavior through digital text interaction",
-    imageUrl: "/project-images/image_1752593129015.png",
+    imageUrl: imgCoAuthorScreenshot,
     category: ["ai-ml", "human-computer-interaction"],
     githubUrl: ["https://github.com/gt-sse-center/coauthor-interface"],
     demoUrl: ["https://coauthor.stanford.edu/"],
@@ -931,7 +952,7 @@ export const projects: Project[] = [
       "Psi4 is a widely used open-source quantum chemistry package that integrates hundreds of approximation methods into a unified framework with a Python interface. This project focused on releasing v1.10 with new methods, bug fixes, and improvements accumulated since the February 2024 v1.9.1 release. The work involved processing academic developers' pull requests, fixing bugs in both Psi4 and continuous integration environments, and contributing user-requested features. The release includes relativistic integrals, resolution-of-the-identity improvements, London dispersion corrections, explicitly correlated methods, and possibly the first implementation of a domain-based local pair natural orbital method outside the Orca program.",
     summary:
       "Official release of Psi4 v1.10 quantum chemistry package with new methods, bug fixes, and improved interfaces",
-    imageUrl: "/project-images/image_1752603154803.png",
+    imageUrl: imgPsi4,
     category: ["chemistry", "computational-science"],
     githubUrl: ["https://github.com/psi4/psi4"],
     demoUrl: [],
@@ -996,7 +1017,7 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        url: "/project-images/image_1752603348921.png",
+        url: imgPsi4Screenshot,
         alt: "Psi4 Ecosystem c. 2025 - Comprehensive network diagram showing upstream and downstream dependencies",
         caption:
           "Psi4 Ecosystem c. 2025 - Network diagram showing the complex interconnections between Psi4 and its upstream/downstream dependencies",
@@ -1012,7 +1033,7 @@ export const projects: Project[] = [
       "The triangulated irregular network (TIN)-based Real-time Integrated Basin Simulator (tRIBS) simulates the interactions between hydrological, ecological, and geomorphic processes occurring on complex land surfaces. Despite its success as a research tool (100+ publications with 4000 citations), it has not yet been deployed for its original goal as a production tool for mitigating hydrometeorological and geomorphic hazards. This engagement focused on delivering performance improvements, better test coverage, and general software engineering best practices to the GT-landslide simulation as run with the GT version of tRIBS (GT-tRIBS).",
     summary:
       "Performance optimization and software engineering improvements for landslide simulation achieving 2x speedup",
-    imageUrl: "/project-images/image_1753815120882.png",
+    imageUrl: imgXtribsScreenshot,
     category: ["computational-science", "earth-atmospheric-sciences"],
     githubUrl: ["https://github.com/mevrens/tRIBS-GT-SSE"],
     demoUrl: [],
@@ -1054,7 +1075,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/image_1753815120882.png",
+        url: imgXtribsScreenshot,
         alt: "Landslide simulation visualization",
         caption:
           "Visualization of landslide simulation results from the optimized GT-tRIBS system",
@@ -1090,7 +1111,7 @@ export const projects: Project[] = [
       "LIReC (Library of Integer Relations and Constants) is an open-source Python library that automates the discovery of exact algebraic relations among high-precision numerical constants using PSLQ-based algorithms. Traditionally, running large-scale searches for integer relations has required custom HPC setups or AWS-centric pipelines. This engagement extended LIReC's reach by porting its core compute routines to the BOINC distributed-computing framework, enabling volunteer computing resources and reducing cloud costs while broadening compute capacity for mathematical research.",
     summary:
       "BOINC integration for distributed mathematical computation enabling volunteer computing for integer relation discovery",
-    imageUrl: "/project-images/image_1752606539171.png",
+    imageUrl: imgLirec,
     category: ["data-science", "computational-science"],
     githubUrl: ["https://github.com/gt-sse-center/LIReC"],
     demoUrl: [],
@@ -1136,7 +1157,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        url: "/project-images/image_1752606874783.png",
+        url: imgLirecScreenshot,
         alt: "BOINC application management interface showing LIReC integration",
         caption:
           "BOINC application management interface showing successful LIReC integration with 'LIReC using BOINC instead of AWS' entry",

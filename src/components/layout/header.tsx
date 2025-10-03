@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'wouter';
+import imgGtLogoColor from '/images/gt-logo-color.svg';
 
 interface HeaderProps {
   toggleMobileMenu: () => void;
@@ -27,14 +28,11 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <img
-                src="/project-images/gt-logo-color.png"
+                src={imgGtLogoColor}
                 alt="Georgia Tech Logo"
                 className="h-10 mr-3"
               />
-              <div>
-                <div className="text-[#003057] font-sans font-bold text-xl">Center for Scientific</div>
-                <div className="text-[#003057] font-sans font-bold text-xl">Software Engineering</div>
-              </div>
+              <div className="text-[#003057] font-sans font-bold text-xl">Center for Scientific Software Engineering</div>
             </Link>
           </div>
 

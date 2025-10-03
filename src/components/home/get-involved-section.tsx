@@ -12,25 +12,25 @@ export default function GetInvolvedSection() {
           <p className="text-xl mb-8">
             Join us in advancing scientific software engineering at Georgia Tech. We offer multiple ways to collaborate.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
-            <InvolvementCard 
+            <InvolvementCard
               icon={<Handshake className="text-white text-2xl" />}
               title="Research Partnerships"
               description="Collaborate with our team on your software-intensive research projects."
               linkText="Learn More"
               linkUrl="/contact"
             />
-            
-            <InvolvementCard 
+
+            <InvolvementCard
               icon={<GraduationCap className="text-white text-2xl" />}
               title="Training & Workshops"
               description="Participate in our software engineering workshops and training sessions."
               linkText="View Schedule"
               linkUrl="/contact"
             />
-            
-            <InvolvementCard 
+
+            <InvolvementCard
               icon={<GitBranch className="text-white text-2xl" />}
               title="Open Source"
               description="Contribute to our open source scientific software projects."
@@ -38,10 +38,10 @@ export default function GetInvolvedSection() {
               linkUrl="/projects"
             />
           </div>
-          
+
           <div className="mt-12">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-[#B3A369] hover:bg-[#E5D6A2] hover:text-[#003057] text-white"
               asChild
             >
@@ -70,8 +70,8 @@ function InvolvementCard({ icon, title, description, linkText, linkUrl }: Involv
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(description) }}></p>
-      <Link 
-        href={linkUrl} 
+      <Link
+        href={linkUrl}
         className="text-[#B3A369] hover:text-[#E5D6A2] font-medium inline-flex items-center"
       >
         {linkText} →
