@@ -1,8 +1,6 @@
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { parseTextWithLinks } from '@/lib/utils';
 import { type Project } from '@/schema';
-import { parseTextWithLinks } from '@/utils';
 import { Link } from 'wouter';
 
 interface FeaturedProjectSectionProps {
@@ -15,9 +13,9 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden shadow-lg">
           <div className="md:w-1/2">
-            <img 
-              src={project.imageUrl || "/images/project-header-bg.png"} 
-              alt={`Featured project: ${project.title}`} 
+            <img
+              src={project.imageUrl || "/images/project-header-bg.png"}
+              alt={`Featured project: ${project.title}`}
               className="w-full h-full object-cover"
             />
           </div>
@@ -29,14 +27,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
               {project.title}
             </h2>
             <p className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.technologies && project.technologies.map((tech, index) => (
-                <Badge key={index} className="bg-[#003057] text-white">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-            
+
             {project.achievements && project.achievements.length > 0 && (
               <div className="mb-6">
                 <h4 className="font-bold text-[#003057] mb-2">Key Achievements:</h4>
@@ -47,9 +38,9 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
                 </ul>
               </div>
             )}
-            
-            <Button 
-              variant="link" 
+
+            <Button
+              variant="link"
               className="text-[#003057] hover:text-[#B3A369] p-0 justify-start"
               asChild
             >

@@ -27,6 +27,11 @@ export interface Screenshot {
   description?: string;
 }
 
+export interface Technology {
+  name: string;
+  url: string;
+}
+
 // Application-level Project interface - projects are stored as static data
 export interface Project {
   id: number;
@@ -43,7 +48,7 @@ export interface Project {
   softwareSolution: string;
   impact: string[];
   detailedTechnologies: {
-    [categoryName: string]: Array<string | { name: string; url: string }>;
+    [categoryName: string]: Array<string | Technology>;
   };
   projectDetails: ProjectDetails;
   screenshots: Screenshot[];
@@ -55,7 +60,7 @@ export interface Project {
  *  ————————————————————————————————————————————— */
 const AbsoluteOrRelativeUrl = z.union([
   // absolute URLs…
-  z.string().url(),
+  z.url(),
   // …or relative paths starting with /, ./, or ../
   z
     .string()
@@ -119,7 +124,7 @@ export const ProjectSchema = z.object({
     z.array(
       z.union([
         z.string(),
-        z.object({ name: z.string(), url: z.string().url() }),
+        z.object({ name: z.string(), url: z.url() }),
       ]),
     ),
   ),

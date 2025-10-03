@@ -27,7 +27,7 @@ export default function Projects() {
   useEffect(() => {
     // Apply filtering and searching
     let result = [...allProjects];
-    
+
     // Apply category filter
     if (activeFilter !== 'all') {
       if (activeFilter === 'featured') {
@@ -36,39 +36,39 @@ export default function Projects() {
         result = result.filter(project => project.category.includes(activeFilter));
       }
     }
-    
+
     // Apply technology filter
     if (selectedTechnologies.length > 0) {
       result = result.filter(project => {
-        const projectTechnologies = extractTechnologiesFromDetailed(project.detailedTechnologies) || project.technologies || [];
-        return selectedTechnologies.some(selectedTech => 
-          projectTechnologies.some(projectTech => 
+        const projectTechnologies = extractTechnologiesFromDetailed(project.detailedTechnologies) || [];
+        return selectedTechnologies.some(selectedTech =>
+          projectTechnologies.some(projectTech =>
             projectTech.toLowerCase().includes(selectedTech.toLowerCase())
           )
         );
       });
     }
-    
+
     // Apply search term
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
       result = result.filter(project => {
-        const projectTechnologies = extractTechnologiesFromDetailed(project.detailedTechnologies) || project.technologies || [];
-        
+        const projectTechnologies = extractTechnologiesFromDetailed(project.detailedTechnologies) || [];
+
         // Search in partner names
-        const partnerMatches = project.projectDetails?.partners?.some(partner => 
+        const partnerMatches = project.projectDetails?.partners?.some(partner =>
           partner?.name?.toLowerCase().includes(search)
         ) || false;
-        
+
         // Search in software engineer names
-        const engineerMatches = project.projectDetails?.softwareEngineers?.some(engineer => 
+        const engineerMatches = project.projectDetails?.softwareEngineers?.some(engineer =>
           engineer?.name?.toLowerCase().includes(search)
         ) || false;
-        
+
         return (
-          project.title.toLowerCase().includes(search) || 
+          project.title.toLowerCase().includes(search) ||
           project.description.toLowerCase().includes(search) ||
-          projectTechnologies.some(tech => 
+          projectTechnologies.some(tech =>
             tech.toLowerCase().includes(search)
           ) ||
           partnerMatches ||
@@ -76,10 +76,10 @@ export default function Projects() {
         );
       });
     }
-    
+
     // Apply sorting
     const sortedResult = sortProjects(result, sortBy);
-    
+
     setFilteredProjects(sortedResult);
   }, [activeFilter, searchTerm, selectedTechnologies, sortBy]);
 
@@ -90,10 +90,10 @@ export default function Projects() {
         description="Explore our diverse portfolio of scientific software engineering projects across multiple disciplines"
         backgroundImage="/images/project-header-bg.png"
       />
-      
+
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <ProjectFilters 
+          <ProjectFilters
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
             searchTerm={searchTerm}
@@ -104,11 +104,11 @@ export default function Projects() {
             setSortBy={setSortBy}
             allProjects={allProjects}
           />
-          
-          <ProjectGrid 
+
+          <ProjectGrid
             projects={filteredProjects}
           />
-          
+
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
               <h3 className="text-xl font-medium text-gray-600">No projects match your criteria</h3>
