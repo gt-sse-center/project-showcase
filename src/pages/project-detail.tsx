@@ -345,8 +345,7 @@ export default function ProjectDetail() {
 
             <div className="flex flex-wrap gap-4 mt-8">
               <Button className="bg-[#003057] hover:bg-[#004F87] text-white" asChild>
-                <a // TODO(Varun): Make ExternalLink
-                  href={project.githubUrl}
+                <a href={project.githubUrls[0]}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

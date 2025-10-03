@@ -18,7 +18,7 @@ export function generateProjectStructuredData(project: Project) {
         "url": "https://gatech.edu/"
       }
     },
-    "codeRepository": project.githubUrl[0],
+    "codeRepositories": project.githubUrls.join(", "),
     "programmingLanguage": extractProgrammingLanguages(project),
     "keywords": project.category.join(", "),
     "image": project.imageUrl,

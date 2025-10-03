@@ -40,7 +40,8 @@ export interface Project {
   summary: string;
   imageUrl: string;
   category: string[];
-  githubUrl: string;
+  // A project can have multiple repositories as part of the engagement
+  githubUrls: string[];
   demoUrl?: string[] | null;
   featured?: boolean | null;
   achievements: string[];
@@ -113,7 +114,7 @@ export const ProjectSchema = z.object({
     .max(200, { message: "Summary cannot exceed 200 characters" }),
   imageUrl: AbsoluteOrRelativeUrl,
   category: z.array(z.string()),
-  githubUrl: z.url(),
+  githubUrls: z.array(z.url()),
   demoUrl: z.array(z.url().optional()).nullable().optional(),
   featured: z.boolean().nullable().optional(),
   achievements: z.array(z.string()),

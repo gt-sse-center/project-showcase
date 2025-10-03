@@ -117,6 +117,7 @@ interface ExternalLinkProps {
   children: React.ReactNode;
 }
 
+//TODO(Varun): Rename to ListExternalLink
 function ExternalLink({ href, children }: ExternalLinkProps) {
   return (
     <li>
