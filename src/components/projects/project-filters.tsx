@@ -1,17 +1,18 @@
 /*eslint no-unused-vars: "off"*/
 
+import { FilterButton } from '@/components/projects/filter-button';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown';
 import { Input } from '@/components/ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import {
   getAllCategoriesFromProjects,
   getAllTechnologiesFromProjects,
-  getCategoryDisplayName
+  getCategoryDisplayName,
 } from '@/lib/utils';
 import { type Project } from '@/schema';
 import { ArrowUpDown, Check, Filter, Search, X } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface ProjectFiltersProps {
   activeFilter: string;
@@ -34,7 +35,7 @@ export default function ProjectFilters({
   setSelectedTechnologies,
   sortBy,
   setSortBy,
-  allProjects
+  allProjects,
 }: ProjectFiltersProps) {
   const [techFilterOpen, setTechFilterOpen] = useState(false);
   const [sortFilterOpen, setSortFilterOpen] = useState(false);
@@ -76,7 +77,7 @@ export default function ProjectFilters({
     dataStructures: 'Data Structures',
     distribution: 'Distribution',
     optimization: 'Optimization',
-    other: 'Other'
+    other: 'Other',
   };
 
   return (
@@ -106,7 +107,7 @@ export default function ProjectFilters({
         ))}
       </div>
 
-      {/* Search and Filter Row */}
+      {/* Search, Sort, and Filter Row */}
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
         {/* Search Input */}
         <div className="relative w-full max-w-md">
@@ -124,8 +125,8 @@ export default function ProjectFilters({
         </div>
 
         {/* Sort Dropdown */}
-        <Popover open={sortFilterOpen} onOpenChange={setSortFilterOpen}>
-          <PopoverTrigger asChild>
+        <DropdownMenu open={sortFilterOpen} onOpenChange={setSortFilterOpen}>
+          <DropdownMenuTrigger asChild>
             <Button variant="outline" className="w-full sm:w-auto min-w-[160px] justify-between">
               <div className="flex items-center gap-2">
                 <ArrowUpDown className="h-4 w-4" />
@@ -133,27 +134,29 @@ export default function ProjectFilters({
                   {sortBy === 'newest'
                     ? 'Newest First'
                     : sortBy === 'oldest'
-                      ? 'Oldest First'
-                      : sortBy === 'alphabetical'
-                        ? 'A-Z'
-                        : sortBy === 'category'
-                          ? 'By Category'
-                          : 'Sort By'}
+                    ? 'Oldest First'
+                    : sortBy === 'alphabetical'
+                    ? 'A-Z'
+                    : sortBy === 'category'
+                    ? 'By Category'
+                    : 'Sort By'}
                 </span>
               </div>
             </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-[180px] p-2" align="start">
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-[180px] p-2" align="start">
             <div className="space-y-1">
               {[
                 { value: 'newest', label: 'Newest First' },
                 { value: 'oldest', label: 'Oldest First' },
                 { value: 'alphabetical', label: 'A-Z' },
-                { value: 'category', label: 'By Category' }
+                { value: 'category', label: 'By Category' },
               ].map((option) => (
                 <div
                   key={option.value}
-                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${sortBy === option.value ? 'bg-gray-100' : ''}`}
+                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${
+                    sortBy === option.value ? 'bg-gray-100' : ''
+                  }`}
                   onClick={() => {
                     setSortBy(option.value);
                     setSortFilterOpen(false);
@@ -165,12 +168,12 @@ export default function ProjectFilters({
                 </div>
               ))}
             </div>
-          </PopoverContent>
-        </Popover>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* Technology Filter Dropdown */}
-        <Popover open={techFilterOpen} onOpenChange={setTechFilterOpen}>
-          <PopoverTrigger asChild>
+        <DropdownMenu open={techFilterOpen} onOpenChange={setTechFilterOpen}>
+          <DropdownMenuTrigger asChild>
             <Button variant="outline" className="w-full sm:w-auto min-w-[200px] justify-between">
               <div className="flex items-center gap-2">
                 <Filter className="h-4 w-4" />
@@ -181,8 +184,8 @@ export default function ProjectFilters({
                 </span>
               </div>
             </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-[400px] p-4" align="start">
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-[400px] p-4" align="start">
             <div className="max-h-[300px] overflow-y-auto">
               <div className="mb-3">
                 <Input placeholder="Search technologies..." className="w-full" />
@@ -216,11 +219,11 @@ export default function ProjectFilters({
                 </div>
               ))}
             </div>
-          </PopoverContent>
-        </Popover>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
-      {/* Selected Technology Tags */}
+      {/* Selected Technology Pills */}
       {selectedTechnologies.length > 0 && (
         <div className="flex flex-wrap gap-2 justify-center mb-4">
           {selectedTechnologies.map((tech) => (
@@ -243,27 +246,5 @@ export default function ProjectFilters({
         </div>
       )}
     </div>
-  );
-}
-
-interface FilterButtonProps {
-  filter: string;
-  activeFilter: string;
-  onClick: () => void;
-  children: React.ReactNode;
-}
-
-function FilterButton({ filter, activeFilter, onClick, children }: FilterButtonProps) {
-  const isActive = filter === activeFilter;
-
-  return (
-    <Button
-      variant={isActive ? 'default' : 'outline'}
-      className={`rounded-full ${isActive
-        ? 'bg-[var(--gt-gold)] text-white hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-info)]'
-        : 'border-[var(--gt-gold)] text-[var(--gt-info)] hover:bg-[var(--gt-gold)] hover:text-white'}`}
-      onClick={onClick}>
-      {children}
-    </Button>
   );
 }
