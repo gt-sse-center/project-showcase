@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
-import React, { useEffect } from 'react';
-import { Link, useLocation } from 'wouter';
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "wouter";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -21,41 +21,47 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   return (
     <div
-      className={`fixed inset-0 bg-white z-50 md:hidden transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
-    >
+      className={`fixed inset-0 bg-white z-50 md:hidden transform transition-transform duration-300 ease-in-out ${
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      }`}>
       <div className="flex justify-end p-4">
         <Button
           variant="ghost"
           onClick={onClose}
           className="text-[var(--gt-navy)]"
-          aria-label="Close menu"
-        >
+          aria-label="Close menu">
           <X className="h-6 w-6" />
         </Button>
       </div>
 
       <div className="flex flex-col items-center space-y-6 p-8">
-        <MobileNavLink href="/" current={location === "/"} onClick={onClose}>Home</MobileNavLink>
-        <MobileNavLink href="/projects" current={location.startsWith("/projects")} onClick={onClose}>Projects</MobileNavLink>
+        <MobileNavLink href="/" current={location === "/"} onClick={onClose}>
+          Home
+        </MobileNavLink>
+        <MobileNavLink
+          href="/projects"
+          current={location.startsWith("/projects")}
+          onClick={onClose}>
+          Projects
+        </MobileNavLink>
         <a
           href="https://ssecenter.cc.gatech.edu/people/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
-          onClick={onClose}
-        >
+          onClick={onClose}>
           Team
         </a>
 
@@ -64,8 +70,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
-          onClick={onClose}
-        >
+          onClick={onClose}>
           Events
         </a>
 
@@ -74,8 +79,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] text-xl transition duration-150 ease-in-out"
-          onClick={onClose}
-        >
+          onClick={onClose}>
           Contact
         </a>
       </div>
@@ -95,11 +99,12 @@ function MobileNavLink({ href, current, onClick, children }: MobileNavLinkProps)
     <Link
       href={href}
       onClick={onClick}
-      className={`${current
-        ? 'text-[var(--gt-gold)] font-medium'
-        : 'text-[var(--gt-navy)] hover:text-[var(--gt-gold)]'}
-        text-xl transition duration-150 ease-in-out`}
-    >
+      className={`${
+        current
+          ? "text-[var(--gt-gold)] font-medium"
+          : "text-[var(--gt-navy)] hover:text-[var(--gt-gold)]"
+      }
+        text-xl transition duration-150 ease-in-out`}>
       {children}
     </Link>
   );

@@ -42,7 +42,7 @@ export function useSEO(seoData: SEOData) {
     if (seoData.description) {
       updateMetaTag('meta[name="description"]', seoData.description);
     }
-    
+
     if (seoData.keywords) {
       updateMetaTag('meta[name="keywords"]', seoData.keywords);
     }
@@ -51,15 +51,15 @@ export function useSEO(seoData: SEOData) {
     if (seoData.ogTitle) {
       updateMetaTag('meta[property="og:title"]', seoData.ogTitle);
     }
-    
+
     if (seoData.ogDescription) {
       updateMetaTag('meta[property="og:description"]', seoData.ogDescription);
     }
-    
+
     if (seoData.ogImage) {
       updateMetaTag('meta[property="og:image"]', seoData.ogImage);
     }
-    
+
     if (seoData.ogUrl) {
       updateMetaTag('meta[property="og:url"]', seoData.ogUrl);
     }
@@ -68,11 +68,11 @@ export function useSEO(seoData: SEOData) {
     if (seoData.twitterTitle) {
       updateMetaTag('meta[name="twitter:title"]', seoData.twitterTitle);
     }
-    
+
     if (seoData.twitterDescription) {
       updateMetaTag('meta[name="twitter:description"]', seoData.twitterDescription);
     }
-    
+
     if (seoData.twitterImage) {
       updateMetaTag('meta[name="twitter:image"]', seoData.twitterImage);
     }

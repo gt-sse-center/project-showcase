@@ -1,9 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  extractTechnologiesFromDetailed,
-  stripHtmlTags,
-  truncate
-} from "@/lib/utils";
+import { extractTechnologiesFromDetailed, stripHtmlTags, truncate } from "@/lib/utils";
 import { type Project } from "@/schema";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
@@ -18,21 +14,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       "computational-science": "Computational Science",
       "data-science": "Data Science",
       "ai-ml": "AI & Machine Learning",
-      "visualization": "Visualization",
+      visualization: "Visualization",
       "biomedical-engineering": "Biomedical Engineering",
-      "psychology": "Psychology",
+      psychology: "Psychology",
       "computer-science": "Computer Science",
-      "mathematics": "Mathematics",
+      mathematics: "Mathematics",
       "material-science": "Material Science",
       "chemistry-biochemistry": "Chemistry & Biochemistry",
       "earth-atmospheric-sciences": "Earth & Atmospheric Sciences",
-      "bioinformatics": "Bioinformatics",
+      bioinformatics: "Bioinformatics",
       "electrical-engineering": "Electrical Engineering",
-      "chemistry": "Chemistry",
-      "human-computer-interaction": "Human-Computer Interaction",
+      chemistry: "Chemistry",
+      "human-computer-interaction": "Human-Computer Interaction"
     };
 
-    let labels = categories.map((category: string) => { return categoryLabels[category] || "Research"; })
+    let labels = categories.map((category: string) => {
+      return categoryLabels[category] || "Research";
+    });
     if (labels.length > 2) {
       labels = [labels[0], labels[1], "..."];
     }
@@ -43,8 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/projects/${project.id}`}>
       <div
         className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full cursor-pointer"
-        data-category={project.category.join(" ")}
-      >
+        data-category={project.category.join(" ")}>
         <div className="relative h-48 bg-gray-100">
           <img
             src={
@@ -59,12 +56,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
         <div className="p-6 flex flex-col grow">
-          <h3 className="text-xl font-bold text-[var(--gt-navy)] mb-2">
-            {project.title}
-          </h3>
-          <p className="text-gray-600 mb-4 grow">
-            {truncate(stripHtmlTags(project.summary), 240)}
-          </p>
+          <h3 className="text-xl font-bold text-[var(--gt-navy)] mb-2">{project.title}</h3>
+          <p className="text-gray-600 mb-4 grow">{truncate(stripHtmlTags(project.summary), 240)}</p>
           <div className="mt-auto">
             <div className="flex flex-wrap gap-2 mb-4">
               {(() => {
@@ -77,8 +70,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] cursor-default"
-                  >
+                    className="bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] cursor-default">
                     {tech}
                   </Badge>
                 ));

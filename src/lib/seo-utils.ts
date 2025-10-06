@@ -119,14 +119,14 @@ export function generateProjectSlug(title: string): string {
 export function generateProjectMetaDescription(project: Project): string {
   const technologies = extractProgrammingLanguages(project).slice(0, 3).join(', ');
   const domain = project.projectDetails.scientificDomain;
-  
+
   return `${project.summary} Built with ${technologies} for ${domain}. Explore this innovative research project from Georgia Tech's CSSE.`;
 }
 
 // Generate keywords for project pages
 export function generateProjectKeywords(project: Project): string {
   const baseKeywords = ['Georgia Tech', 'CSSE', 'Scientific Software Engineering', 'Research Project'];
-  const categoryKeywords = project.category.map(cat => 
+  const categoryKeywords = project.category.map(cat =>
     cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
   );
   const techKeywords = extractProgrammingLanguages(project);
