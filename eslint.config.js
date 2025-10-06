@@ -17,7 +17,7 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-    globalIgnores(["dist",]),
+    globalIgnores(["build",]),
     {
         files: ['**/*.{ts,tsx}'],
         extends: compat.extends("eslint:recommended", "plugin:react/recommended"),
