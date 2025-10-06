@@ -60,7 +60,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
               Events
             </a>
             <a
-              href="https://ssecenter.cc.gatech.edu/contact/"
+              href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact/`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] transition duration-150 ease-in-out">

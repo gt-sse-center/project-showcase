@@ -8,6 +8,7 @@ import ProjectDetail from '@/pages/project-detail';
 import Projects from '@/pages/projects';
 import { Route, Router, Switch, useLocation } from 'wouter';
 
+import ExternalRedirect from '@/components/ui/redirect';
 import { useEffect, useState } from 'react';
 import { useHashLocation } from 'wouter/use-hash-location';
 
@@ -24,6 +25,13 @@ function RouterLocationHook() {
       <Route path="/" component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/projects/:id" component={ProjectDetail} />
+
+      <Route path="/contact" >
+        <ExternalRedirect to={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact`} />
+      </Route>
+      <Route path="/events" >
+      <ExternalRedirect to={`${import.meta.env.VITE_CSSE_GT_PAGE}/events`} />
+      </Route>
 
       <Route component={NotFound} />
     </Switch>
