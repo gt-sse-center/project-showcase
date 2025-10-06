@@ -11,13 +11,6 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const [location] = useLocation();
 
-  // Close the menu when route changes
-  useEffect(() => {
-    if (isOpen) {
-      onClose();
-    }
-  }, [location, isOpen, onClose]);
-
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
