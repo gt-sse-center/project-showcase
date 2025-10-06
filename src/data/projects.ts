@@ -1,25 +1,25 @@
-import { type Project } from "@/schema";
-import imgPatientX from '/project-images/patientx-screenshot.png';
-import imgAutoRA from '/project-images/autora-overview.png';
-import imgAutoRAScreenshot from '/project-images/autora-screenshot.png';
-import imgMars from '/project-images/mars.png';
-import imgMarsScreenshot from '/project-images/mars-screenshot.png';
-import imgRamanujanMachine from '/project-images/ramanujan_machine.png';
-import imgRamanujanMachineScreenshot from '/project-images/ramanujan-screenshot.png';
-import imgKokkosMaceMaterials from '/project-images/kokkos-mace-materials.png';
-import imgProteinComparison from '/project-images/protein-comparison.png';
-import imgIcetempAnalysis from '/project-images/icetemp-analysis.png';
-import imgFastani from '/project-images/fastani-visualization.png';
-import imgRl2Grid from '/project-images/rl2grid.png';
-import imgRl2GridPerformance from '/project-images/rl2grid-performance.png';
-import imgQcSchema from '/project-images/qcschema-v1v2.png';
-import imgCoAuthorScreenshot from '/project-images/coauthor-screenshot.png';
-import imgPsi4 from '/project-images/psi4.png';
-import imgPsi4Screenshot from '/project-images/psi4-screenshot.png';
-import imgXtribsScreenshot from '/project-images/xtribs-screenshot.png';
-import imgLirec from '/project-images/lirec.png';
-import imgLirecScreenshot from '/project-images/lirec-screenshot.png';
-import imgCoauthorDemo from '/project-images/coauthor-demo.gif';
+import { ProjectSchema, type Project } from "../schema";
+import imgPatientX from '../../public/project-images/patientx-screenshot.png';
+import imgAutoRA from '../../public/project-images/autora-overview.png';
+import imgAutoRAScreenshot from '../../public/project-images/autora-screenshot.png';
+import imgMars from '../../public/project-images/mars.png';
+import imgMarsScreenshot from '../../public/project-images/mars-screenshot.png';
+import imgRamanujanMachine from '../../public/project-images/ramanujan_machine.png';
+import imgRamanujanMachineScreenshot from '../../public/project-images/ramanujan-screenshot.png';
+import imgKokkosMaceMaterials from '../../public/project-images/kokkos-mace-materials.png';
+import imgProteinComparison from '../../public/project-images/protein-comparison.png';
+import imgIcetempAnalysis from '../../public/project-images/icetemp-analysis.png';
+import imgFastani from '../../public/project-images/fastani-visualization.png';
+import imgRl2Grid from '../../public/project-images/rl2grid.png';
+import imgRl2GridPerformance from '../../public/project-images/rl2grid-performance.png';
+import imgQcSchema from '../../public/project-images/qcschema-v1v2.png';
+import imgCoAuthorScreenshot from '../../public/project-images/coauthor-screenshot.png';
+import imgPsi4 from '../../public/project-images/psi4.png';
+import imgPsi4Screenshot from '../../public/project-images/psi4-screenshot.png';
+import imgXtribsScreenshot from '../../public/project-images/xtribs-screenshot.png';
+import imgLirec from '../../public/project-images/lirec.png';
+import imgLirecScreenshot from '../../public/project-images/lirec-screenshot.png';
+import imgCoauthorDemo from '../../public/project-images/coauthor-demo.gif';
 
 
 // Projects data extracted from the Georgia Tech CSSE website
@@ -1187,8 +1187,6 @@ export const projects: Project[] = [
     ],
   },
 ];
-
-import { ProjectSchema } from "@/schema";
 
 (() => {
   const errors = projects

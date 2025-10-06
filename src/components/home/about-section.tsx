@@ -1,10 +1,10 @@
-import { parseTextWithLinks } from "@/lib/utils";
-import { Code, FlaskRound, GraduationCap } from "lucide-react";
-import React from "react";
-import imgAtlanta from "/images/atlanta.png";
-import imgBuilding from "/images/building.png";
-import imgCollaboration from "/images/collaboration.png";
-import imgTechTower from "/images/tech-tower.png";
+import { Code, FlaskRound, GraduationCap } from 'lucide-react';
+import React from 'react';
+import imgAtlanta from '../../../public/images/atlanta.png';
+import imgBuilding from '../../../public/images/building.png';
+import imgCollaboration from '../../../public/images/collaboration.png';
+import imgTechTower from '../../../public/images/tech-tower.png';
+import { parseTextWithLinks } from '../../lib/utils';
 
 export default function AboutSection() {
   return (

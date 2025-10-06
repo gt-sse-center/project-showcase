@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { type Project } from "@/schema";
-import { Link } from "wouter";
-import ProjectCard from "./project-card";
+import { Link } from 'wouter';
+import { Button } from '../../components/ui/button';
+import { Skeleton } from '../../components/ui/skeleton';
+import { type Project } from '../../schema';
+import ProjectCard from './project-card';
 
 interface ProjectGridProps {
   projects: Project[];

@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Button } from '../../components/ui/button';
 
 export default function HeroSection() {
   return (
@@ -45,8 +44,9 @@ export default function HeroSection() {
             <Button
               size="lg"
               className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white transition-colors text-lg px-6 py-6"
-              asChild>
-              <Link href="/projects">Explore Projects</Link>
+              asChild
+            >
+              <a href="/projects">Explore Projects</a>
             </Button>
           </div>
         </div>

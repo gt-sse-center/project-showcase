@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { parseTextWithLinks } from "@/lib/utils";
-import { type Project } from "@/schema";
 import { Link } from "wouter";
-import imgProjectHeaderBackground from "/images/project-header-bg.png";
+import imgProjectHeaderBackground from "../../../public/images/project-header-bg.png";
+import { parseTextWithLinks } from "../../lib/utils";
+import { type Project } from "../../schema";
+import { Button } from "../ui/button";
 
 interface FeaturedProjectSectionProps {
   project: Project;

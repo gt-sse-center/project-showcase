@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import sanitizeHtml from 'sanitize-html';
-import { type Partner, type Project, type SoftwareEngineer, type Technology } from "@/schema";
+import { type Partner, type Project, type SoftwareEngineer, type Technology } from "../schema";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
