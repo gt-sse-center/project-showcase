@@ -24,13 +24,22 @@ export default function Footer() {
               , advances research through professional software engineering practices.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="https://twitter.com/georgiatech" icon="fab fa-twitter" />
+              <SocialLink
+                href="https://twitter.com/georgiatech"
+                icon="fa-brands fa-x-twitter fa-lg"
+              />
               <SocialLink
                 href="https://linkedin.com/school/georgia-institute-of-technology/"
-                icon="fab fa-linkedin-in"
+                icon="fa-brands fa-linkedin-in fa-lg"
               />
-              <SocialLink href="https://github.com/gt-sse-center" icon="fab fa-github" />
-              <SocialLink href="https://www.youtube.com/user/GeorgiaTech" icon="fab fa-youtube" />
+              <SocialLink
+                href="https://github.com/gt-sse-center"
+                icon="fa-brands fa-github fa-lg"
+              />
+              <SocialLink
+                href="https://www.youtube.com/user/GeorgiaTech"
+                icon="fa-brands fa-youtube fa-lg"
+              />
             </div>
           </div>
 
@@ -39,45 +48,35 @@ export default function Footer() {
             <ul className="space-y-2">
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="/projects">Projects</FooterLink>
-              <li>
-                <a
-                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/people/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/events/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-                  Events
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-                  Contact
-                </a>
-              </li>
+              <ExternalFooterLink href={`${import.meta.env.VITE_CSSE_GT_PAGE}/people/`}>
+                Team
+              </ExternalFooterLink>
+              <ExternalFooterLink href={`${import.meta.env.VITE_CSSE_GT_PAGE}/events/`}>
+                Events
+              </ExternalFooterLink>
+              <ExternalFooterLink href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact/`}>
+                Contact
+              </ExternalFooterLink>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold text-xl mb-4">Georgia Tech</h3>
             <ul className="space-y-2">
-              <ExternalLink href="https://www.gatech.edu">Main Website</ExternalLink>
-              <ExternalLink href="https://www.cc.gatech.edu">College of Computing</ExternalLink>
-              <ExternalLink href="https://www.cos.gatech.edu">College of Sciences</ExternalLink>
-              <ExternalLink href="https://www.coe.gatech.edu">College of Engineering</ExternalLink>
-              <ExternalLink href="https://www.research.gatech.edu">Research Portal</ExternalLink>
-              <ExternalLink href="https://www.library.gatech.edu">Library</ExternalLink>
+              <ExternalFooterLink href="https://www.gatech.edu">Main Website</ExternalFooterLink>
+              <ExternalFooterLink href="https://www.cc.gatech.edu">
+                College of Computing
+              </ExternalFooterLink>
+              <ExternalFooterLink href="https://www.cos.gatech.edu">
+                College of Sciences
+              </ExternalFooterLink>
+              <ExternalFooterLink href="https://www.coe.gatech.edu">
+                College of Engineering
+              </ExternalFooterLink>
+              <ExternalFooterLink href="https://www.research.gatech.edu">
+                Research Portal
+              </ExternalFooterLink>
+              <ExternalFooterLink href="https://www.library.gatech.edu">Library</ExternalFooterLink>
             </ul>
           </div>
         </div>
@@ -116,38 +115,47 @@ export default function Footer() {
 
 interface FooterLinkProps {
   href: string;
+  rel?: string;
+  target?: string;
   children: React.ReactNode;
 }
 
-function FooterLink({ href, children }: FooterLinkProps) {
+function FooterLink(
+  { href, target = "", rel = "", children }: FooterLinkProps,
+  isExternal: boolean = false
+) {
   return (
     <li>
-      <Link
-        href={href}
-        className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-        {children}
-      </Link>
+      {isExternal ? (
+        <a
+          href={href}
+          target={target}
+          rel={rel}
+          className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
+          {children}
+        </a>
+      ) : (
+        <Link
+          href={href}
+          target={target}
+          rel={rel}
+          className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
+          {children}
+        </Link>
+      )}
     </li>
   );
 }
 
-interface ExternalLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
-//TODO(Varun): Rename to ListExternalLink
-function ExternalLink({ href, children }: ExternalLinkProps) {
-  return (
-    <li>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-        {children}
-      </a>
-    </li>
+function ExternalFooterLink({ href, children }: FooterLinkProps) {
+  return FooterLink(
+    {
+      href: href,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      children: children
+    },
+    true
   );
 }
 
