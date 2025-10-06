@@ -1,16 +1,15 @@
-import Footer from '@/components/layout/footer';
-import Header from '@/components/layout/header';
-import MobileMenu from '@/components/layout/mobile-menu';
-import { Toaster } from '@/components/ui/toaster';
-import Home from '@/pages/home';
-import NotFound from '@/pages/not-found';
-import ProjectDetail from '@/pages/project-detail';
-import Projects from '@/pages/projects';
-import { Route, Router, Switch, useLocation } from 'wouter';
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
+import { Toaster } from "@/components/ui/toaster";
+import Home from "@/pages/home";
+import NotFound from "@/pages/not-found";
+import ProjectDetail from "@/pages/project-detail";
+import Projects from "@/pages/projects";
+import { Route, Router, Switch, useLocation } from "wouter";
 
-import ExternalRedirect from '@/components/ui/redirect';
-import { useEffect, useState } from 'react';
-import { useHashLocation } from 'wouter/use-hash-location';
+import ExternalRedirect from "@/components/ui/redirect";
+import { useEffect } from "react";
+import { useHashLocation } from "wouter/use-hash-location";
 
 function RouterLocationHook() {
   const [location] = useLocation();
@@ -26,11 +25,11 @@ function RouterLocationHook() {
       <Route path="/projects" component={Projects} />
       <Route path="/projects/:id" component={ProjectDetail} />
 
-      <Route path="/contact" >
+      <Route path="/contact">
         <ExternalRedirect to={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact`} />
       </Route>
-      <Route path="/events" >
-      <ExternalRedirect to={`${import.meta.env.VITE_CSSE_GT_PAGE}/events`} />
+      <Route path="/events">
+        <ExternalRedirect to={`${import.meta.env.VITE_CSSE_GT_PAGE}/events`} />
       </Route>
 
       <Route component={NotFound} />
@@ -39,12 +38,6 @@ function RouterLocationHook() {
 }
 
 function App() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
     <div>
       {/* Since Vite generates a Single Page Application (SPA)
@@ -52,8 +45,7 @@ function App() {
       */}
       <Router hook={useHashLocation}>
         <div className="flex flex-col min-h-screen">
-          <Header toggleMobileMenu={toggleMobileMenu} />
-          <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+          <Header />
           <main className="grow">
             <RouterLocationHook />
           </main>
