@@ -1,0 +1,46 @@
+:root {
+	/* GT fonts and colors */
+	--font-roboto: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	--font-roboto-condensed: 'Roboto Condensed', sans-serif;
+	--font-roboto-slab: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	--gt-black: #262626;
+	--gt-white: #ffffff;
+	--gt-buzz-gold: #eeb211;
+	--gt-gold: #b3a369;
+	--gt-tech-gold: #b3a369;
+	--gt-gold-grad-1: #bfb37c;
+	--gt-tech-light-gold: #bfb37c;
+	--gt-mdlt-gold: #ac9a58;
+	--gt-md-gold: #a4925a;
+	--gt-tech-medium-gold: #a4925a;
+	--gt-drk-gold: #857437;
+	--gt-tech-dark-gold: #857437;
+	--gt-navy: #003057;
+	--gt-blue: #004f9f;
+	--gt-link-blue: #004f9f;
+	--gt-blue-visited: #1879db;
+	--gt-blue-hover: #1879db;
+	--gt-link-hover-blue: #1879db;
+	--gt-text-black: #262626;
+	--gt-warm-gray: #d6dbd4;
+	--gt-warm-gray-medium: #e5e7e4;
+	--gt-superlight-gray: #f2f2f2;
+	--gt-light-gray: #ccc;
+	--gt-warm-gray-light: #f2f3f1;
+	--gt-medium-gray-light: #545454;
+	--gt-dark-gray: #3b3b3b;
+	--gt-pimile-light: #f2f3f1;
+	--gt-horizon: #f95e10;
+	--gt-gold-grad: linear-gradient(to right, #bfb37c 0%, #b3a369 100%);
+	--gt-gold-grad-rev: linear-gradient(to right, #b3a369 0%, #bfb37c 100%);
+	--gt-gold-drk-half: linear-gradient(to right, #ac9a58 0%, #ac9a58 50%, white 50%, white 100%);
+	--gt-gold-grad-shine: linear-gradient(60deg, #b3a369 0%, #bfb37c 40%, #bfb37c 60%, #b3a369 100%);
+	--gt-primary-gold: #b3a369;
+	--gt-secondary: #d6dbd4;
+	--gt-success: #349e08;
+	--gt-danger: #f95e10;
+	--gt-warning: #ff0101;
+	--gt-info: #003057;
+	--gt-light: #f2f3f1;
+	--gt-dark: #3b3b3b;
+}

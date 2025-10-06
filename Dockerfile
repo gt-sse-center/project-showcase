@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
 
 FROM ubuntu:latest
-LABEL description="SSEC Showcase"
+LABEL description="CSSE Showcase"
 
 # set working directory
-WORKDIR /srv/ssec-showcase
+WORKDIR /srv/csse-showcase
 
 # install dependencies
 RUN apt-get update && apt-get -y install git ca-certificates curl gnupg
