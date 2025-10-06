@@ -1,11 +1,11 @@
-import HeroSection from '@/components/home/hero-section';
 import AboutSection from '@/components/home/about-section';
-import StatsSection from '@/components/home/stats-section';
 import FeaturedProjectSection from '@/components/home/featured-project-section';
 import GetInvolvedSection from '@/components/home/get-involved-section';
+import HeroSection from '@/components/home/hero-section';
+import StatsSection from '@/components/home/stats-section';
 import ProjectGrid from '@/components/projects/project-grid';
 import { projects } from '@/data/projects';
-import { useSEO, defaultSEOData } from "@/hooks/use-seo";
+import { defaultSEOData, useSEO } from "@/hooks/use-seo";
 import { generateOrganizationStructuredData } from "@/lib/seo-utils";
 import { useEffect } from "react";
 
@@ -39,7 +39,7 @@ export default function Home() {
       <section id="projects" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#003057] font-sans mb-4">Our Projects</h2>
+            <h2 className="text-3xl font-bold text-[var(--gt-navy)] font-sans mb-4">Our Projects</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our diverse portfolio of scientific software engineering projects across multiple disciplines
             </p>

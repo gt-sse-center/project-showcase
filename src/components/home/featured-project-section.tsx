@@ -21,17 +21,17 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
             />
           </div>
           <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-            <div className="inline-block bg-[#E5D6A2] text-[#003057] text-sm font-bold px-3 py-1 rounded mb-4">
+            <div className="inline-block bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] text-sm font-bold px-3 py-1 rounded mb-4">
               Featured Project
             </div>
-            <h2 className="text-3xl font-bold text-[#003057] font-sans mb-4">
+            <h2 className="text-3xl font-bold text-[var(--gt-navy)] font-sans mb-4">
               {project.title}
             </h2>
             <p className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></p>
 
             {project.achievements && project.achievements.length > 0 && (
               <div className="mb-6">
-                <h4 className="font-bold text-[#003057] mb-2">Key Achievements:</h4>
+                <h4 className="font-bold text-[var(--gt-navy)] mb-2">Key Achievements:</h4>
                 <ul className="list-disc list-inside text-gray-600 space-y-1">
                   {project.achievements.map((achievement, index) => (
                     <li key={index} dangerouslySetInnerHTML={{ __html: parseTextWithLinks(achievement) }}></li>
@@ -42,7 +42,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
 
             <Button
               variant="link"
-              className="text-[#003057] hover:text-[#B3A369] p-0 justify-start"
+              className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] p-0 justify-start"
               asChild
             >
               <Link href={`/projects/${project.id}`}>

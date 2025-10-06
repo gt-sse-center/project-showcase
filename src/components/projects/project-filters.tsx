@@ -116,7 +116,7 @@ export default function ProjectFilters({
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full py-3 pl-4 pr-10 rounded-lg border focus:ring-[#B3A369]"
+            className="w-full py-3 pl-4 pr-10 rounded-lg border focus:ring-[var(--gt-gold)]"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             <Search className="h-5 w-5 text-gray-400" />
@@ -159,7 +159,7 @@ export default function ProjectFilters({
                     setSortFilterOpen(false);
                   }}>
                   <div className="w-4 h-4 flex items-center justify-center">
-                    {sortBy === option.value && <Check className="h-4 w-4 text-[#003057]" />}
+                    {sortBy === option.value && <Check className="h-4 w-4 text-[var(--gt-info)]" />}
                   </div>
                   <span className="text-sm">{option.label}</span>
                 </div>
@@ -206,7 +206,7 @@ export default function ProjectFilters({
                         }}>
                         <div className="w-4 h-4 flex items-center justify-center">
                           {selectedTechnologies.includes(tech) && (
-                            <Check className="h-4 w-4 text-[#003057]" />
+                            <Check className="h-4 w-4 text-[var(--gt-info)]" />
                           )}
                         </div>
                         <span className="flex-1 text-sm">{tech}</span>
@@ -227,7 +227,7 @@ export default function ProjectFilters({
             <Badge
               key={tech}
               variant="secondary"
-              className="bg-[#003057] text-white hover:bg-[#003057]/90 cursor-pointer"
+              className="bg-[var(--gt-info)] text-white hover:bg-[var(--gt-info)]/90 cursor-pointer"
               onClick={() => toggleTechnology(tech)}>
               {tech}
               <X className="h-3 w-3 ml-1" />
@@ -260,8 +260,8 @@ function FilterButton({ filter, activeFilter, onClick, children }: FilterButtonP
     <Button
       variant={isActive ? 'default' : 'outline'}
       className={`rounded-full ${isActive
-        ? 'bg-[#B3A369] text-white hover:bg-[#E5D6A2] hover:text-[#003057]'
-        : 'border-[#B3A369] text-[#003057] hover:bg-[#B3A369] hover:text-white'}`}
+        ? 'bg-[var(--gt-gold)] text-white hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-info)]'
+        : 'border-[var(--gt-gold)] text-[var(--gt-info)] hover:bg-[var(--gt-gold)] hover:text-white'}`}
       onClick={onClick}>
       {children}
     </Button>

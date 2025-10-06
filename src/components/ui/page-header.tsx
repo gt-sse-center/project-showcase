@@ -21,7 +21,7 @@ export default function PageHeader({
 
   return (
     <div
-      className={`relative bg-[#003057] text-white ${heightClass} overflow-hidden`}
+      className={`relative bg-[var(--gt-navy)] text-white ${heightClass} overflow-hidden`}
     >
       {/* Optional background image with overlay */}
       {backgroundImage && (
@@ -31,7 +31,7 @@ export default function PageHeader({
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#003057] opacity-60"></div>
+          <div className="absolute inset-0 bg-[var(--gt-navy)] opacity-60"></div>
         </div>
       )}
 

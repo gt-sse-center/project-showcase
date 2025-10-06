@@ -32,7 +32,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
                 alt="Georgia Tech Logo"
                 className="h-10 mr-3"
               />
-              <div className="text-[#003057] font-sans font-bold text-xl">Center for Scientific Software Engineering</div>
+              <div className="text-[var(--gt-navy)] font-sans font-bold text-xl">Center for Scientific Software Engineering</div>
             </Link>
           </div>
 
@@ -44,7 +44,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
               href="https://ssecenter.cc.gatech.edu/people/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#003057] hover:text-[#B3A369] transition duration-150 ease-in-out"
+              className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] transition duration-150 ease-in-out"
             >
               Team
             </a>
@@ -52,7 +52,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
               href="https://ssecenter.cc.gatech.edu/events/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#003057] hover:text-[#B3A369] transition duration-150 ease-in-out"
+              className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] transition duration-150 ease-in-out"
             >
               Events
             </a>
@@ -60,7 +60,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
               href="https://ssecenter.cc.gatech.edu/contact/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#003057] hover:text-[#B3A369] transition duration-150 ease-in-out"
+              className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] transition duration-150 ease-in-out"
             >
               Contact
             </a>
@@ -69,7 +69,7 @@ export default function Header({ toggleMobileMenu }: HeaderProps) {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            className="md:hidden text-[#003057]"
+            className="md:hidden text-[var(--gt-navy)]"
             onClick={toggleMobileMenu}
             aria-label="Open menu"
           >
@@ -92,8 +92,8 @@ function NavLink({ href, current, children }: NavLinkProps) {
     <Link
       href={href}
       className={`${current
-        ? 'text-[#B3A369] font-medium'
-        : 'text-[#003057] hover:text-[#B3A369]'}
+        ? 'text-[var(--gt-gold)] font-medium'
+        : 'text-[var(--gt-navy)] hover:text-[var(--gt-gold)]'}
         transition duration-150 ease-in-out`}
     >
       {children}

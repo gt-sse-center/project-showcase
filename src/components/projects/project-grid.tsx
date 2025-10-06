@@ -1,8 +1,8 @@
-import { type Project } from '@/schema';
-import ProjectCard from './project-card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'wouter';
 import { Skeleton } from '@/components/ui/skeleton';
+import { type Project } from '@/schema';
+import { Link } from 'wouter';
+import ProjectCard from './project-card';
 
 interface ProjectGridProps {
   projects: Project[];
@@ -38,7 +38,7 @@ export default function ProjectGrid({
       {showViewAll && (
         <div className="text-center mt-12">
           <Button 
-            className="bg-[#003057] hover:bg-[#B3A369] text-white" 
+            className="bg-[var(--gt-navy)] hover:bg-[var(--gt-gold)] text-white" 
             size="lg"
             asChild
           >

@@ -28,8 +28,8 @@ interface StatCardProps {
 function StatCard({ number, label }: StatCardProps) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-xs transform hover:translate-y-[-5px] transition-transform duration-300 relative">
-      <div className="text-4xl font-bold text-[#B3A369] mb-2">{number}</div>
-      <div className="text-[#003057] font-medium">{label}</div>
+      <div className="text-4xl font-bold text-[var(--gt-gold)] mb-2">{number}</div>
+      <div className="text-[var(--gt-navy)] font-medium">{label}</div>
     </div>
   );
 }
