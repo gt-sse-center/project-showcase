@@ -19,6 +19,7 @@ import imgPsi4Screenshot from '/project-images/psi4-screenshot.png';
 import imgXtribsScreenshot from '/project-images/xtribs-screenshot.png';
 import imgLirec from '/project-images/lirec.png';
 import imgLirecScreenshot from '/project-images/lirec-screenshot.png';
+import imgCoauthorDemo from '/project-images/coauthor-demo.gif';
 
 
 // Projects data extracted from the Georgia Tech CSSE website
@@ -936,7 +937,7 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        url: "/project-images/coauthor-demo.gif",
+        url: imgCoauthorDemo,
         alt: "CoAuthor interface demonstration",
         caption:
           "CoAuthor interface showing real-time writing assistance and behavioral pattern detection",
