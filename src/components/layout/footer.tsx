@@ -91,19 +91,19 @@ export default function Footer() {
           </div>
           <div className="flex space-x-4 text-sm">
             <a
-              href="#"
+              href="https://www.gatech.edu/privacy"
               className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
-              Privacy Policy
+              Legal & Privacy Information
             </a>
             <span className="text-gray-600">|</span>
             <a
-              href="#"
+              href="https://www.gatech.edu/accountability"
               className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
-              Terms of Use
+              Accountability
             </a>
             <span className="text-gray-600">|</span>
             <a
-              href="#"
+              href="https://www.gatech.edu/accessibility"
               className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
               Accessibility
             </a>
