@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'wouter';
-import imgGtLogoWhite from '/images/gt-logo-white.svg';
+import React from "react";
+import { Link } from "wouter";
+import imgGtLogoWhite from "/images/gt-logo-white.svg";
 
 export default function Footer() {
   return (
@@ -9,19 +9,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center mb-1">
-              <img
-                src={imgGtLogoWhite}
-                alt="Georgia Tech Logo"
-                className="h-15 mt-1"
-              />
+              <img src={imgGtLogoWhite} alt="Georgia Tech Logo" className="h-15 mt-1" />
               <div className="font-sans font-bold text-xl">CSSE</div>
             </div>
             <p className="text-gray-300 mb-4">
-              The Center for Scientific Software Engineering at Georgia Tech, part of the <a href="https://www.schmidtsciences.org/viss/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-white">Virtual Institute for Scientific Software (VISS)</a>, advances research through professional software engineering practices.
+              The Center for Scientific Software Engineering at Georgia Tech, part of the{" "}
+              <a
+                href="https://www.schmidtsciences.org/viss/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-100 hover:text-white">
+                Virtual Institute for Scientific Software (VISS)
+              </a>
+              , advances research through professional software engineering practices.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="https://twitter.com/georgiatech" icon="fab fa-twitter" />
-              <SocialLink href="https://linkedin.com/school/georgia-institute-of-technology/" icon="fab fa-linkedin-in" />
+              <SocialLink
+                href="https://linkedin.com/school/georgia-institute-of-technology/"
+                icon="fab fa-linkedin-in"
+              />
               <SocialLink href="https://github.com/gt-sse-center" icon="fab fa-github" />
               <SocialLink href="https://www.youtube.com/user/GeorgiaTech" icon="fab fa-youtube" />
             </div>
@@ -37,8 +44,7 @@ export default function Footer() {
                   href={`${import.meta.env.VITE_CSSE_GT_PAGE}/people/`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
-                >
+                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
                   Team
                 </a>
               </li>
@@ -47,8 +53,7 @@ export default function Footer() {
                   href={`${import.meta.env.VITE_CSSE_GT_PAGE}/events/`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
-                >
+                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
                   Events
                 </a>
               </li>
@@ -57,8 +62,7 @@ export default function Footer() {
                   href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact/`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
-                >
+                  className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
                   Contact
                 </a>
               </li>
@@ -82,14 +86,27 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Center for Scientific Software Engineering, Georgia Institute of Technology. All rights reserved.
+            &copy; {new Date().getFullYear()} Center for Scientific Software Engineering, Georgia
+            Institute of Technology. All rights reserved.
           </div>
           <div className="flex space-x-4 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition duration-150 ease-in-out">Privacy Policy</a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+              Privacy Policy
+            </a>
             <span className="text-gray-600">|</span>
-            <a href="#" className="text-gray-400 hover:text-white transition duration-150 ease-in-out">Terms of Use</a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+              Terms of Use
+            </a>
             <span className="text-gray-600">|</span>
-            <a href="#" className="text-gray-400 hover:text-white transition duration-150 ease-in-out">Accessibility</a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+              Accessibility
+            </a>
           </div>
         </div>
       </div>
@@ -105,7 +122,9 @@ interface FooterLinkProps {
 function FooterLink({ href, children }: FooterLinkProps) {
   return (
     <li>
-      <Link href={href} className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
+      <Link
+        href={href}
+        className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
         {children}
       </Link>
     </li>
@@ -125,8 +144,7 @@ function ExternalLink({ href, children }: ExternalLinkProps) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
-      >
+        className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
         {children}
       </a>
     </li>
@@ -144,8 +162,7 @@ function SocialLink({ href, icon }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-300 hover:text-white transition duration-150 ease-in-out"
-    >
+      className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
       <i className={icon}></i>
     </a>
   );

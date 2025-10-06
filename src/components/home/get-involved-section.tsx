@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { parseTextWithLinks } from '@/lib/utils';
-import { GitBranch, GraduationCap, Handshake } from 'lucide-react';
-import React from 'react';
-import { Link } from 'wouter';
+import { Button } from "@/components/ui/button";
+import { parseTextWithLinks } from "@/lib/utils";
+import { GitBranch, GraduationCap, Handshake } from "lucide-react";
+import React from "react";
+import { Link } from "wouter";
 
 export default function GetInvolvedSection() {
   return (
@@ -11,7 +11,8 @@ export default function GetInvolvedSection() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold font-sans mb-6">Get Involved</h2>
           <p className="text-xl mb-8">
-            Join us in advancing scientific software engineering at Georgia Tech. We offer multiple ways to collaborate.
+            Join us in advancing scientific software engineering at Georgia Tech. We offer multiple
+            ways to collaborate.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -44,8 +45,7 @@ export default function GetInvolvedSection() {
             <Button
               size="lg"
               className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white"
-              asChild
-            >
+              asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
@@ -70,11 +70,12 @@ function InvolvementCard({ icon, title, description, linkText, linkUrl }: Involv
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(description) }}></p>
+      <p
+        className="text-gray-100 mb-4"
+        dangerouslySetInnerHTML={{ __html: parseTextWithLinks(description) }}></p>
       <Link
         href={linkUrl}
-        className="text-[var(--gt-gold)] hover:text-[var(--gt-tech-light-gold)] font-medium inline-flex items-center"
-      >
+        className="text-[var(--gt-gold)] hover:text-[var(--gt-tech-light-gold)] font-medium inline-flex items-center">
         {linkText} →
       </Link>
     </div>

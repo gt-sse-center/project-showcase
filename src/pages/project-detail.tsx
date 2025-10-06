@@ -3,20 +3,18 @@ import { Button } from "@/components/ui/button";
 import PageHeader from "@/components/ui/page-header";
 import { projects } from "@/data/projects";
 import { useSEO } from "@/hooks/use-seo";
-import { generateBreadcrumbStructuredData, generateProjectKeywords, generateProjectMetaDescription, generateProjectStructuredData } from "@/lib/seo-utils";
-import { parseTextWithLinks } from "@/lib/utils";
-import { SiGithub } from '@icons-pack/react-simple-icons';
 import {
-  ArrowLeft,
-  Building,
-  Calendar,
-  ExternalLink,
-  Target,
-  Users,
-} from "lucide-react";
+  generateBreadcrumbStructuredData,
+  generateProjectKeywords,
+  generateProjectMetaDescription,
+  generateProjectStructuredData
+} from "@/lib/seo-utils";
+import { parseTextWithLinks } from "@/lib/utils";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { ArrowLeft, Building, Calendar, ExternalLink, Target, Users } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation, useParams } from "wouter";
-import imgProjectHeaderBackground from '/images/project-header-bg.png';
+import imgProjectHeaderBackground from "/images/project-header-bg.png";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -38,31 +36,33 @@ export default function ProjectDetail() {
       "earth-atmospheric-sciences": "Earth & Atmospheric Sciences",
       bioinformatics: "Bioinformatics",
       "electrical-engineering": "Electrical Engineering",
-      chemistry: "Chemistry",
+      chemistry: "Chemistry"
     };
 
     return categories[category] || "Research";
   };
 
   // Find the project in our static data by ID
-  const project = projectId
-    ? projects.find((p) => p.id === projectId)
-    : undefined;
+  const project = projectId ? projects.find((p) => p.id === projectId) : undefined;
 
   // SEO setup for project detail page
-  useSEO(project ? {
-    title: `${project.title} | CSSE Project Showcase`,
-    description: generateProjectMetaDescription(project),
-    keywords: generateProjectKeywords(project),
-    canonical: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
-    ogTitle: `${project.title} | CSSE Project Showcase`,
-    ogDescription: project.summary,
-    ogImage: project.imageUrl,
-    ogUrl: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
-    twitterTitle: `${project.title} | CSSE`,
-    twitterDescription: project.summary,
-    twitterImage: project.imageUrl,
-  } : {});
+  useSEO(
+    project
+      ? {
+          title: `${project.title} | CSSE Project Showcase`,
+          description: generateProjectMetaDescription(project),
+          keywords: generateProjectKeywords(project),
+          canonical: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
+          ogTitle: `${project.title} | CSSE Project Showcase`,
+          ogDescription: project.summary,
+          ogImage: project.imageUrl,
+          ogUrl: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
+          twitterTitle: `${project.title} | CSSE`,
+          twitterDescription: project.summary,
+          twitterImage: project.imageUrl
+        }
+      : {}
+  );
 
   // Add structured data for project
   useEffect(() => {
@@ -75,13 +75,13 @@ export default function ProjectDetail() {
       { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` }
     ]);
 
-    const projectScript = document.createElement('script');
-    projectScript.type = 'application/ld+json';
+    const projectScript = document.createElement("script");
+    projectScript.type = "application/ld+json";
     projectScript.text = JSON.stringify(projectStructuredData);
     document.head.appendChild(projectScript);
 
-    const breadcrumbScript = document.createElement('script');
-    breadcrumbScript.type = 'application/ld+json';
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
     breadcrumbScript.text = JSON.stringify(breadcrumbStructuredData);
     document.head.appendChild(breadcrumbScript);
 
@@ -98,12 +98,8 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <h2 className="text-2xl font-bold text-[var(--gt-navy)] mb-4">
-          Project Not Found
-        </h2>
-        <p className="text-gray-600 mb-6">
-          {"We couldn't find the project you're looking for."}
-        </p>
+        <h2 className="text-2xl font-bold text-[var(--gt-navy)] mb-4">Project Not Found</h2>
+        <p className="text-gray-600 mb-6">{"We couldn't find the project you're looking for."}</p>
         <Button onClick={() => navigate("/projects")}>
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
         </Button>
@@ -134,7 +130,7 @@ export default function ProjectDetail() {
                     {/* Timeline Card */}
                     {(project.projectDetails.startDate ||
                       project.projectDetails.endDate ||
-                      project.projectDetails.source) &&
+                      project.projectDetails.source) && (
                       <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
                         <div className="flex items-center mb-3">
                           <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
@@ -155,22 +151,18 @@ export default function ProjectDetail() {
                           {project.projectDetails.endDate && (
                             <p className="flex justify-between">
                               <span className="text-gray-600">End:</span>
-                              <span className="font-medium">
-                                {project.projectDetails.endDate}
-                              </span>
+                              <span className="font-medium">{project.projectDetails.endDate}</span>
                             </p>
                           )}
                           {project.projectDetails.source && (
                             <p className="flex justify-between">
                               <span className="text-gray-600">Source:</span>
-                              <span className="font-medium">
-                                {project.projectDetails.source}
-                              </span>
+                              <span className="font-medium">{project.projectDetails.source}</span>
                             </p>
                           )}
                         </div>
                       </div>
-                    }
+                    )}
 
                     {/* Scientific Domain Card */}
                     {project.projectDetails.scientificDomain && (
@@ -190,18 +182,17 @@ export default function ProjectDetail() {
 
                     {/* Partners Card */}
                     {project.projectDetails.partners &&
-                      project.projectDetails.partners.length > 0 &&
-                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                        <div className="flex items-center mb-3">
-                          <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
-                            <Building className="w-4 h-4 mr-2" />
-                            Partners
-                          </h3>
-                        </div>
-                        <div className="space-y-1">
-                          {project.projectDetails.partners.map(
-                            (partner, index) => (
+                      project.projectDetails.partners.length > 0 && (
+                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                          <div className="flex items-center mb-3">
+                            <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                            <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
+                              <Building className="w-4 h-4 mr-2" />
+                              Partners
+                            </h3>
+                          </div>
+                          <div className="space-y-1">
+                            {project.projectDetails.partners.map((partner, index) => (
                               <p key={index} className="text-sm font-medium">
                                 {typeof partner === "string" ? (
                                   partner
@@ -210,34 +201,31 @@ export default function ProjectDetail() {
                                     href={partner.profileUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-blue-600 hover:text-blue-800 underline"
-                                  >
+                                    className="text-blue-600 hover:text-blue-800 underline">
                                     {partner.name}
                                   </a>
                                 ) : (
                                   partner.name
                                 )}
                               </p>
-                            ),
-                          )}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    }
+                      )}
 
                     {/* Software Engineers Card */}
                     {project.projectDetails.softwareEngineers &&
-                      project.projectDetails.softwareEngineers.length > 0 &&
-                      <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
-                        <div className="flex items-center mb-3">
-                          <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                          <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
-                            <Users className="w-4 h-4 mr-2" />
-                            Software Engineers
-                          </h3>
-                        </div>
-                        <div className="space-y-1">
-                          {project.projectDetails.softwareEngineers.map(
-                            (engineer, index) => (
+                      project.projectDetails.softwareEngineers.length > 0 && (
+                        <div className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                          <div className="flex items-center mb-3">
+                            <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                            <h3 className="font-semibold text-[var(--gt-navy)] flex items-center">
+                              <Users className="w-4 h-4 mr-2" />
+                              Software Engineers
+                            </h3>
+                          </div>
+                          <div className="space-y-1">
+                            {project.projectDetails.softwareEngineers.map((engineer, index) => (
                               <p key={index} className="text-sm font-medium">
                                 {typeof engineer === "string" ? (
                                   engineer
@@ -246,19 +234,17 @@ export default function ProjectDetail() {
                                     href={engineer.profileUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-blue-600 hover:text-blue-800 underline"
-                                  >
+                                    className="text-blue-600 hover:text-blue-800 underline">
                                     {engineer.name}
                                   </a>
                                 ) : (
                                   engineer.name
                                 )}
                               </p>
-                            ),
-                          )}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    }
+                      )}
                   </div>
                 </div>
               </div>
@@ -268,9 +254,8 @@ export default function ProjectDetail() {
               <h2 className="text-[var(--gt-navy)]">About this Project</h2>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: parseTextWithLinks(project.description),
-                }}
-              ></p>
+                  __html: parseTextWithLinks(project.description)
+                }}></p>
 
               {/* Goals section between About this Project and Key Achievements */}
               {project.goals && (
@@ -281,9 +266,8 @@ export default function ProjectDetail() {
                       <li
                         key={index}
                         dangerouslySetInnerHTML={{
-                          __html: parseTextWithLinks(goal),
-                        }}
-                      ></li>
+                          __html: parseTextWithLinks(goal)
+                        }}></li>
                     ))}
                   </ul>
                 </>
@@ -295,9 +279,8 @@ export default function ProjectDetail() {
                   <h3 className="text-[var(--gt-navy)]">Software Solution</h3>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: parseTextWithLinks(project.softwareSolution),
-                    }}
-                  ></p>
+                      __html: parseTextWithLinks(project.softwareSolution)
+                    }}></p>
                 </>
               )}
 
@@ -309,9 +292,8 @@ export default function ProjectDetail() {
                       <li
                         key={index}
                         dangerouslySetInnerHTML={{
-                          __html: parseTextWithLinks(achievement),
-                        }}
-                      ></li>
+                          __html: parseTextWithLinks(achievement)
+                        }}></li>
                     ))}
                   </ul>
                 </>
@@ -335,8 +317,7 @@ export default function ProjectDetail() {
                 {project.category.map((cat, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] rounded-full text-sm"
-                  >
+                    className="px-3 py-1 bg-[var(--gt-tech-light-gold)] text-[var(--gt-navy)] rounded-full text-sm">
                     {getCategoryLabel(cat)}
                   </span>
                 ))}
@@ -345,49 +326,42 @@ export default function ProjectDetail() {
 
             <div className="flex flex-wrap gap-4 mt-8">
               <Button className="bg-[var(--gt-navy)] hover:bg-[var(--gt-blue)]] text-white" asChild>
-                <a href={project.githubUrls[0]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.githubUrls[0]} target="_blank" rel="noopener noreferrer">
                   <SiGithub className="mr-2 h-4 w-4" />
                   View on GitHub
                 </a>
               </Button>
 
-              {
-                project.demoUrl && (
-                  <>
-                    {(Array.isArray(project.demoUrl) ? project.demoUrl : [project.demoUrl]).map((url, index) => (
+              {project.demoUrl && (
+                <>
+                  {(Array.isArray(project.demoUrl) ? project.demoUrl : [project.demoUrl]).map(
+                    (url, index) => (
                       <Button
                         key={index}
                         className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)]"
-                        asChild
-                      >
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        asChild>
+                        <a href={url} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
-                          {Array.isArray(project.demoUrl) && project.demoUrl.length > 1 ? `Demo ${index + 1}` : 'Live Demo'}
-                        </a >
-                      </Button >
-                    ))
-                    }
-                  </>
-                )}
+                          {Array.isArray(project.demoUrl) && project.demoUrl.length > 1
+                            ? `Demo ${index + 1}`
+                            : "Live Demo"}
+                        </a>
+                      </Button>
+                    )
+                  )}
+                </>
+              )}
 
               <Button
                 variant="outline"
                 className="border-[var(--gt-navy)] text-[var(--gt-navy)]"
-                onClick={() => navigate("/projects")}
-              >
+                onClick={() => navigate("/projects")}>
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
               </Button>
-            </div >
-          </div >
-        </div >
-      </section >
-    </div >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

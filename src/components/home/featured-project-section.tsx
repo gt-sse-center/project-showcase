@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { parseTextWithLinks } from '@/lib/utils';
-import { type Project } from '@/schema';
-import { Link } from 'wouter';
-import imgProjectHeaderBackground from '/images/project-header-bg.png';
+import { Button } from "@/components/ui/button";
+import { parseTextWithLinks } from "@/lib/utils";
+import { type Project } from "@/schema";
+import { Link } from "wouter";
+import imgProjectHeaderBackground from "/images/project-header-bg.png";
 
 interface FeaturedProjectSectionProps {
   project: Project;
@@ -27,14 +27,18 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
             <h2 className="text-3xl font-bold text-[var(--gt-navy)] font-sans mb-4">
               {project.title}
             </h2>
-            <p className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></p>
+            <p
+              className="text-gray-600 mb-6"
+              dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></p>
 
             {project.achievements && project.achievements.length > 0 && (
               <div className="mb-6">
                 <h4 className="font-bold text-[var(--gt-navy)] mb-2">Key Achievements:</h4>
                 <ul className="list-disc list-inside text-gray-600 space-y-1">
                   {project.achievements.map((achievement, index) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: parseTextWithLinks(achievement) }}></li>
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: parseTextWithLinks(achievement) }}></li>
                   ))}
                 </ul>
               </div>
@@ -43,8 +47,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
             <Button
               variant="link"
               className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] p-0 justify-start"
-              asChild
-            >
+              asChild>
               <Link href={`/projects/${project.id}`}>
                 Explore Project Details <i className="fas fa-arrow-right ml-2"></i>
               </Link>

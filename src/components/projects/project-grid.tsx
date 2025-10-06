@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
-import { type Project } from '@/schema';
-import { Link } from 'wouter';
-import ProjectCard from './project-card';
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { type Project } from "@/schema";
+import { Link } from "wouter";
+import ProjectCard from "./project-card";
 
 interface ProjectGridProps {
   projects: Project[];
@@ -11,9 +11,9 @@ interface ProjectGridProps {
   viewAllLink?: string;
 }
 
-export default function ProjectGrid({ 
-  projects, 
-  isLoading = false, 
+export default function ProjectGrid({
+  projects,
+  isLoading = false,
   showViewAll = false,
   viewAllLink = "/projects"
 }: ProjectGridProps) {
@@ -34,14 +34,13 @@ export default function ProjectGrid({
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-      
+
       {showViewAll && (
         <div className="text-center mt-12">
-          <Button 
-            className="bg-[var(--gt-navy)] hover:bg-[var(--gt-gold)] text-white" 
+          <Button
+            className="bg-[var(--gt-navy)] hover:bg-[var(--gt-gold)] text-white"
             size="lg"
-            asChild
-          >
+            asChild>
             <Link href={viewAllLink}>
               View All Projects <i className="fas fa-arrow-right ml-2"></i>
             </Link>
@@ -63,13 +62,13 @@ function ProjectCardSkeleton() {
         <Skeleton className="h-4 w-full mb-1" />
         <Skeleton className="h-4 w-full mb-1" />
         <Skeleton className="h-4 w-2/3 mb-4" />
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           <Skeleton className="h-6 w-16 rounded-full" />
           <Skeleton className="h-6 w-20 rounded-full" />
           <Skeleton className="h-6 w-24 rounded-full" />
         </div>
-        
+
         <div className="flex justify-between items-center">
           <Skeleton className="h-4 w-1/3" />
           <Skeleton className="h-6 w-24" />

@@ -1,17 +1,17 @@
 /*eslint no-unused-vars: "off"*/
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   getAllCategoriesFromProjects,
   getAllTechnologiesFromProjects,
   getCategoryDisplayName
-} from '@/lib/utils';
-import { type Project } from '@/schema';
-import { ArrowUpDown, Check, Filter, Search, X } from 'lucide-react';
-import React, { useState } from 'react';
+} from "@/lib/utils";
+import { type Project } from "@/schema";
+import { ArrowUpDown, Check, Filter, Search, X } from "lucide-react";
+import React, { useState } from "react";
 
 interface ProjectFiltersProps {
   activeFilter: string;
@@ -42,14 +42,14 @@ export default function ProjectFilters({
   const projectCategories = getAllCategoriesFromProjects(allProjects);
 
   const toggleTechnology = (tech: string) => {
-    console.log('Toggling technology:', tech);
-    console.log('Current selected:', selectedTechnologies);
+    console.log("Toggling technology:", tech);
+    console.log("Current selected:", selectedTechnologies);
 
     const newSelected = selectedTechnologies.includes(tech)
       ? selectedTechnologies.filter((t) => t !== tech)
       : [...selectedTechnologies, tech];
 
-    console.log('New selected:', newSelected);
+    console.log("New selected:", newSelected);
     setSelectedTechnologies(newSelected);
   };
 
@@ -58,25 +58,25 @@ export default function ProjectFilters({
   };
 
   const categoryDisplayNames: { [key: string]: string } = {
-    frontend: 'Frontend',
-    backend: 'Backend',
-    ai: 'AI & ML',
-    machineLearning: 'Machine Learning',
-    framework: 'Frameworks',
-    database: 'Databases',
-    computing: 'Computing',
-    simulation: 'Simulation',
-    visualization: 'Visualization',
-    cicd: 'CI/CD',
-    development: 'Development Tools',
-    profiling: 'Profiling',
-    modeling: 'Modeling',
-    bioinformatics: 'Bioinformatics',
-    science: 'Scientific Computing',
-    dataStructures: 'Data Structures',
-    distribution: 'Distribution',
-    optimization: 'Optimization',
-    other: 'Other'
+    frontend: "Frontend",
+    backend: "Backend",
+    ai: "AI & ML",
+    machineLearning: "Machine Learning",
+    framework: "Frameworks",
+    database: "Databases",
+    computing: "Computing",
+    simulation: "Simulation",
+    visualization: "Visualization",
+    cicd: "CI/CD",
+    development: "Development Tools",
+    profiling: "Profiling",
+    modeling: "Modeling",
+    bioinformatics: "Bioinformatics",
+    science: "Scientific Computing",
+    dataStructures: "Data Structures",
+    distribution: "Distribution",
+    optimization: "Optimization",
+    other: "Other"
   };
 
   return (
@@ -86,13 +86,13 @@ export default function ProjectFilters({
         <FilterButton
           filter="all"
           activeFilter={activeFilter}
-          onClick={() => setActiveFilter('all')}>
+          onClick={() => setActiveFilter("all")}>
           All Projects
         </FilterButton>
         <FilterButton
           filter="featured"
           activeFilter={activeFilter}
-          onClick={() => setActiveFilter('featured')}>
+          onClick={() => setActiveFilter("featured")}>
           Featured
         </FilterButton>
         {projectCategories.map((category) => (
@@ -130,15 +130,15 @@ export default function ProjectFilters({
               <div className="flex items-center gap-2">
                 <ArrowUpDown className="h-4 w-4" />
                 <span>
-                  {sortBy === 'newest'
-                    ? 'Newest First'
-                    : sortBy === 'oldest'
-                      ? 'Oldest First'
-                      : sortBy === 'alphabetical'
-                        ? 'A-Z'
-                        : sortBy === 'category'
-                          ? 'By Category'
-                          : 'Sort By'}
+                  {sortBy === "newest"
+                    ? "Newest First"
+                    : sortBy === "oldest"
+                    ? "Oldest First"
+                    : sortBy === "alphabetical"
+                    ? "A-Z"
+                    : sortBy === "category"
+                    ? "By Category"
+                    : "Sort By"}
                 </span>
               </div>
             </Button>
@@ -146,14 +146,16 @@ export default function ProjectFilters({
           <PopoverContent className="w-[180px] p-2" align="start">
             <div className="space-y-1">
               {[
-                { value: 'newest', label: 'Newest First' },
-                { value: 'oldest', label: 'Oldest First' },
-                { value: 'alphabetical', label: 'A-Z' },
-                { value: 'category', label: 'By Category' }
+                { value: "newest", label: "Newest First" },
+                { value: "oldest", label: "Oldest First" },
+                { value: "alphabetical", label: "A-Z" },
+                { value: "category", label: "By Category" }
               ].map((option) => (
                 <div
                   key={option.value}
-                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${sortBy === option.value ? 'bg-gray-100' : ''}`}
+                  className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-50 ${
+                    sortBy === option.value ? "bg-gray-100" : ""
+                  }`}
                   onClick={() => {
                     setSortBy(option.value);
                     setSortFilterOpen(false);
@@ -176,7 +178,7 @@ export default function ProjectFilters({
                 <Filter className="h-4 w-4" />
                 <span>
                   {selectedTechnologies.length === 0
-                    ? 'Filter by Technology'
+                    ? "Filter by Technology"
                     : `${selectedTechnologies.length} selected`}
                 </span>
               </div>
@@ -201,7 +203,7 @@ export default function ProjectFilters({
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          console.log('Clicking tech:', tech);
+                          console.log("Clicking tech:", tech);
                           toggleTechnology(tech);
                         }}>
                         <div className="w-4 h-4 flex items-center justify-center">
@@ -258,10 +260,12 @@ function FilterButton({ filter, activeFilter, onClick, children }: FilterButtonP
 
   return (
     <Button
-      variant={isActive ? 'default' : 'outline'}
-      className={`rounded-full ${isActive
-        ? 'bg-[var(--gt-gold)] text-white hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-info)]'
-        : 'border-[var(--gt-gold)] text-[var(--gt-info)] hover:bg-[var(--gt-gold)] hover:text-white'}`}
+      variant={isActive ? "default" : "outline"}
+      className={`rounded-full ${
+        isActive
+          ? "bg-[var(--gt-gold)] text-white hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-info)]"
+          : "border-[var(--gt-gold)] text-[var(--gt-info)] hover:bg-[var(--gt-gold)] hover:text-white"
+      }`}
       onClick={onClick}>
       {children}
     </Button>

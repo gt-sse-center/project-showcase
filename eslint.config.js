@@ -24,7 +24,7 @@ export default defineConfig([
 
         plugins: {
             react,
-            "@stylistic/js": stylisticJs,
+            "@stylistic": stylisticJs,
         },
 
         languageOptions: {
@@ -55,7 +55,7 @@ export default defineConfig([
                 afterColon: true,
             }],
 
-            "@stylistic/js/indent": ["error", 2],
+            "@stylistic/indent": ["error", 2],
             "react/react-in-jsx-scope": "off",
         },
     }]);
