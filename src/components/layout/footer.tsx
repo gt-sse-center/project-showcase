@@ -1,3 +1,7 @@
+import { type IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+/* import all the icons in Free Solid, Free Regular, and Brands styles */
+import { faGithub, faLinkedin, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import { Link } from "wouter";
 import imgGtLogoWhite from "/images/gt-logo-white.svg";
@@ -24,22 +28,13 @@ export default function Footer() {
               , advances research through professional software engineering practices.
             </p>
             <div className="flex space-x-4">
-              <SocialLink
-                href="https://twitter.com/georgiatech"
-                icon="fa-brands fa-x-twitter fa-lg"
-              />
+              <SocialLink href="https://twitter.com/georgiatech" icon={faXTwitter} />
               <SocialLink
                 href="https://linkedin.com/school/georgia-institute-of-technology/"
-                icon="fa-brands fa-linkedin-in fa-lg"
+                icon={faLinkedin}
               />
-              <SocialLink
-                href="https://github.com/gt-sse-center"
-                icon="fa-brands fa-github fa-lg"
-              />
-              <SocialLink
-                href="https://www.youtube.com/user/GeorgiaTech"
-                icon="fa-brands fa-youtube fa-lg"
-              />
+              <SocialLink href="https://github.com/gt-sse-center" icon={faGithub} />
+              <SocialLink href="https://www.youtube.com/user/GeorgiaTech" icon={faYoutube} />
             </div>
           </div>
 
@@ -153,7 +148,7 @@ function ExternalFooterLink({ href, children }: FooterLinkProps) {
       href: href,
       target: "_blank",
       rel: "noopener noreferrer",
-      children: children
+      children: children,
     },
     true
   );
@@ -161,7 +156,7 @@ function ExternalFooterLink({ href, children }: FooterLinkProps) {
 
 interface SocialLinkProps {
   href: string;
-  icon: string;
+  icon: IconDefinition;
 }
 
 function SocialLink({ href, icon }: SocialLinkProps) {
@@ -171,7 +166,7 @@ function SocialLink({ href, icon }: SocialLinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
-      <i className={icon}></i>
+      <FontAwesomeIcon icon={icon} size="xl" />
     </a>
   );
 }
