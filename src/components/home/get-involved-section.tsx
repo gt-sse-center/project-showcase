@@ -29,7 +29,7 @@ export default function GetInvolvedSection() {
               title="Training & Workshops"
               description="Participate in our software engineering workshops and training sessions."
               linkText="View Schedule"
-              linkUrl="/contact"
+              linkUrl="/events"
             />
 
             <InvolvementCard
@@ -46,7 +46,12 @@ export default function GetInvolvedSection() {
               size="lg"
               className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white"
               asChild>
-              <Link href="/contact">Contact Us</Link>
+              <a
+                href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact`}
+                target="_blank"
+                rel="noopener noreferrer">
+                Contact Us
+              </a>
             </Button>
           </div>
         </div>
