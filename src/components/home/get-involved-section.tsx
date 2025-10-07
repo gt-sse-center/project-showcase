@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { parseTextWithLinks } from "@/lib/utils";
 import { GitBranch, GraduationCap, Handshake } from "lucide-react";
 import React from "react";
-import { Link } from "wouter";
+import { parseTextWithLinks } from "../../lib/utils";
 
 export default function GetInvolvedSection() {
   return (
@@ -21,7 +20,7 @@ export default function GetInvolvedSection() {
               title="Research Partnerships"
               description="Collaborate with our team on your software-intensive research projects."
               linkText="Learn More"
-              linkUrl="/contact"
+              linkUrl={`${import.meta.env.CSSE_GT_PAGE}/contact`}
             />
 
             <InvolvementCard
@@ -29,7 +28,7 @@ export default function GetInvolvedSection() {
               title="Training & Workshops"
               description="Participate in our software engineering workshops and training sessions."
               linkText="View Schedule"
-              linkUrl="/events"
+              linkUrl={`${import.meta.env.CSSE_GT_PAGE}/events`}
             />
 
             <InvolvementCard
@@ -47,7 +46,7 @@ export default function GetInvolvedSection() {
               className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white"
               asChild>
               <a
-                href={`${import.meta.env.VITE_CSSE_GT_PAGE}/contact`}
+                href={`${import.meta.env.CSSE_GT_PAGE}/contact`}
                 target="_blank"
                 rel="noopener noreferrer">
                 Contact Us
@@ -78,11 +77,11 @@ function InvolvementCard({ icon, title, description, linkText, linkUrl }: Involv
       <p
         className="text-gray-100 mb-4"
         dangerouslySetInnerHTML={{ __html: parseTextWithLinks(description) }}></p>
-      <Link
+      <a
         href={linkUrl}
         className="text-[var(--gt-gold)] hover:text-[var(--gt-tech-light-gold)] font-medium inline-flex items-center">
         {linkText} →
-      </Link>
+      </a>
     </div>
   );
 }

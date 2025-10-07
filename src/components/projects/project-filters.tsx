@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown";
 import { Input } from "@/components/ui/input";
+import { type Project } from "@/lib/schema";
 import {
   getAllCategoriesFromProjects,
   getAllTechnologiesFromProjects,
-  getCategoryDisplayName
+  getCategoryDisplayName,
 } from "@/lib/utils";
-import { type Project } from "@/schema";
 import { ArrowUpDown, Check, Filter, Search, X } from "lucide-react";
 import { useState } from "react";
 
@@ -35,7 +35,7 @@ export default function ProjectFilters({
   setSelectedTechnologies,
   sortBy,
   setSortBy,
-  allProjects
+  allProjects,
 }: ProjectFiltersProps) {
   const [techFilterOpen, setTechFilterOpen] = useState(false);
   const [sortFilterOpen, setSortFilterOpen] = useState(false);
@@ -77,7 +77,7 @@ export default function ProjectFilters({
     dataStructures: "Data Structures",
     distribution: "Distribution",
     optimization: "Optimization",
-    other: "Other"
+    other: "Other",
   };
 
   return (
@@ -150,7 +150,7 @@ export default function ProjectFilters({
                 { value: "newest", label: "Newest First" },
                 { value: "oldest", label: "Oldest First" },
                 { value: "alphabetical", label: "A-Z" },
-                { value: "category", label: "By Category" }
+                { value: "category", label: "By Category" },
               ].map((option) => (
                 <div
                   key={option.value}

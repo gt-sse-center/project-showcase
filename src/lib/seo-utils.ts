@@ -1,4 +1,4 @@
-import { type Project } from "@/schema";
+import { type Project } from "@/lib/schema";
 
 // Generate structured data (JSON-LD) for projects
 export function generateProjectStructuredData(project: Project) {

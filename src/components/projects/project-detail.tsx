@@ -13,14 +13,12 @@ import { parseTextWithLinks } from "@/lib/utils";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { ArrowLeft, Building, Calendar, ExternalLink, Target, Users } from "lucide-react";
 import { useEffect } from "react";
-import { useLocation, useParams } from "wouter";
-import imgProjectHeaderBackground from "/images/project-header-bg.png";
 
-export default function ProjectDetail() {
-  const params = useParams();
-  const [, navigate] = useLocation();
-  const projectId = params.id ? parseInt(params.id, 10) : undefined;
+interface ProjectDetailProps {
+  id: number;
+}
 
+export default function ProjectDetail({ id }: ProjectDetailProps) {
   const getCategoryLabel = (category: string): string => {
     const categories: Record<string, string> = {
       "computational-science": "Computational Science",
@@ -43,7 +41,7 @@ export default function ProjectDetail() {
   };
 
   // Find the project in our static data by ID
-  const project = projectId ? projects.find((p) => p.id === projectId) : undefined;
+  const project = id ? projects.find((p) => p.id == id) : undefined;
 
   // SEO setup for project detail page
   useSEO(
@@ -100,9 +98,11 @@ export default function ProjectDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold text-[var(--gt-navy)] mb-4">Project Not Found</h2>
         <p className="text-gray-600 mb-6">{"We couldn't find the project you're looking for."}</p>
-        <Button onClick={() => navigate("/projects")}>
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-        </Button>
+        <a href="/projects">
+          <Button>
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
+          </Button>
+        </a>
       </div>
     );
   }
@@ -112,7 +112,7 @@ export default function ProjectDetail() {
       <PageHeader
         title={project.title}
         description={project.summary}
-        backgroundImage={project.imageUrl || imgProjectHeaderBackground}
+        backgroundImage={project.imageUrl || "/images/project-header-bg.png"}
       />
 
       <section className="py-12 bg-white">
@@ -352,12 +352,12 @@ export default function ProjectDetail() {
                 </>
               )}
 
-              <Button
+              {/* <Button
                 variant="outline"
                 className="border-[var(--gt-navy)] text-[var(--gt-navy)]"
                 onClick={() => navigate("/projects")}>
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

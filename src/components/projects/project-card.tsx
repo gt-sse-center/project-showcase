@@ -1,12 +1,7 @@
+import { Badge } from "@/components/ui/badge";
+import { type Project } from "@/lib/schema";
+import { extractTechnologiesFromDetailed, stripHtmlTags, truncate } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { Link } from "wouter";
-import { Badge } from "../../components/ui/badge";
-import {
-  extractTechnologiesFromDetailed,
-  stripHtmlTags,
-  truncate
-} from "../../lib/utils";
-import { type Project } from "../../schema";
 
 interface ProjectCardProps {
   project: Project;
@@ -42,7 +37,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <Link href={`/projects/${project.id}`}>
+    <a href={`/projects/${project.id}`}>
       <div
         className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full cursor-pointer"
         data-category={project.category.join(" ")}>
@@ -88,6 +83,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

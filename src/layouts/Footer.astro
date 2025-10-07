@@ -1,0 +1,105 @@
+---
+import { ExternalFooterLink, FooterLink, SocialLink } from "@/components/ui/footerLink";
+import SvgGtLogoWhite from "@/images/gt-logo-white.svg";
+import SvgGithub from "@/images/icons/mdi--github.svg";
+import SvgLinkedIn from "@/images/icons/mdi--linkedin.svg";
+import SvgYoutube from "@/images/icons/mdi--youtube.svg";
+import SvgXTwitter from "@/images/icons/ri--twitter-x-fill.svg";
+---
+
+<footer class="bg-[var(--gt-navy)] text-white pt-12 pb-6">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center mb-1">
+          <SvgGtLogoWhite class="h-15 mt-1" />
+          <div class="font-sans font-bold text-xl">CSSE</div>
+        </div>
+        <p class="text-gray-300 mb-4">
+          The Center for Scientific Software Engineering at Georgia Tech, part of the{" "}
+          <a
+            href="https://www.schmidtsciences.org/viss/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-100 hover:text-white">
+            Virtual Institute for Scientific Software (VISS)
+          </a>
+          , advances research through professional software engineering practices.
+        </p>
+        <div class="flex space-x-4">
+          <SocialLink href="https://twitter.com/georgiatech"><SvgXTwitter /></SocialLink>
+          <SocialLink href="https://linkedin.com/school/georgia-institute-of-technology/"
+            ><SvgLinkedIn /></SocialLink
+          >
+          <SocialLink href="https://github.com/gt-sse-center"><SvgGithub /></SocialLink>
+          <SocialLink href="https://www.youtube.com/user/GeorgiaTech"><SvgYoutube /></SocialLink>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-xl mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <FooterLink href="/">Home</FooterLink>
+          <FooterLink href="/projects">Projects</FooterLink>
+          <ExternalFooterLink href={`${import.meta.env.CSSE_GT_PAGE}/people/`}>
+            Team
+          </ExternalFooterLink>
+          <ExternalFooterLink href={`${import.meta.env.CSSE_GT_PAGE}/events/`}>
+            Events
+          </ExternalFooterLink>
+          <ExternalFooterLink href={`${import.meta.env.CSSE_GT_PAGE}/contact/`}>
+            Contact
+          </ExternalFooterLink>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-xl mb-4">Georgia Tech</h3>
+        <ul class="space-y-2">
+          <ExternalFooterLink href="https://www.gatech.edu">Main Website</ExternalFooterLink>
+          <ExternalFooterLink href="https://www.cc.gatech.edu">
+            College of Computing
+          </ExternalFooterLink>
+          <ExternalFooterLink href="https://www.cos.gatech.edu">
+            College of Sciences
+          </ExternalFooterLink>
+          <ExternalFooterLink href="https://www.coe.gatech.edu">
+            College of Engineering
+          </ExternalFooterLink>
+          <ExternalFooterLink href="https://www.research.gatech.edu">
+            Research Portal
+          </ExternalFooterLink>
+          <ExternalFooterLink href="https://www.library.gatech.edu">Library</ExternalFooterLink>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-gray-700 my-6" />
+
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="text-gray-400 text-sm mb-4 md:mb-0">
+        &copy; {new Date().getFullYear()} Center for Scientific Software Engineering, Georgia Institute
+        of Technology. All rights reserved.
+      </div>
+      <div class="flex space-x-4 text-sm">
+        <a
+          href="https://www.gatech.edu/privacy"
+          class="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+          Legal & Privacy Information
+        </a>
+        <span class="text-gray-600">|</span>
+        <a
+          href="https://www.gatech.edu/accountability"
+          class="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+          Accountability
+        </a>
+        <span class="text-gray-600">|</span>
+        <a
+          href="https://www.gatech.edu/accessibility"
+          class="text-gray-400 hover:text-white transition duration-150 ease-in-out">
+          Accessibility
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

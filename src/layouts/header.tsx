@@ -1,14 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "wouter";
-import imgGtLogoColor from "/images/gt-logo-color.svg";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+interface HeaderProps {
+  path: string;
+}
+
+export default function Header({ path }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   let closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +33,15 @@ export default function Header() {
       }`}>
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <img src={imgGtLogoColor} alt="Georgia Tech Logo" className="h-10 mr-3" />
+          <a href="/" className="flex items-center">
+            <img src="/images/gt-logo-color.svg" alt="Georgia Tech Logo" className="h-10 mr-3" />
             <div className="text-[var(--gt-navy)] font-sans font-bold text-xl">
               Center for Scientific Software Engineering
             </div>
-          </Link>
+          </a>
         </div>
 
-        <nav className="hidden md:flex space-x-6 items-center">{getMenuItems()}</nav>
+        <nav className="hidden md:flex space-x-6 items-center">{getMenuItems(path)}</nav>
 
         {/* Mobile Menu from here on.
             Only visible on smaller viewports
@@ -65,7 +72,7 @@ export default function Header() {
           </div>
 
           <nav className="flex flex-col items-center space-y-6 p-8">
-            {getMenuItems("text-xl", true, closeMobileMenu)}
+            {getMenuItems(path, "text-xl", true, closeMobileMenu)}
           </nav>
         </div>
       </nav>
@@ -83,7 +90,7 @@ interface NavLinkProps {
 
 function NavLink({ href, current, children, onClick, isMobile = false }: NavLinkProps) {
   return (
-    <Link
+    <a
       href={href}
       onClick={onClick}
       className={`${
@@ -93,7 +100,7 @@ function NavLink({ href, current, children, onClick, isMobile = false }: NavLink
       }
     ${isMobile ? "text-xl" : ""} transition duration-150 ease-in-out`}>
       {children}
-    </Link>
+    </a>
   );
 }
 
@@ -106,19 +113,19 @@ function NavLink({ href, current, children, onClick, isMobile = false }: NavLink
  * @returns Returns the <nav> menu items for desktop or mobile based on flags.
  */
 function getMenuItems(
+  path: string,
   classNames: string = "",
   isMobile: boolean = false,
   closeMobileMenu?: () => void
 ) {
-  const [location] = useLocation();
   return (
     <>
-      <NavLink href="/" current={location === "/"} onClick={closeMobileMenu} isMobile={isMobile}>
+      <NavLink href="/" current={path === "/"} onClick={closeMobileMenu} isMobile={isMobile}>
         Home
       </NavLink>
       <NavLink
         href="/projects"
-        current={location.startsWith("/projects")}
+        current={path.startsWith("/projects")}
         onClick={closeMobileMenu}
         isMobile={isMobile}>
         Projects

@@ -1,10 +1,6 @@
-import { Code, FlaskRound, GraduationCap } from 'lucide-react';
-import React from 'react';
-import imgAtlanta from '../../../public/images/atlanta.png';
-import imgBuilding from '../../../public/images/building.png';
-import imgCollaboration from '../../../public/images/collaboration.png';
-import imgTechTower from '../../../public/images/tech-tower.png';
-import { parseTextWithLinks } from '../../lib/utils';
+import { parseTextWithLinks } from "@/lib/utils";
+import { Code, FlaskRound, GraduationCap } from "lucide-react";
+import React from "react";
 
 export default function AboutSection() {
   return (
@@ -53,28 +49,28 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden">
               <img
-                src={imgBuilding}
+                src="/images/building.png"
                 alt="Georgia Tech College of Computing"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden mt-8">
               <img
-                src={imgCollaboration}
+                src="/images/collaboration.png"
                 alt="Software engineering collaboration"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden">
               <img
-                src={imgTechTower}
+                src="/images/tech-tower.png"
                 alt="Georgia Tech Tower with blossoms"
                 className="object-cover h-full w-full"
               />
             </div>
             <div className="rounded-lg shadow-lg h-48 w-full overflow-hidden mt-8">
               <img
-                src={imgAtlanta}
+                src="/images/atlanta.png"
                 alt="Atlanta tech skyline"
                 className="object-cover h-full w-full"
               />

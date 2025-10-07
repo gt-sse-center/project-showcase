@@ -1,8 +1,6 @@
-import { Link } from "wouter";
-import imgProjectHeaderBackground from "../../../public/images/project-header-bg.png";
-import { parseTextWithLinks } from "../../lib/utils";
-import { type Project } from "../../schema";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { type Project } from "@/lib/schema";
+import { parseTextWithLinks } from "@/lib/utils";
 
 interface FeaturedProjectSectionProps {
   project: Project;
@@ -15,7 +13,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
         <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden shadow-lg">
           <div className="md:w-1/2">
             <img
-              src={project.imageUrl || imgProjectHeaderBackground}
+              src={project.imageUrl || "/images/project-header-bg.png"}
               alt={`Featured project: ${project.title}`}
               className="w-full h-full object-cover"
             />
@@ -48,9 +46,9 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
               variant="link"
               className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] p-0 justify-start"
               asChild>
-              <Link href={`/projects/${project.id}`}>
+              <a href={`/projects/${project.id}`}>
                 Explore Project Details <i className="fas fa-arrow-right ml-2"></i>
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

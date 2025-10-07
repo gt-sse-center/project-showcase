@@ -1,0 +1,21 @@
+---
+import Base from "@/layouts/Base.astro";
+import ProjectDetail from "@/components/projects/project-detail";
+import { projects as allProjects } from "@/data/projects";
+
+export function getStaticPaths() {
+  return allProjects.map((project) => {
+    return {
+      params: {
+        id: project.id
+      }
+    };
+  });
+}
+
+const { id } = Astro.params;
+---
+
+<Base>
+  <ProjectDetail id={id} />
+</Base>

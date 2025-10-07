@@ -1,0 +1,66 @@
+---
+import Header from "./header";
+import Footer from "./Footer.astro";
+import Toaster from "@/components/ui/toaster";
+
+import "../css/index.css";
+
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://brand.gatech.edu/themes/custom/brand/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Center for Scientific Software Engineering</title>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ResearchOrganization",
+        "name": "Center for Scientific Software Engineering",
+        "alternateName": "CSSE",
+        "url": "https://ssec-showcase.gatech.edu/",
+        "logo": "https://ssec-showcase.gatech.edu/project-images/gt-logo-color.png",
+        "description": "The Center for Scientific Software Engineering (CSSE) at Georgia Tech develops cutting-edge software solutions for scientific research, specializing in AI/ML, computational science, and data visualization.",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "Georgia Institute of Technology",
+          "url": "https://gatech.edu/",
+          "logo": "https://ssec-showcase.gatech.edu/project-images/gt-logo-color.png"
+        },
+        "areaServed": "Global",
+        "knowsAbout": [
+          "Scientific Software Engineering",
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Computational Science",
+          "Data Visualization",
+          "Research Software Development"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "General Inquiry",
+          "url": "https://ssecenter.cc.gatech.edu/contact/"
+        },
+        "sameAs": ["https://github.com/gt-sse-center", "https://ssecenter.cc.gatech.edu/"]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <Header path={path} client:load />
+      <slot />
+      <Footer />
+    </div>
+    <Toaster />
+  </body>
+</html>
