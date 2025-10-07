@@ -6,7 +6,7 @@ Allow: /projects
 Allow: /projects/*
 
 # Sitemap
-Sitemap: https://ssec-showcase.gatech.edu/sitemap.xml
+Sitemap: https://gt-sse-center.github.io/project-showcase/sitemap-index.xml
 
 # Crawl-delay (optional, for politeness)
 Crawl-delay: 1
