@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SvgGtLogoColor from "@/images/gt-logo-color.svg";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -34,7 +35,7 @@ export default function Header({ path }: HeaderProps) {
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <img src="/images/gt-logo-color.svg" alt="Georgia Tech Logo" className="h-10 mr-3" />
+            <img src={SvgGtLogoColor.src} alt="Georgia Tech Logo" className="h-10 mr-3" />
             <div className="text-[var(--gt-navy)] font-sans font-bold text-xl">
               Center for Scientific Software Engineering
             </div>

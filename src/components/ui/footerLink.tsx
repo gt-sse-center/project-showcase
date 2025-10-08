@@ -47,6 +47,7 @@ function SocialLink({ href, children }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={href}
       className="text-gray-300 hover:text-white transition duration-150 ease-in-out">
       {children}
     </a>

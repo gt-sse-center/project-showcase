@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import PageHeader from "@/components/ui/page-header";
 import { projects } from "@/data/projects";
 import { useSEO } from "@/hooks/use-seo";
+import imgProjectHeader from "@/images/general/project-header-bg.png";
 import {
   generateBreadcrumbStructuredData,
   generateProjectKeywords,
@@ -112,7 +113,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
       <PageHeader
         title={project.title}
         description={project.summary}
-        backgroundImage={project.imageUrl || "/images/project-header-bg.png"}
+        backgroundImage={project.imageUrl || imgProjectHeader.src}
       />
 
       <section className="py-12 bg-white">

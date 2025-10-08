@@ -3,6 +3,7 @@ import ProjectGrid from "@/components/projects/project-grid";
 import PageHeader from "@/components/ui/page-header";
 import { projects as allProjects } from "@/data/projects";
 import { useSEO } from "@/hooks/use-seo";
+import imgProjectHeader from "@/images/general/project-header-bg.png";
 import { extractTechnologiesFromDetailed, sortProjects } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
@@ -18,7 +19,7 @@ export default function Projects() {
     ogTitle: "Research Projects | CSSE Project Showcase",
     ogDescription:
       "Browse all research projects from Georgia Tech's Center for Scientific Software Engineering.",
-    ogUrl: "https://ssec-showcase.gatech.edu/projects"
+    ogUrl: "https://ssec-showcase.gatech.edu/projects",
   });
 
   const [filteredProjects, setFilteredProjects] = useState(allProjects);
@@ -93,7 +94,7 @@ export default function Projects() {
       <PageHeader
         title="Projects"
         description="Explore our diverse portfolio of scientific software engineering projects across multiple disciplines"
-        backgroundImage="/images/project-header-bg.png"
+        backgroundImage={imgProjectHeader.src}
       />
 
       <section className="py-16 bg-white">
