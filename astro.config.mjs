@@ -13,5 +13,4 @@ export default defineConfig({
   vite: {
     plugins: [nodePolyfills(), tailwindcss()],
   },
-  outDir: "build",
 });
