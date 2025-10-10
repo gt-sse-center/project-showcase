@@ -7,7 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gt-sse-center.github.io/project-showcase",
+  site: "https://gt-sse-center.github.io",
+  base: "/project-showcase",
   integrations: [react(), sitemap()],
   vite: {
     plugins: [nodePolyfills(), tailwindcss()],
