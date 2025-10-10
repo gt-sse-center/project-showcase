@@ -8,9 +8,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "lint": "eslint .",
-    "preview": "astro preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
