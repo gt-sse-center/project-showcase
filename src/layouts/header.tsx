@@ -34,7 +34,7 @@ export default function Header({ path }: HeaderProps) {
       }`}>
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <a href={`${import.meta.env.BASE_URL}`} className="flex items-center">
             <img src={SvgGtLogoColor.src} alt="Georgia Tech Logo" className="h-10 mr-3" />
             <div className="text-[var(--gt-navy)] font-sans font-bold text-xl">
               Center for Scientific Software Engineering
@@ -121,12 +121,12 @@ function getMenuItems(
 ) {
   return (
     <>
-      <NavLink href="/" current={path === "/"} onClick={closeMobileMenu} isMobile={isMobile}>
+      <NavLink href={`${import.meta.env.BASE_URL}`} current={path === `${import.meta.env.BASE_URL}/`} onClick={closeMobileMenu} isMobile={isMobile}>
         Home
       </NavLink>
       <NavLink
-        href="/projects"
-        current={path.startsWith("/projects")}
+        href={`${import.meta.env.BASE_URL}/projects`}
+        current={path.startsWith(`${import.meta.env.BASE_URL}/projects`)}
         onClick={closeMobileMenu}
         isMobile={isMobile}>
         Projects

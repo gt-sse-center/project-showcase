@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       bioinformatics: "Bioinformatics",
       "electrical-engineering": "Electrical Engineering",
       chemistry: "Chemistry",
-      "human-computer-interaction": "Human-Computer Interaction"
+      "human-computer-interaction": "Human-Computer Interaction",
     };
 
     let labels = categories.map((category: string) => {
@@ -37,16 +37,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <a href={`/projects/${project.id}`}>
+    <a href={`${import.meta.env.BASE_URL}/projects/${project.id}`}>
       <div
         className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full cursor-pointer"
         data-category={project.category.join(" ")}>
         <div className="relative h-48 bg-gray-100">
           <img
-            src={
+            src={`${import.meta.env.BASE_URL}/${
               project.imageUrl ||
               "https://images.unsplash.com/photo-1581093196277-9f608732aac8?auto=format&fit=crop&q=80"
-            }
+            }`}
             alt={`Project: ${project.title}`}
             className="w-full h-full object-contain p-2"
           />

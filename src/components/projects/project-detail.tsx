@@ -8,7 +8,7 @@ import {
   generateBreadcrumbStructuredData,
   generateProjectKeywords,
   generateProjectMetaDescription,
-  generateProjectStructuredData
+  generateProjectStructuredData,
 } from "@/lib/seo-utils";
 import { parseTextWithLinks } from "@/lib/utils";
 import { SiGithub } from "@icons-pack/react-simple-icons";
@@ -35,7 +35,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
       "earth-atmospheric-sciences": "Earth & Atmospheric Sciences",
       bioinformatics: "Bioinformatics",
       "electrical-engineering": "Electrical Engineering",
-      chemistry: "Chemistry"
+      chemistry: "Chemistry",
     };
 
     return categories[category] || "Research";
@@ -58,7 +58,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
           ogUrl: `https://ssec-showcase.gatech.edu/projects/${project.id}`,
           twitterTitle: `${project.title} | CSSE`,
           twitterDescription: project.summary,
-          twitterImage: project.imageUrl
+          twitterImage: project.imageUrl,
         }
       : {}
   );
@@ -71,7 +71,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
     const breadcrumbStructuredData = generateBreadcrumbStructuredData([
       { name: "Home", url: "https://ssec-showcase.gatech.edu/" },
       { name: "Projects", url: "https://ssec-showcase.gatech.edu/projects" },
-      { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` }
+      { name: project.title, url: `https://ssec-showcase.gatech.edu/projects/${project.id}` },
     ]);
 
     const projectScript = document.createElement("script");
@@ -99,11 +99,11 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold text-[var(--gt-navy)] mb-4">Project Not Found</h2>
         <p className="text-gray-600 mb-6">{"We couldn't find the project you're looking for."}</p>
-        <a href="/projects">
-          <Button>
+        <Button asChild>
+          <a href={`${import.meta.env.BASE_URL}/projects`}>
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-          </Button>
-        </a>
+          </a>
+        </Button>
       </div>
     );
   }
@@ -255,7 +255,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
               <h2 className="text-[var(--gt-navy)]">About this Project</h2>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: parseTextWithLinks(project.description)
+                  __html: parseTextWithLinks(project.description),
                 }}></p>
 
               {/* Goals section between About this Project and Key Achievements */}
@@ -267,7 +267,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
                       <li
                         key={index}
                         dangerouslySetInnerHTML={{
-                          __html: parseTextWithLinks(goal)
+                          __html: parseTextWithLinks(goal),
                         }}></li>
                     ))}
                   </ul>
@@ -280,7 +280,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
                   <h3 className="text-[var(--gt-navy)]">Software Solution</h3>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: parseTextWithLinks(project.softwareSolution)
+                      __html: parseTextWithLinks(project.softwareSolution),
                     }}></p>
                 </>
               )}
@@ -293,7 +293,7 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
                       <li
                         key={index}
                         dangerouslySetInnerHTML={{
-                          __html: parseTextWithLinks(achievement)
+                          __html: parseTextWithLinks(achievement),
                         }}></li>
                     ))}
                   </ul>
@@ -353,12 +353,14 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
                 </>
               )}
 
-              {/* <Button
+              <Button
                 variant="outline"
                 className="border-[var(--gt-navy)] text-[var(--gt-navy)]"
-                onClick={() => navigate("/projects")}>
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-              </Button> */}
+                asChild>
+                <a href={`${import.meta.env.BASE_URL}/projects`}>
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
+                </a>
+              </Button>
             </div>
           </div>
         </div>

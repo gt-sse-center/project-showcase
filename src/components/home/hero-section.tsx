@@ -45,7 +45,7 @@ export default function HeroSection() {
               size="lg"
               className="bg-[var(--gt-gold)] hover:bg-[var(--gt-tech-light-gold)] hover:text-[var(--gt-navy)] text-white transition-colors text-lg px-6 py-6"
               asChild>
-              <a href="/projects">Explore Projects</a>
+              <a href={`${import.meta.env.BASE_URL}/projects`}>Explore Projects</a>
             </Button>
           </div>
         </div>

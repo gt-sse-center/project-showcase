@@ -5,16 +5,16 @@ import ProjectCard from "./project-card";
 
 interface ProjectGridProps {
   projects: Project[];
+  viewAllLink: string;
   isLoading?: boolean;
   showViewAll?: boolean;
-  viewAllLink?: string;
 }
 
 export default function ProjectGrid({
   projects,
+  viewAllLink,
   isLoading = false,
   showViewAll = false,
-  viewAllLink = "/projects"
 }: ProjectGridProps) {
   if (isLoading) {
     return (

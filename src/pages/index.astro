@@ -35,7 +35,7 @@ const featuredProjects = projects.filter((project) => project.featured);
         <ProjectGrid
           projects={allProjects.slice(0, 6)}
           showViewAll={true}
-          viewAllLink="/projects"
+          viewAllLink={`${import.meta.env.BASE_URL}/projects`}
         />
       </div>
     </section>

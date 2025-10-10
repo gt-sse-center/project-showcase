@@ -14,7 +14,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
         <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden shadow-lg">
           <div className="md:w-1/2">
             <img
-              src={project.imageUrl || imgProjectHeader.src}
+              src={`${import.meta.env.BASE_URL}/${project.imageUrl || imgProjectHeader.src}`}
               alt={`Featured project: ${project.title}`}
               className="w-full h-full object-cover"
             />
@@ -47,7 +47,7 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
               variant="link"
               className="text-[var(--gt-navy)] hover:text-[var(--gt-gold)] p-0 justify-start"
               asChild>
-              <a href={`/projects/${project.id}`}>
+              <a href={`${import.meta.env.BASE_URL}/projects/${project.id}`}>
                 Explore Project Details <i className="fas fa-arrow-right ml-2"></i>
               </a>
             </Button>

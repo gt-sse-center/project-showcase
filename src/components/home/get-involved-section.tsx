@@ -36,7 +36,7 @@ export default function GetInvolvedSection() {
               title="Open Source"
               description="Contribute to our open source scientific software projects."
               linkText="View Projects"
-              linkUrl="/projects"
+              linkUrl={`${import.meta.env.BASE_URL}/projects`}
             />
           </div>
 
