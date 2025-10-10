@@ -121,7 +121,11 @@ function getMenuItems(
 ) {
   return (
     <>
-      <NavLink href={`${import.meta.env.BASE_URL}`} current={path === `${import.meta.env.BASE_URL}/`} onClick={closeMobileMenu} isMobile={isMobile}>
+      <NavLink
+        href={`${import.meta.env.BASE_URL}`}
+        current={path === `${import.meta.env.BASE_URL}/` || path === `${import.meta.env.BASE_URL}`}
+        onClick={closeMobileMenu}
+        isMobile={isMobile}>
         Home
       </NavLink>
       <NavLink
