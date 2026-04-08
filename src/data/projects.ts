@@ -1,4 +1,6 @@
 import { type Project } from "@/schema";
+
+import imgInatInq from '/project-images/inat-img.png';
 import imgPatientX from '/project-images/patientx-screenshot.png';
 import imgAutoRA from '/project-images/autora-overview.png';
 import imgAutoRAScreenshot from '/project-images/autora-screenshot.png';
@@ -24,6 +26,83 @@ import imgCoauthorDemo from '/project-images/coauthor-demo.gif';
 
 // Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
+  {
+    id: 15,
+    title: "iNat x INQUIRE",
+    description:
+      "Advances in multi-modal machine learning, especially vision-language models, have the potential to transform ecological research and drive new scientific discoveries by enabling practitioners to efficiently search and process large-scale repositories of natural world images. In particular, the ability to search a large, living database of natural observations using natural language-based queries, combined with spatial and taxonomy-based filtering, would unlock significant value to the scientific and naturalist communities. In this partnership, we explored what it would take to integrate natural language search functionality into the <a href='https://www.inaturalist.org/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>iNaturalist</a> platform. iNaturalist is a non-profit organization that hosts the largest living dataset of natural world observations (450M observations in August 2025), which is curated by a community of millions of users. Previous collaboration between Dr. Sara Beery and iNaturalist led to the development of <a href='http://inquire-demo.csail.mit.edu/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>INQUIRE search</a>, which allows users to search over a static subset of the iNaturalist dataset using natural language queries. Early usage of INQUIRE search by ecologists has demonstrated the scientific value of introducing new modalities of data collection, which unlocks new approaches to answering scientific questions. Throughout the course of this partnership, we developed a large-scale data ingestion pipeline and search engine, ready for integration into the iNaturalist platform to bring text-based search capabilities to over 8M active users. In addition, we provide a detailed cost breakdown and benchmarking tool to help stakeholders find the most cost-effective integration strategy.",
+    summary:
+      "Enterprise-ready natural language image search solution for iNaturalist's 450M+ image dataset with scalable ETL pipeline and benchmarking framework",
+    imageUrl: imgInatInq,
+    category: ["ai-ml", "environmental-science"],
+    githubUrls: ["https://github.com/gt-sse-center/iNatInq/"],
+    demoUrl: [],
+    featured: false,
+    achievements: [
+      "Built an ETL pipeline to embed 4.8M images and load them into a vector database within 20 hours. This pipeline is designed to scale to the full iNaturalist dataset (450M images), with an expected runtime of ~1 day using GPUs for embedding computation",
+      "Developed a scalable, production-ready search engine supporting natural language queries over 4.8M images, achieving sub-200 ms latency",
+      "Implemented a configuration-driven system architecture that decouples infrastructure dependencies, enabling flexible deployment across hybrid cloud and local environments",
+      "Created a benchmarking framework to evaluate embedding models (e.g., <a href='https://openai.com/research/clip' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>CLIP</a>, <a href='https://arxiv.org/abs/2303.15343' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>SigLip</a>) and vector database backends using key search metrics, including <a href='https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Mean_average_precision' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>mAP</a>, <a href='https://en.wikipedia.org/wiki/Discounted_cumulative_gain' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDCG</a>, <a href='https://en.wikipedia.org/wiki/Mean_reciprocal_rank' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>MRR</a>, <a href='https://en.wikipedia.org/wiki/Precision_and_recall' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>precision</a>, and <a href='https://en.wikipedia.org/wiki/Precision_and_recall' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>recall</a>",
+      "Built CI/CD pipelines to automate unit and integration testing, as well as deployment of the search service to Azure",
+      "Delivered a detailed report analyzing cost and performance trade-offs across models and hosting strategies, covering datasets up to 4.8M images and projected estimates for 450M+ images.",
+      "Provided iNaturalist with tiered cost estimates to clarify how different budget levels impact system capabilities and scalability",
+    ],
+    goals: [
+      "To provide iNaturalist with an enterprise ready natural language image search solution that can be deployed to all 8M active iNaturalist users over their full 450M image dataset",
+      "To allow stakeholders to better understand the cost-performance trade-offs associated with the various options for hosting a natural language-based search service on iNaturalist so more informed decisions can be made about cost-effective ways to introduce such functionality into iNaturalist.",
+      "To build out a production-ready ETL pipeline capable of reliably processing the full 450M image iNaturalist dataset",
+    ],
+    softwareSolution:
+      "During the engagement, we developed iNatInq, a software tool that enables users to search large collections of images using natural language descriptions. For example, a user can type \"bird perched on a branch\" or \"tiger crossing a busy city street\", and the system returns the most visually relevant results, ranked by similarity. To support integration with iNaturalist's existing ecosystem, the tool includes a scalable ingestion pipeline that converts existing image data into a searchable format, a production-grade search API for retrieving results, and a configuration-driven architecture that allows teams to switch between underlying technologies and models without code changes, making it easy to benchmark alternatives and select the best approach based on metrics such as <a href='https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Mean_average_precision' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>mAP</a>, <a href='https://en.wikipedia.org/wiki/Discounted_cumulative_gain' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDCG</a>, <a href='https://en.wikipedia.org/wiki/Mean_reciprocal_rank' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>MRR</a>, <a href='https://en.wikipedia.org/wiki/Precision_and_recall' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>precision</a> and <a href='https://en.wikipedia.org/wiki/Precision_and_recall' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>recall</a>. The system is an enterprise-grade, fault-tolerant solution designed to handle the scale of iNaturalist's full dataset (450M+ images). To support this, the software uses an architecture that enables horizontal scaling in a cloud environment. For resilience, it incorporates <a href='https://en.wikipedia.org/wiki/Dead_letter_queue' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>dead-letter queues</a> to capture and retry failed processing jobs, as well as <a href='https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>circuit breaker patterns</a> to prevent cascading service failures, combined with retries using backoff, structured error coding, and built-in metric tracking for visibility into system health and performance. Additionally, we implement <a href='https://en.wikipedia.org/wiki/Change_data_capture' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Change Data Capture (CDC)</a> to ensure the search service remains up to date with changes to iNaturalist image data. The codebase is supported by a comprehensive testing suite, including unit, integration, and end-to-end tests, and CI/CD pipelines that automate test execution and deploy the search service directly to the cloud.",
+    impact: [
+      "Equipped iNaturalist stakeholders with a detailed cost breakdown, enabling informed planning for hosting the service at full dataset scale and integrating it into the production codebase",
+      "Enabled a high-performance search experience that returns relevant results across 4.8M images with sub-200 ms latency",
+      "Delivered benchmarking insights on quantization methods, helping stakeholders understand trade-offs between model performance and cost. Further research is set to follow on the impact of quantization in vision-language models",
+      "Delivered a production-grade benchmarking framework that enables rapid swapping and evaluation of embedding models and vector backends, allowing researchers to efficiently measure and optimize natural language search performance on the <a href='https://github.com/inquire-benchmark/INQUIRE/tree/main/data' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>INQUIRE dataset</a>.",
+      "Enabled an automated, self-healing ingestion and search pipeline at scale, unlocking new opportunities for large-scale data collection and empowering teams to explore and answer previously infeasible research questions.",
+    ],
+    detailedTechnologies: {
+      cloud: [
+        { name: "Azure", url: "https://azure.microsoft.com/" },
+      ],
+      vectorDatabases: [
+        { name: "Qdrant", url: "https://qdrant.tech/" },
+        { name: "Weaviate", url: "https://weaviate.io/" },
+      ],
+      dataProcessing: [
+        { name: "Ray", url: "https://www.ray.io/" },
+        { name: "Databricks", url: "https://www.databricks.com/" },
+      ],
+      backend: [
+        { name: "FastAPI", url: "https://fastapi.tiangolo.com/" },
+      ],
+      infrastructure: [
+        { name: "MinIO", url: "https://min.io/" },
+        { name: "Docker", url: "https://www.docker.com/" },
+        { name: "Redis", url: "https://redis.io/" },
+        { name: "Prometheus", url: "https://prometheus.io/" },
+      ],
+    },
+    projectDetails: {
+      startDate: "September 2025",
+      endDate: "April 2026",
+      source: "VISS",
+      scientificDomain: "Environmental Science",
+      partners: [
+        { name: "Sara Beery (Principal Investigator)", profileUrl: "https://www.linkedin.com/in/sara-beery-1ba89166/" },
+        { name: "iNaturalist Team", profileUrl: "https://www.inaturalist.org/pages/team" },
+      ],
+      softwareEngineers: [
+        { name: "Alex Djalali", profileUrl: "https://www.linkedin.com/in/alex-djalali-272502273/" },
+        { name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" },
+        { name: "Varun Narayan", profileUrl: "https://www.linkedin.com/in/varun-n/" },
+        { name: "Austin Weeks", profileUrl: "https://www.linkedin.com/in/austinweeks/" },
+        { name: "Jeremy Garcia", profileUrl: "https://www.linkedin.com/in/jeremygarcia23/" },
+        { name: "Varun Agarwal", profileUrl: "" },
+      ],
+    },
+    screenshots: [],
+  },
   {
     id: 1,
     title: "PatientX.AI",
@@ -86,11 +165,11 @@ export const projects: Project[] = [
       source: "VISS",
       scientificDomain: "Neuroscience",
       partners: [
-        { name: "Coco Newton (Principal Investigator)", profileUrl: "" },
-        { name: "Jiwon Jung", profileUrl: "" },
+        { name: "Coco Newton (Principal Investigator)", profileUrl: "https://www.linkedin.com/in/coconewton/" },
+        { name: "Jiwon Jung", profileUrl: "https://www.linkedin.com/in/drjiwonjung/" },
       ],
       softwareEngineers: [
-        { name: "Varun Narayan", profileUrl: "" },
+        { name: "Varun Narayan", profileUrl: "https://www.linkedin.com/in/varun-n/" },
         {
           name: "Robin Fiévet",
           profileUrl: "https://www.linkedin.com/in/robin-fievet-6189a431/",
@@ -135,8 +214,8 @@ export const projects: Project[] = [
         { name: "Younes Strittmatter", profileUrl: "" },
       ],
       softwareEngineers: [
-        { name: "Kate Rachwal", profileUrl: "" },
-        { name: "Varun Narayan", profileUrl: "" },
+        { name: "Kate Rachwal", profileUrl: "https://www.linkedin.com/in/kasiarachwal/" },
+        { name: "Varun Narayan", profileUrl: "https://www.linkedin.com/in/varun-n/" },
       ],
     },
     screenshots: [
@@ -293,7 +372,7 @@ export const projects: Project[] = [
         { name: "Ido Kaminer", profileUrl: "" },
         { name: "Michael Shalyt", profileUrl: "" },
       ],
-      softwareEngineers: [{ name: "Kate Rachwal", profileUrl: "" }],
+      softwareEngineers: [{ name: "Kate Rachwal", profileUrl: "https://www.linkedin.com/in/kasiarachwal/" }],
     },
     goals: [
       "Increase the visibility of The Ramanujan Machine by creating an experience where contributing mathematicians can submit conjectures for potential exploration",
@@ -371,7 +450,7 @@ export const projects: Project[] = [
       source: "VISS",
       scientificDomain: "Material Science / Computational Chemistry",
       partners: [{ name: "Chuck Witt", profileUrl: "" }],
-      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "" }],
+      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" }],
     },
     goals: [
       "Developing a Kokkos Accelerated Machine Learned Interatomic Potential software library, named Sprint-Kokkos, incorporating Kokkos support for heterogeneous CPU-GPU simulations as well as the researcher's implementation of MACE ('sprint C++') to further accelerate simulations",
@@ -458,7 +537,7 @@ export const projects: Project[] = [
         { name: "Gabi Heller", profileUrl: "" },
         { name: "Thomas Lohr", profileUrl: "" },
       ],
-      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "" }],
+      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" }],
     },
     goals: [
       "Address performance bottlenecks in PLUMED software plugin for GROMACS-based simulations",
@@ -537,7 +616,7 @@ export const projects: Project[] = [
       source: "VISS",
       scientificDomain: "Glaciology, Thermal Modeling",
       partners: [{ name: "Sasha Montelli", profileUrl: "" }],
-      softwareEngineers: [{ name: "Dave Brownell", profileUrl: "" }],
+      softwareEngineers: [{ name: "Dave Brownell", profileUrl: "https://www.linkedin.com/in/david-brownell-b87921/" }],
     },
     goals: [
       "Increase the code quality and performance of the existing model",
@@ -708,8 +787,8 @@ export const projects: Project[] = [
         { name: "Benjamin Donnot", profileUrl: "" },
       ],
       softwareEngineers: [
-        { name: "Ketan Bhardwaj", profileUrl: "" },
-        { name: "Lori A. Burns", profileUrl: "" },
+        { name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" },
+        { name: "Lori A. Burns", profileUrl: "https://www.linkedin.com/in/lori-burns-02766740/" },
       ],
     },
     goals: [
@@ -1056,7 +1135,7 @@ export const projects: Project[] = [
         { name: "Evren Soylu", profileUrl: "" },
         { name: "Elisa Arnone", profileUrl: "" },
       ],
-      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "" }],
+      softwareEngineers: [{ name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" }],
     },
     goals: [
       "Deliver performance improvements to GT-tRIBS landslide simulation",
