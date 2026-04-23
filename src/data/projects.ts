@@ -22,6 +22,10 @@ import imgXtribsScreenshot from '/project-images/xtribs-screenshot.png';
 import imgLirec from '/project-images/lirec.png';
 import imgLirecScreenshot from '/project-images/lirec-screenshot.png';
 import imgCoauthorDemo from '/project-images/coauthor-demo.gif';
+import imgIrisThumbnail from '/project-images/IRIS_thumbnail.jpeg';
+import imgIrisBeforeAfter from '/project-images/before_after_ml.jpeg';
+import imgIrisLanding from '/project-images/IRIS_landing.jpeg';
+
 
 
 // Projects data extracted from the Georgia Tech CSSE website
@@ -1263,6 +1267,120 @@ export const projects: Project[] = [
     references: [
       'H. R. P. Ferguson, D. H. Bailey, and S. Arno, "Analysis of PSLQ, an integer relation finding algorithm," Mathematics of Computation, vol. 68, no. 225, pp. 351–369, 1999.',
       'D. P. Anderson, "BOINC: A System for Public-Resource Computing and Storage," in Proceedings of the 5th IEEE/ACM International Workshop on Grid Computing, 2004.',
+    ],
+  },
+  {
+    id: 16,
+    title: "IRIS: Intelligently Reinforced Image Segmentation",
+    description:
+      "IRIS (Intelligently Reinforced Image Segmentation) is an open-source, web-based platform for manual and AI-assisted annotation of satellite imagery, designed to accelerate the creation of machine learning training datasets for Earth Observation. Researchers working with multi-spectral satellite data often rely on fragmented tooling or manual workflows that slow down annotation and limit collaboration. IRIS provides a unified browser-based environment for pixel-level annotation with AI assistance (gradient boosted decision trees), multi-user collaboration with automatic mask merging, configurable multi-spectral views, and a modern administrative interface.\n\nThe IRIS project (<a href='https://github.com/ESA-PhiLab/iris' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>ESA-PhiLab, v0.5</a>) was a functional but aging Flask and vanilla JavaScript application with no CI pipeline, no automated tests, and a legacy command-line interface. Over 276 commits across two repositories and six months of work (October 2025 – March 2026), the team modernized the entire stack, making IRIS maintainable, testable, and extensible, while preserving full backward compatibility with existing project data and workflows. A standalone marketing landing page was also built to give the project a public-facing presence for potential users and stakeholders.",
+    summary:
+      "Open-source web platform for AI-assisted satellite image annotation, modernized with comprehensive testing, CI/CD, and a redesigned interface",
+    imageUrl: imgIrisThumbnail,
+    category: ["ai-ml", "earth-atmospheric-sciences"],
+    githubUrls: ["https://github.com/gt-sse-center/iris"],
+    demoUrl: [],
+    featured: false,
+    achievements: [
+      "Delivered a fully modernized platform with 276 commits across two repositories over 6 months, touching 274 files with ~55,100 lines added, without breaking backward compatibility with existing project data",
+      "Built a comprehensive test suite from scratch: 28 backend pytest files (~5,100 lines), 67 frontend Vitest unit test files (~8,500 lines), and 3 Cypress E2E test files (~470 lines), totaling ~14,100 lines across 98 test files",
+      "Introduced CI/CD automation and pre-commit hooks where none existed, with 6 GitHub Actions workflow and config files",
+      "Shipped over 10 new user-facing features improving the annotation, export, collaboration, and administration workflows",
+      "Identified and patched a privilege escalation vulnerability with dedicated regression tests; hardened user configuration validation and band expression evaluation",
+      "Formalized the development process with PR templates and automated code quality enforcement",
+      "Delivered a standalone marketing landing page for project visibility and outreach",
+    ],
+    goals: [
+      "Modernize the legacy codebase into a maintainable, modern platform that future contributors can confidently extend without risk of regressions",
+      "Introduce comprehensive automated testing and continuous integration where none existed, covering backend logic, frontend components, and end-to-end user workflows",
+      "Improve the annotation workflow with new user-facing features such as password management, bulk data export, collaborative discussion tools, and enhanced drawing and visualization controls",
+      "Harden the application's security posture by identifying and patching vulnerabilities, adding input validation, and integrating automated security scanning into the development pipeline",
+      "Build a polished landing page to showcase IRIS capabilities to the Earth Observation research community",
+    ],
+    softwareSolution:
+      "The admin and segmentation interfaces were incrementally rewritten as modern single-page applications with TypeScript, React-based state management, and client-side routing, while a legacy bridge maintained backward compatibility with the existing canvas-based annotation system throughout the transition. The admin interface gained a complete in-browser project configuration editor with real-time validation and backup/rollback safety. The segmentation interface was rebuilt with a new page layout, redesigned toolbar and status bar, all application modals, a tabbed preferences system, custom icons, and a theme/colorscheme system with a modern dark visual redesign. New features were shipped including a password reset flow with admin approval, bulk and per-user GeoTIFF mask export, a per-image chat panel, configurable paintbrush tools, contrast/brightness controls, a searchable image navigator, side-by-side viewer comparison, improved undo/redo, and a full React-based viewport manager replacing the legacy viewer.\n\nThe build system was migrated to modern Python packaging with <a href='https://docs.astral.sh/uv/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>UV</a> and a <a href='https://vite.dev/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Vite</a> frontend pipeline with TypeScript strict mode and multi-entry bundling. The CLI was rewritten with <a href='https://typer.tiangolo.com/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Typer</a> for type-safe commands and CI-friendly non-interactive operation. A comprehensive GitHub Actions CI/CD pipeline was introduced with linting, security scanning, and pre-commit hooks. A standalone marketing website was built from scratch with React 19, Tailwind CSS, and Framer Motion.",
+    impact: [
+      "Enabled the project to be maintained and extended by future contributors through modern tooling, comprehensive tests, and CI/CD, significantly reducing the risk of regressions",
+      "Improved annotation workflow efficiency for Earth Observation researchers with searchable navigation, configurable brushes, AI preferences, bulk export, and a redesigned interface",
+      "Strengthened the application's security posture with automated scanning (Bandit, TruffleHog), privilege escalation fixes, user config validation hardening, and band expression forbidden token checking",
+      "Gave the project a public-facing presence through the IRIS Landing page, supporting outreach to potential users and stakeholders in the Earth Observation community",
+    ],
+    detailedTechnologies: {
+      backend: [
+        { name: "Python", url: "https://www.python.org/" },
+        { name: "Flask", url: "https://flask.palletsprojects.com/" },
+        { name: "rasterio", url: "https://rasterio.readthedocs.io/" },
+        { name: "scikit-image", url: "https://scikit-image.org/" },
+        { name: "LightGBM", url: "https://lightgbm.readthedocs.io/" },
+      ],
+      frontend: [
+        { name: "React", url: "https://react.dev/" },
+        { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+        { name: "Zustand", url: "https://zustand.docs.pmnd.rs/" },
+        { name: "Vite", url: "https://vite.dev/" },
+      ],
+      landingPage: [
+        { name: "React 19", url: "https://react.dev/" },
+        { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+        { name: "Framer Motion", url: "https://motion.dev/" },
+      ],
+      testing: [
+        { name: "pytest", url: "https://docs.pytest.org/" },
+        { name: "Vitest", url: "https://vitest.dev/" },
+        { name: "Cypress", url: "https://www.cypress.io/" },
+      ],
+      cicd: [
+        { name: "GitHub Actions", url: "https://github.com/features/actions" },
+        { name: "Bandit", url: "https://bandit.readthedocs.io/" },
+      ],
+      cli: [
+        { name: "Typer", url: "https://typer.tiangolo.com/" },
+      ],
+      packageManagement: [
+        { name: "UV", url: "https://docs.astral.sh/uv/" },
+      ],
+    },
+    projectDetails: {
+      startDate: "October 2025",
+      endDate: "March 2026",
+      source: "VISS",
+      scientificDomain: "Earth Observation / Satellite Image Segmentation",
+      partners: [
+        { name: "Jacqueline Campbell (Principal Investigator)", profileUrl: "" },
+        { name: "Alistair Francis", profileUrl: "" },
+        { name: "Mikolaj Czerkawski", profileUrl: "" },
+      ],
+      softwareEngineers: [
+        { name: "Robin Fiévet", profileUrl: "https://www.linkedin.com/in/robin-fievet-6189a431/" },
+        { name: "Lori A. Burns", profileUrl: "" },
+      ],
+    },
+    screenshots: [
+      {
+        url: imgIrisBeforeAfter,
+        alt: "IRIS before and after ML-assisted segmentation",
+        caption: "Before and after comparison of ML-assisted satellite image segmentation in IRIS",
+        description:
+          "Side-by-side comparison showing the satellite image annotation workflow in IRIS, demonstrating the effectiveness of the AI-assisted segmentation using gradient boosted decision trees to accelerate the creation of training datasets for Earth Observation.",
+      },
+      {
+        url: imgIrisLanding,
+        alt: "IRIS marketing landing page",
+        caption: "Standalone marketing landing page built for the IRIS project",
+        description:
+          "The IRIS landing page built with React 19, Tailwind CSS, and Framer Motion, featuring a dark space-themed design showcasing the platform's features and workflow for potential users and stakeholders in the Earth Observation community.",
+      },
+    ],
+    metrics: [
+      { label: "Total commits", value: "276 (across 2 repositories)" },
+      { label: "Files changed", value: "274" },
+      { label: "Lines added", value: "~40,000 (excl. lock files)" },
+      { label: "TypeScript / TSX", value: "+26,470 lines (151 files)" },
+      { label: "Python", value: "+8,080 lines (51 files)" },
+      { label: "Frontend code", value: "+33,600 lines (161 files)" },
+      { label: "Backend & infrastructure", value: "+11,000 lines (76 files)" },
+      { label: "Test suite (from scratch)", value: "~14,100 lines (98 files)" },
+      { label: "CI/CD workflows", value: "6 GitHub Actions configs" },
     ],
   },
 ];
