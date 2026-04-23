@@ -1361,7 +1361,7 @@ export const projects: Project[] = [
         alt: "IRIS before and after ML-assisted segmentation",
         caption: "Before and after comparison of ML-assisted satellite image segmentation in IRIS",
         description:
-          "Side-by-side comparison showing the satellite image annotation workflow in IRIS, demonstrating the effectiveness of the AI-assisted segmentation using gradient boosted decision trees to accelerate the creation of training datasets for Earth Observation.",
+          "Before and after comparison showing the satellite image annotation workflow in IRIS, demonstrating the effectiveness of the AI-assisted segmentation using gradient boosted decision trees to accelerate the creation of training datasets for Earth Observation.",
       },
       {
         url: imgIrisLanding,
