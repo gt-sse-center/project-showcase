@@ -41,6 +41,26 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
         </div>
       )}
 
+      {/* Metrics */}
+      {project.metrics && project.metrics.length > 0 && (
+        <div className="bg-linear-to-r from-gray-50 to-blue-50 p-6 rounded-lg border border-gray-200">
+          <div className="text-[var(--gt-navy)] text-xl pb-2 font-semibold mb-4 flex items-center">
+            <span className="w-2 h-6 bg-[var(--gt-gold)] rounded-full mr-3"></span>
+            Metrics
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {project.metrics.map((metric, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-4 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
+                <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">{metric.label}</p>
+                <p className="text-lg font-semibold text-[var(--gt-navy)]">{metric.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Technologies */}
       {project.detailedTechnologies && (
         <div className="bg-linear-to-r from-gray-50 to-blue-50 pb-6 px-6 rounded-lg border border-gray-200">

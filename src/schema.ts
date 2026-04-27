@@ -32,6 +32,11 @@ export interface Technology {
   url: string;
 }
 
+export interface Metric {
+  label: string;
+  value: string;
+}
+
 // Application-level Project interface - projects are stored as static data
 export interface Project {
   id: number;
@@ -54,6 +59,7 @@ export interface Project {
   projectDetails: ProjectDetails;
   screenshots: Screenshot[];
   references?: string[] | null;
+  metrics?: Metric[] | null;
 }
 
 /** —————————————————————————————————————————————
@@ -132,6 +138,7 @@ export const ProjectSchema = z.object({
   projectDetails: ProjectDetailsSchema,
   screenshots: z.array(ScreenshotSchema),
   references: z.array(z.string()).nullable().optional(),
+  metrics: z.array(z.object({ label: z.string(), value: z.string() })).nullable().optional(),
 });
 
 export type ProjectFromSchema = z.infer<typeof ProjectSchema>;
