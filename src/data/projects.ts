@@ -23,7 +23,8 @@ import imgLirec from '/project-images/lirec.png';
 import imgLirecScreenshot from '/project-images/lirec-screenshot.png';
 import imgCoauthorDemo from '/project-images/coauthor-demo.gif';
 import imgIrisThumbnail from '/project-images/IRIS_thumbnail.jpeg';
-import imgIrisBeforeAfter from '/project-images/before_after_ml.jpeg';
+import imgIrisNoMask from '/project-images/no-mask.jpeg';
+import imgIrisGenMask from '/project-images/gen_mask.jpeg';
 import imgIrisLanding from '/project-images/IRIS_landing.jpeg';
 
 
@@ -1357,11 +1358,18 @@ export const projects: Project[] = [
     },
     screenshots: [
       {
-        url: imgIrisBeforeAfter,
-        alt: "IRIS before and after ML-assisted segmentation",
-        caption: "Before and after comparison of ML-assisted satellite image segmentation in IRIS",
+        url: imgIrisNoMask,
+        alt: "Satellite image in IRIS without masking applied",
+        caption: "Without masking — raw satellite imagery as seen in the IRIS annotation interface",
         description:
-          "Before and after comparison showing the satellite image annotation workflow in IRIS, demonstrating the effectiveness of the AI-assisted segmentation using gradient boosted decision trees to accelerate the creation of training datasets for Earth Observation.",
+          "The raw satellite image displayed in the IRIS platform before any segmentation mask has been applied, showing the unprocessed multi-spectral view that researchers start with when beginning an annotation session.",
+      },
+      {
+        url: imgIrisGenMask,
+        alt: "Satellite image in IRIS with AI-generated segmentation mask applied",
+        caption: "With masking — AI-generated segmentation overlay produced by IRIS",
+        description:
+          "The same satellite image after the AI-assisted segmentation has been applied using gradient boosted decision trees, showing the generated mask overlay that accelerates the creation of training datasets for Earth Observation research.",
       },
       {
         url: imgIrisLanding,
