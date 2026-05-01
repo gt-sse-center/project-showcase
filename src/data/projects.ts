@@ -26,6 +26,10 @@ import imgIrisThumbnail from '/project-images/IRIS_thumbnail.jpeg';
 import imgIrisNoMask from '/project-images/no-mask.jpeg';
 import imgIrisGenMask from '/project-images/gen_mask.jpeg';
 import imgIrisLanding from '/project-images/IRIS_landing.jpeg';
+import imgGalileoThumbnail from '/project-images/galileo-thumbnail.png';
+import imgGalileo1 from '/project-images/galileo_1.jpeg';
+import imgGalileo2 from '/project-images/galileo_2.jpeg';
+import imgGalileo0 from '/project-images/galileo_0.jpeg';
 
 
 
@@ -1389,6 +1393,133 @@ export const projects: Project[] = [
       { label: "Backend & infrastructure", value: "+11,000 lines (76 files)" },
       { label: "Test suite (from scratch)", value: "~14,100 lines (98 files)" },
       { label: "CI/CD workflows", value: "6 GitHub Actions configs" },
+    ],
+  },
+  {
+    id: 17,
+    title: "Galileo - Copernicus Data Integration & Interactive Tooling",
+    description:
+      "<a href='https://github.com/nasaharvest/galileo' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Galileo</a> is a family of pretrained foundation models developed by NASA Harvest that learns global and local features from multi-source satellite imagery. The models are pretrained on a variety of remote sensing inputs, including Sentinel-1 (radar imagery) and Sentinel-2 (optical imagery), both from the European Union's <a href='https://browser.dataspace.copernicus.eu/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Copernicus</a> Earth observation program, as well as <a href='https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>ERA5</a> (weather reanalysis), elevation, and land cover data, and perform well on a range of benchmark tasks such as crop classification, land cover mapping, and vegetation monitoring. These satellite images are large, typically 800MB to 1.5GB each, and time-series analyses can involve dozens of images totaling tens of gigabytes.\n\nResearchers wanting to apply Galileo to new geographic areas had no streamlined way to fetch satellite imagery, prepare it for the model, visualize results, or export outputs for use in <a href='https://en.wikipedia.org/wiki/Geographic_information_system' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>GIS</a> (Geographic Information System) software. This engagement addressed those gaps by integrating Copernicus satellite data into the Galileo pipeline, building interactive visualization applications, and adding modern DevOps practices to the existing codebase.",
+    summary:
+      "Copernicus satellite data integration, interactive visualization tooling, and DevOps modernization for NASA Harvest's Galileo foundation models",
+    imageUrl: imgGalileoThumbnail,
+    category: ["ai-ml", "earth-atmospheric-sciences"],
+    githubUrls: ["https://github.com/nasaharvest/galileo"],
+    demoUrl: [],
+    featured: false,
+    achievements: [
+      "A fully functional Copernicus Data Space Ecosystem client supporting both Sentinel-1 (SAR) and Sentinel-2 (optical) satellite data acquisition with OAuth2 authentication, caching, and automatic deduplication of downloaded images",
+      "An interactive <a href='https://marimo.io/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Marimo</a>-based GUI that allows researchers to search, download, browse, visualize, and export satellite imagery without writing code",
+      "A Galileo adapter that converts Copernicus satellite images into model-compatible inputs, enabling the model to process newly acquired data from any geographic area",
+      "A memory-efficient embedding generation pipeline that writes results to disk instead of accumulating them in RAM, reducing peak memory from double the output size to a fixed amount independent of image dimensions",
+      "Five spectral index implementations (<a href='https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDVI</a>, <a href='https://en.wikipedia.org/wiki/Normalized_difference_water_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDWI</a>, <a href='https://en.wikipedia.org/wiki/Enhanced_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>EVI</a>, <a href='https://en.wikipedia.org/wiki/Soil-adjusted_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>SAVI</a>, <a href='https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NBR</a>) and eight predefined band visualization recipes covering both optical and SAR data",
+      "A quality assessment pipeline with SCL-based cloud masking for Sentinel-2, border noise and invalid pixel detection for Sentinel-1, and a configurable quality gate for automated tile filtering",
+      "Modern dependency management via pyproject.toml and <a href='https://docs.astral.sh/uv/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>uv</a>, replacing the previous requirements.txt approach, with <a href='https://github.com/dependabot' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Dependabot</a> for automated dependency updates",
+    ],
+    goals: [
+      "Enable researchers to acquire Sentinel-1 (SAR) and Sentinel-2 (optical) satellite data directly from the Copernicus Data Space Ecosystem and feed it into Galileo models without manual data wrangling",
+      "Provide an interactive graphical interface for exploring satellite imagery: searching by location and date, browsing time series, applying predefined visualization presets (e.g., true color, vegetation index, false color), and exporting georeferenced outputs",
+      "Build an adapter to convert Copernicus satellite data into Galileo's expected 25-band input format, enabling models to use satellite imagery alone without requiring the full set of auxiliary data sources the model was originally trained on",
+      "Establish CI/CD, automated testing, dependency management, and code quality tooling to support sustainable open-source collaboration",
+      "Improve the memory efficiency of the embedding generation pipeline to handle large satellite scenes without excessive RAM consumption",
+    ],
+    softwareSolution:
+      "A Python client was built to search and download Sentinel-1 and Sentinel-2 satellite data from the Copernicus Data Space Ecosystem, handling authentication, multi-GB downloads with automatic retry, and deduplication of previously downloaded images. Around this client, a processing library provides image compositing, spectral index computation (<a href='https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDVI</a>, <a href='https://en.wikipedia.org/wiki/Normalized_difference_water_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NDWI</a>, <a href='https://en.wikipedia.org/wiki/Enhanced_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>EVI</a>, <a href='https://en.wikipedia.org/wiki/Soil-adjusted_vegetation_index' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>SAVI</a>, <a href='https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>NBR</a>), cloud and noise quality assessment, and <a href='https://en.wikipedia.org/wiki/GeoTIFF' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>GeoTIFF</a> export.\n\nAn interactive notebook application was built using <a href='https://marimo.io/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Marimo</a>, providing researchers with a GUI for the full workflow: configuring credentials, searching and downloading satellite data, browsing images over time, applying visualization presets, and exporting results. For model integration, an adapter converts Copernicus data into Galileo's expected input format, enabling the model to process newly acquired satellite imagery. The embedding generation pipeline was also rewritten to use memory-mapped arrays, keeping RAM usage to a minimum. The project infrastructure was modernized with a GitHub Actions CI pipeline, <a href='https://docs.astral.sh/uv/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>uv</a>-based dependency management, <a href='https://pre-commit.com/' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>pre-commit</a> hooks, <a href='https://github.com/dependabot' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Dependabot</a>, and coverage reporting.",
+    impact: [
+      "Researchers can now apply Galileo models to any geographic area by fetching satellite data directly from Copernicus, removing the previous dependency on pre-curated datasets",
+      "The interactive GUI lowers the barrier to entry for non-programmers and domain scientists who want to explore satellite imagery and generate model embeddings without Python expertise",
+      "The Copernicus-to-Galileo adapter establishes a reusable pattern for integrating additional data sources (<a href='https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>ERA5</a> weather, <a href='https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>SRTM</a> elevation, Dynamic World land cover) in future phases, with a documented roadmap and impact analysis for each",
+      "The memory-efficient inference module enables processing of larger satellite scenes that would previously have caused out-of-memory failures",
+      "The CI/CD infrastructure and code quality tooling set the project up for sustainable open-source collaboration, with automated checks preventing regressions on every contribution",
+      "The quality filtering spike and documentation provide a research-backed foundation for implementing automated tile rejection, which is important for operational satellite monitoring pipelines",
+      "All contributions have been merged into the upstream NASA Harvest repository (nasaharvest/galileo), directly benefiting the broader remote sensing research community",
+    ],
+    detailedTechnologies: {
+      core: [
+        { name: "Python 3.11", url: "https://www.python.org/" },
+        { name: "PyTorch", url: "https://pytorch.org/" },
+        { name: "NumPy", url: "https://numpy.org/" },
+      ],
+      geospatial: [
+        { name: "Rasterio", url: "https://rasterio.readthedocs.io/" },
+        { name: "RioXarray", url: "https://corteva.github.io/rioxarray/" },
+        { name: "GeoPandas", url: "https://geopandas.org/" },
+        { name: "Shapely", url: "https://shapely.readthedocs.io/" },
+      ],
+      visualization: [
+        { name: "Matplotlib", url: "https://matplotlib.org/" },
+        { name: "Marimo", url: "https://marimo.io/" },
+      ],
+      machineLearning: [
+        { name: "scikit-learn", url: "https://scikit-learn.org/" },
+      ],
+      testing: [
+        { name: "pytest", url: "https://docs.pytest.org/" },
+      ],
+      cicd: [
+        { name: "GitHub Actions", url: "https://github.com/features/actions" },
+        { name: "pre-commit", url: "https://pre-commit.com/" },
+        { name: "Dependabot", url: "https://github.com/dependabot" },
+      ],
+      codeQuality: [
+        { name: "Ruff", url: "https://docs.astral.sh/ruff/" },
+        { name: "mypy", url: "https://mypy-lang.org/" },
+      ],
+      packageManagement: [
+        { name: "uv", url: "https://docs.astral.sh/uv/" },
+      ],
+      containerization: [
+        { name: "Docker", url: "https://www.docker.com/" },
+      ],
+    },
+    projectDetails: {
+      startDate: "December 2025",
+      endDate: "April 2026",
+      source: "VISS",
+      scientificDomain: "Remote Sensing / Earth Observation / Machine Learning",
+      partners: [
+        { name: "Gabriel Tseng (Principal Investigator)", profileUrl: "mailto:gabriel.tseng@mila.quebec" },
+        { name: "Francis Pelletier", profileUrl: "mailto:francis.pelletier@mila.quebec" },
+        { name: "Hannah Kerner", profileUrl: "" },
+        { name: "David Rolnick", profileUrl: "" },
+      ],
+      softwareEngineers: [
+        { name: "Robin Fiévet", profileUrl: "https://www.linkedin.com/in/robin-fievet-6189a431/" },
+      ],
+    },
+    screenshots: [
+      {
+        url: imgGalileo0,
+        alt: "Galileo Copernicus satellite data overview",
+        caption: "Coordinate bounding box selection and satellite type configuration in the Marimo notebook",
+        description:
+          "The Marimo notebook interface where researchers define a geographic bounding box and select the satellite type (Sentinel-1 or Sentinel-2) before searching and downloading imagery from the Copernicus Data Space Ecosystem.",
+      },
+      {
+        url: imgGalileo1,
+        alt: "Galileo Copernicus satellite data visualization",
+        caption: "Satellite imagery visualization through the interactive Marimo notebook",
+        description:
+          "The Galileo platform displaying Copernicus satellite data with visualization presets applied, enabling researchers to explore Sentinel-1 and Sentinel-2 imagery interactively.",
+      },
+      {
+        url: imgGalileo2,
+        alt: "Galileo interactive Marimo GUI for satellite data exploration",
+        caption: "Interactive Marimo-based GUI for searching, browsing, and exporting satellite imagery",
+        description:
+          "The Marimo notebook application providing a graphical interface for the full Copernicus data workflow: credential configuration, satellite data search and download, time-series browsing, visualization preset application, and georeferenced export.",
+      },
+    ],
+    metrics: [
+      { label: "Total commits", value: "78 (across 14 merged pull requests)" },
+      { label: "Files changed", value: "57" },
+      { label: "Lines added", value: "~16,750" },
+      { label: "Lines removed", value: "~400" },
+      { label: "Python source code", value: "~12,000 lines" },
+      { label: "New Copernicus modules", value: "15 (src/data/copernicus/, ~6,700 lines)" },
+      { label: "Test files", value: "7 (81 test functions, ~1,950 lines)" },
+      { label: "Interactive Marimo GUI", value: "1 application (~2,200 lines)" },
+      { label: "Contribution period", value: "December 2025 to April 2026 (~5 months)" },
     ],
   },
 ];
