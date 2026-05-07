@@ -1,5 +1,6 @@
 import { type Project } from "@/schema";
 
+import imgageabCrown from '/project-images/dabcrown.png';
 import imgInatInq from '/project-images/inat-img.png';
 import imgPatientX from '/project-images/patientx-screenshot.png';
 import imgAutoRA from '/project-images/autora-overview.png';
@@ -35,6 +36,69 @@ import imgGalileo0 from '/project-images/galileo_0.jpeg';
 
 // Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
+  {
+  id: 16,
+  title: "d,α,β-CROWN: Distributed α,β-CROWN ",
+  description: "Neural network verification is the process of ensuring that a neural network behaves as expected for all possible inputs, confirming properties like safety, security, and correctness. This is crucial, especially in safety-critical applications, and enable its use in control systems, robotics, AI factories etc. by ensuring that they are safe from adversarial input-based attacks. α,β-CROWN is a state-of-the-art neural network verification software solution which has won multiple awards in last few years. This project advances the state of neural network verification by transforming α,β-CROWN into a scalable, high-performance platform capable of handling modern deep learning models. By introducing asynchronous execution, multi-GPU, and multi-node parallelism, it is a concrete step towards verification of significantly larger networks and input domains than previously feasible. This directly strengthens the reliability of machine learning systems deployed in safety-critical domains such as robotics and autonomous systems, where guarantees of correctness are essential. Beyond performance gains, the integration of rigorous profiling, testing, and reproducibility practices elevates the tool from a research prototype to robust infrastructure, supporting broader adoption and accelerating research in trustworthy AI. The project addressed several fundamental challenges inherent in neural network verification using α,β-CROWN . Existing workflows were previously constrained by the sequential execution of the computationally expensive branch-and-bound (BaB) operation and by underutilized hardware and scalability. To overcome these limitations, the project introduced architectural improvements that reduced Python-level bottlenecks, enabled asynchronous CPU–GPU pipeline coordination using Ray framework. The work also tackled the challenges of scaling across multiple GPUs and distributed nodes which made near linear speed up with scaling hardware. In parallel, the newly added codebase as part of this project incorporates stronger software engineering practices, including improved testing and documentation while preserving compatibility with ongoing research workflows. ",
+  summary: "Distributed and scalable implementation of α,β-CROWN for neural network verification using Ray",
+  imageUrl: imgageabCrown,
+  category: ["ai-ml", "data-science"],
+  githubUrls: ["https://github.com/Verified-Intelligence/alpha-beta-CROWN"],
+  demoUrl: [],
+  featured: false,
+  achievements: [
+    "Delivered a multi-node, multi-GPU version of BaB implementations using Ray  in the α,β-CROWN repository with a single node single GPU performance of at least ~90%+ of existing PIs previous code base. ",
+    "Exceeded scale out performance ratio goal of 4:3 on multi-node multi-gpu infrastructure by demonstrating 4:3.8 (ReLU BaB) and 4:3.9 (Input BaB) scale out performance ratio on provided benchmark jobs. "
+  ],
+  goals: [
+    "Enable pipeline decoupling and asynchronous execution to evaluate the feasibility of parallelizing the α,β-CROWN stack across distributed GPU infrastructure ",
+    "Achieve multi-GPU and multi-node scaling with a target scale out performance improvement ratio of at least 4:3 i.e., adding 8 GPUs must lead to at least 6x faster performance."
+  ],
+  softwareSolution: "We evaluated several parallelization frameworks compatible with the Python-based α,β-CROWN stack and selected Ray due to its strong support for pipeline abstractions, actor-based execution, seamless scaling from single-node to multi-node environments, and production readiness. Using Ray, we reimplemented both types of BaB (ReLU and Input), the primary bottleneck in the verification workflow. This effort exposed data-level constraints in the existing codebase that prevented clean pipeline decoupling and asynchronous execution. In collaboration with the PIs, we addressed these limitations, which subsequently revealed deeper transport-level constraints in the underlying stack, particularly the lack of efficient GPU-to-GPU communication support (e.g., RDMA/RDT integration for CUDA workloads). Based on these findings, we determined that system-level scaling would provide more immediate impact than further pipeline decoupling given current ecosystem limitations. To achieve scalable performance, we extended the Ray-based implementation to distribute the BaB workload across multiple GPUs within a node and across multiple nodes. This uncovered an additional bottleneck: reliance on a centralized global task queue that constrained parallel execution. To address this, we designed a hierarchical task management approach that maintains a global task pool at the cluster level while allowing each GPU to operate primarily on a local task queue, synchronizing only when necessary. This design reduced contention and enabled near-linear scaling, exceeding the target 4:3 scale out performance ratio across both variants of the BaB algorithm. In parallel, we developed a streamlined execution harness that allows distributed α,β-CROWN to be run with a single command on any SLURM-enabled cluster, enabling consistent profiling and benchmarking throughout the project. All implementations were documented, validated with the PIs, and passed all CI tests. ",
+  impact: [
+    "Uncovered and resolved implicit assumptions in α,β-CROWN implementation that helped the stack to get to production readiness. ",
+    "Unblocked path for PIs to leverage multi-node multi-GPU infrastructure to tackle larger unsolved problems, the ones that cannot be run in a reasonable amount of time on a single GPU. "
+  ],
+  detailedTechnologies: {
+    programming: [
+      { name: "Python", url: "https://www.python.org/" }
+    ],
+    frameworks: [
+      { name: "Ray", url: "https://docs.ray.io/en/latest/ray-core/walkthrough.html" },
+      { name: "CUDA", url: "https://docs.nvidia.com/cuda/" }
+    ],
+    HPCtools: [
+      { name: "Slurm", url: "https://slurm.schedmd.com/documentation.html" },
+      { name: "NSight", url: "https://developer.nvidia.com/nsight-systems" }
+    ],
+  },
+  projectDetails: {
+    startDate: "December 2025",
+    endDate: "April 2026",
+    source: "VISS",
+    scientificDomain: "AI/ML, Neural Network Verification",
+    partners: [
+      { name: "Huan Zhang", profileUrl: "https://www.huan-zhang.com/" }
+    ],
+    softwareEngineers: [
+      { name: "Robert Bates", profileUrl: "" },
+      { name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" },
+      { name: "Mathieu Tanneau", profileUrl: "https://www.linkedin.com/in/mtanneau/" }
+    ]
+  },
+  screenshots: [
+    {
+      url: imgageabCrown,
+      alt: "",
+      caption: "High Level Overview of the Distributed α,β-CROWN",
+      description: ""
+    },
+  ],
+  references: [],
+  metrics: [
+    { label: "Scale out performance ratio", value: "4:3.8+" },
+  ]
+},
   {
     id: 15,
     title: "iNat x INQUIRE",
