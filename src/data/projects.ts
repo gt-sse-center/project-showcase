@@ -85,7 +85,7 @@ export const projects: Project[] = [
       { name: "Huan Zhang", profileUrl: "https://www.huan-zhang.com/" }
     ],
     softwareEngineers: [
-      { name: "Robert Bates", profileUrl: "" },
+      { name: "Robert Bates", profileUrl: "https://www.linkedin.com/in/arpieb/" },
       { name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" },
       { name: "Mathieu Tanneau", profileUrl: "https://www.linkedin.com/in/mtanneau/" }
     ]
