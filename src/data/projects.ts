@@ -107,7 +107,7 @@ export const projects: Project[] = [
   ],
   references: [],
   metrics: [
-    { label: "Scale out performance ratio", value: "4:3.8+" },
+    { label: "Multi-node, multi-gpu scale out performance ratio (Target: 4:3)", value: "Achieved: 4:3.8+" },
   ]
 },
   {
