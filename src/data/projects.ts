@@ -1,6 +1,10 @@
 import { type Project } from "@/schema";
 
 import imgageabCrown from '/project-images/dabcrown.png';
+import imgageabCrownPerf1 from '/project-images/dabcrownperf-1.png';
+import imgageabCrownPerf2 from '/project-images/dabcrownperf-2.png';
+
+
 import imgInatInq from '/project-images/inat-img.png';
 import imgPatientX from '/project-images/patientx-screenshot.png';
 import imgAutoRA from '/project-images/autora-overview.png';
@@ -37,7 +41,7 @@ import imgGalileo0 from '/project-images/galileo_0.jpeg';
 // Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
   {
-  id: 16,
+  id: 17,
   title: "d,α,β-CROWN: Distributed α,β-CROWN ",
   description: "Neural network verification is the process of ensuring that a neural network behaves as expected for all possible inputs, confirming properties like safety, security, and correctness. This is crucial, especially in safety-critical applications, and enable its use in control systems, robotics, AI factories etc. by ensuring that they are safe from adversarial input-based attacks. α,β-CROWN is a state-of-the-art neural network verification software solution which has won multiple awards in last few years. This project advances the state of neural network verification by transforming α,β-CROWN into a scalable, high-performance platform capable of handling modern deep learning models. By introducing asynchronous execution, multi-GPU, and multi-node parallelism, it is a concrete step towards verification of significantly larger networks and input domains than previously feasible. This directly strengthens the reliability of machine learning systems deployed in safety-critical domains such as robotics and autonomous systems, where guarantees of correctness are essential. Beyond performance gains, the integration of rigorous profiling, testing, and reproducibility practices elevates the tool from a research prototype to robust infrastructure, supporting broader adoption and accelerating research in trustworthy AI. The project addressed several fundamental challenges inherent in neural network verification using α,β-CROWN . Existing workflows were previously constrained by the sequential execution of the computationally expensive branch-and-bound (BaB) operation and by underutilized hardware and scalability. To overcome these limitations, the project introduced architectural improvements that reduced Python-level bottlenecks, enabled asynchronous CPU–GPU pipeline coordination using Ray framework. The work also tackled the challenges of scaling across multiple GPUs and distributed nodes which made near linear speed up with scaling hardware. In parallel, the newly added codebase as part of this project incorporates stronger software engineering practices, including improved testing and documentation while preserving compatibility with ongoing research workflows. ",
   summary: "Distributed and scalable implementation of α,β-CROWN for neural network verification using Ray",
@@ -87,12 +91,18 @@ export const projects: Project[] = [
     ]
   },
   screenshots: [
-    {
-      url: imgageabCrown,
+        {
+      url: imgageabCrownPerf1,
       alt: "",
-      caption: "High Level Overview of the Distributed α,β-CROWN",
+      caption: "Performance comparison (no. of domains visited) of the distributed α,β-CROWN implementation against the existing single GPU implementation varying the number of GPUs and number of nodes used for an unsolved ReLU BaB job",
       description: ""
     },
+    {
+      url: imgageabCrownPerf2,
+      alt: "",
+      caption: "Performance comparison (no. of domains visited) of the distributed α,β-CROWN implementation against the existing single GPU implementation varying the number of GPUs and number of nodes used for an unsolved input BaB job",
+      description: ""
+    }
   ],
   references: [],
   metrics: [
