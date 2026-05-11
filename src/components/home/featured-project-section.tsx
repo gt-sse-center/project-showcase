@@ -27,9 +27,9 @@ export default function FeaturedProjectSection({ project }: FeaturedProjectSecti
             <h2 className="text-3xl font-bold text-[var(--gt-navy)] font-sans mb-4">
               {project.title}
             </h2>
-            <p
+            <div
               className="text-gray-600 mb-6"
-              dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></p>
+              dangerouslySetInnerHTML={{ __html: parseTextWithLinks(project.description) }}></div>
 
             {project.achievements && project.achievements.length > 0 && (
               <div className="mb-6">
