@@ -252,10 +252,10 @@ export default function ProjectDetail() {
 
             <div className="prose max-w-none mb-8">
               <h2 className="text-[var(--gt-navy)]">About this Project</h2>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: parseTextWithLinks(project.description)
-                }}></p>
+                }}></div>
 
               {/* Goals section between About this Project and Key Achievements */}
               {project.goals && (

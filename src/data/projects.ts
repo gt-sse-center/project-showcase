@@ -1,5 +1,10 @@
 import { type Project } from "@/schema";
 
+import imgageabCrown from '/project-images/dabcrown.png';
+import imgageabCrownPerf1 from '/project-images/dabcrownperf-1.png';
+import imgageabCrownPerf2 from '/project-images/dabcrownperf-2.png';
+
+
 import imgInatInq from '/project-images/inat-img.png';
 import imgPatientX from '/project-images/patientx-screenshot.png';
 import imgAutoRA from '/project-images/autora-overview.png';
@@ -35,6 +40,76 @@ import imgGalileo0 from '/project-images/galileo_0.jpeg';
 
 // Projects data extracted from the Georgia Tech CSSE website
 export const projects: Project[] = [
+  {
+  id: 17,
+  title: "d,α,β-CROWN: Distributed α,β-CROWN ",
+  description: "<p>Neural network verification is the process of ensuring that a neural network behaves as expected for all possible inputs, confirming properties like safety, security, and correctness. Verification is crucial for deploying neural networks in safety-critical applications, such as control systems, autonomous vehicles, robotics, and AI factories, by ensuring that they are safe from adversarial input-based attacks.</p><p>Among neural network verifiers, <a href='https://github.com/Verified-Intelligence/alpha-beta-CROWN' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>α,β-CROWN</a> is an award-winning, state-of-the-art software solution. In this project, we advance the state of neural network verification by transforming α,β-CROWN into a scalable, high-performance platform capable of handling modern deep learning models. By introducing asynchronous execution, multi-GPU, and multi-node parallelism, it becomes possible to verify significantly larger networks and input domains than previously feasible, in shorter timeframes. Some verification tasks have very large search spaces, which can only be fully explored in meaningful timeframes, leveraging a distributed scaled approach. This capability directly strengthens the reliability of machine learning systems deployed in safety-critical domains where guarantees of correctness are essential. Beyond performance gains, the integration of rigorous profiling, testing, and reproducibility practices elevates the tool from a research prototype into robust infrastructure, supporting broader adoption and accelerating research in trustworthy AI.</p><p>The project addressed several fundamental challenges in α,β-CROWN. Existing workflows were previously constrained by the sequential execution of the computationally expensive branch-and-bound (BaB) operation and by underutilized hardware and scalability. To overcome these limitations, the project introduced architectural improvements that reduced Python-level bottlenecks and enabled asynchronous CPU–GPU pipeline coordination using Ray framework. The work also tackled the challenges of scaling across multiple GPUs and distributed nodes, leading to near-linear speed ups. In addition, the resulting codebase incorporates stronger software engineering practices, including improved testing and documentation while preserving compatibility with ongoing research workflows.</p>",
+  summary: "Distributed and scalable implementation of α,β-CROWN for neural network verification using Ray",
+  imageUrl: imgageabCrown,
+  category: ["ai-ml", "data-science"],
+  githubUrls: ["https://github.com/Verified-Intelligence/alpha-beta-CROWN"],
+  demoUrl: [],
+  featured: false,
+  achievements: [
+    "Delivered a multi-node, multi-GPU version of BaB implementations using Ray in the α,β-CROWN repository with a single node single GPU performance of at least ~90%+ of existing PIs previous code base.",
+    "Exceeded scale out performance ratio goal of 4:3 on multi-node, multi-gpu infrastructure by demonstrating 4:3.8 (ReLU BaB) and 4:3.9 (Input BaB) scale out performance ratios on provided benchmark jobs. "
+  ],
+  goals: [
+    "Enable pipeline decoupling and asynchronous execution to evaluate the feasibility of parallelizing the α,β-CROWN stack across distributed GPU infrastructure. ",
+    "Achieve multi-GPU, multi-node scaling with a target scale out performance improvement ratio of at least 4:3, e.g., adding 8 GPUs must lead to at least 6x faster performance. ",
+    "Ensure all new software is well-tested, documented and delivered to PI repository. "
+  ],
+  softwareSolution: "<p>We evaluated several parallelization frameworks compatible with the Python-based α,β-CROWN stack and selected <a href='https://docs.ray.io/en/latest/index.html' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>Ray</a> due to its strong support for pipeline abstractions, actor-based execution, seamless scaling from single-node to multi-node environments, and production readiness. Using Ray, we reimplemented both types of BaB (ReLU and Input), the primary bottleneck in the verification workflow. This effort exposed data-level constraints in the existing codebase that prevented clean pipeline decoupling and asynchronous execution. In collaboration with the PIs, we addressed these limitations, which subsequently revealed deeper transport-level constraints in the underlying stack, particularly the lack of efficient GPU-to-GPU communication support (e.g., RDMA/RDT integration for CUDA workloads). Based on these findings, we determined that system-level scaling would provide more immediate impact than further pipeline decoupling given current ecosystem limitations.</p> <p> To achieve scalable performance, we extended the Ray-based implementation to distribute the BaB workload across multiple GPUs within a node and across multiple nodes. This change revealed an additional bottleneck: reliance on a centralized global task queue that constrained parallel execution. To address it, we designed a hierarchical task management approach that maintains a global task pool at the cluster level while allowing each GPU to operate primarily on a local task queue, synchronizing only when necessary. This design reduced contention and enabled near-linear scaling, exceeding the target 4:3 scale out performance ratio across both variants of the BaB algorithm.</p> <p> We also developed a streamlined execution harness that allows distributed α,β-CROWN to be run with a single command on any <a href='https://slurm.schedmd.com/overview.html' target='_blank' rel='noopener noreferrer' class='text-[var(--gt-navy)] hover:text-[var(--gt-gold)] underline'>SLURM</a>-enabled cluster, enabling consistent profiling and benchmarking throughout the project. All implementations were documented, validated with the PIs, and passed all CI tests.</p>",
+  impact: [
+    "During our collaboration, we uncovered and resolved implicit scheduling and data structure assumptions in the α,β-CROWN implementation that limited scaling of key benchmark test cases. ",
+    "Completion of this project enables PIs to leverage multi-node multi-GPU infrastructure to tackle larger unsolved problems, which were previously untenable on single GPU deployments. "
+  ],
+  detailedTechnologies: {
+    programming: [
+      { name: "Python", url: "https://www.python.org/" }
+    ],
+    frameworks: [
+      { name: "Ray", url: "https://docs.ray.io/en/latest/ray-core/walkthrough.html" },
+      { name: "CUDA", url: "https://docs.nvidia.com/cuda/" }
+    ],
+    HPCtools: [
+      { name: "Slurm", url: "https://slurm.schedmd.com/documentation.html" },
+      { name: "NSight", url: "https://developer.nvidia.com/nsight-systems" }
+    ],
+  },
+  projectDetails: {
+    startDate: "December 2025",
+    endDate: "April 2026",
+    source: "VISS",
+    scientificDomain: "AI/ML, Neural Network Verification",
+    partners: [
+      { name: "Huan Zhang", profileUrl: "https://www.huan-zhang.com/" }
+    ],
+    softwareEngineers: [
+      { name: "Robert Bates", profileUrl: "https://www.linkedin.com/in/arpieb/" },
+      { name: "Ketan Bhardwaj", profileUrl: "https://www.linkedin.com/in/ketanbj/" },
+      { name: "Mathieu Tanneau", profileUrl: "https://www.linkedin.com/in/mtanneau/" }
+    ]
+  },
+  screenshots: [
+        {
+      url: imgageabCrownPerf1,
+      alt: "",
+      caption: "Performance comparison (no. of domains visited) of the distributed α,β-CROWN implementation against the existing single GPU implementation varying the number of GPUs and number of nodes used for an unsolved ReLU BaB job",
+      description: ""
+    },
+    {
+      url: imgageabCrownPerf2,
+      alt: "",
+      caption: "Performance comparison (no. of domains visited) of the distributed α,β-CROWN implementation against the existing single GPU implementation varying the number of GPUs and number of nodes used for an unsolved input BaB job",
+      description: ""
+    }
+  ],
+  references: [],
+  metrics: [
+    { label: "Multi-node, multi-gpu scale out performance ratio (Target: 4:3)", value: "Achieved: 4:3.8+" },
+  ]
+},
   {
     id: 15,
     title: "iNat x INQUIRE",
