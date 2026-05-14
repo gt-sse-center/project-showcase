@@ -1,4 +1,5 @@
 import { parseTextWithLinks } from "@/lib/utils";
+import { getTechnologyCategoryLabel } from "@/lib/technology-categories";
 import { type Project } from "@/schema";
 
 interface ProjectOnePagerProps {
@@ -115,29 +116,13 @@ export default function ProjectOnePager({ project }: ProjectOnePagerProps) {
 
                 const colorScheme = colorSchemes[index % colorSchemes.length];
 
-                // Format category name for display
-                const formatCategoryName = (key: string) => {
-                  switch (key) {
-                    case "cicd":
-                      return "CI/CD";
-                    case "auth":
-                      return "Auth & Collaboration";
-                    case "dataFormats":
-                      return "Data Formats";
-                    default:
-                      return key
-                        .replace(/([A-Z])/g, " $1")
-                        .replace(/^./, (str) => str.toUpperCase());
-                  }
-                };
-
                 return (
                   <div
                     key={categoryKey}
                     className="bg-white pb-4 px-4 rounded-lg shadow-xs border border-gray-100">
                     <div className="font-semibold text-[var(--gt-navy)] my-3 flex items-center">
                       <span className={`w-3 h-3 ${colorScheme.dot} rounded-full mr-2`}></span>
-                      {formatCategoryName(categoryKey)}
+                      {getTechnologyCategoryLabel(categoryKey)}
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {technologies.map((tech, techIndex) => {

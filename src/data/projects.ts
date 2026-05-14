@@ -72,7 +72,7 @@ export const projects: Project[] = [
       { name: "Ray", url: "https://docs.ray.io/en/latest/ray-core/walkthrough.html" },
       { name: "CUDA", url: "https://docs.nvidia.com/cuda/" }
     ],
-    HPCtools: [
+    hpcTools: [
       { name: "Slurm", url: "https://slurm.schedmd.com/documentation.html" },
       { name: "NSight", url: "https://developer.nvidia.com/nsight-systems" }
     ],
@@ -237,7 +237,7 @@ export const projects: Project[] = [
         { name: "Mistral", url: "https://mistral.ai/" },
         { name: "OpenAI API", url: "https://openai.com/api/" },
       ],
-      NaturalLanguageToolkit: [
+      naturalLanguageToolkit: [
         { name: "spaCy", url: "https://spacy.io/" },
         { name: "NLTK", url: "https://www.nltk.org/" },
       ],

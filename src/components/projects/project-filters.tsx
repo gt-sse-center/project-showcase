@@ -10,6 +10,7 @@ import {
   getAllTechnologiesFromProjects,
   getCategoryDisplayName
 } from "@/lib/utils";
+import { getTechnologyCategoryLabel } from "@/lib/technology-categories";
 import { type Project } from "@/schema";
 import { ArrowUpDown, Check, Filter, Search, X } from "lucide-react";
 import { useState } from "react";
@@ -56,28 +57,6 @@ export default function ProjectFilters({
 
   const clearTechnologyFilters = () => {
     setSelectedTechnologies([]);
-  };
-
-  const categoryDisplayNames: { [key: string]: string } = {
-    frontend: "Frontend",
-    backend: "Backend",
-    ai: "AI & ML",
-    machineLearning: "Machine Learning",
-    framework: "Frameworks",
-    database: "Databases",
-    computing: "Computing",
-    simulation: "Simulation",
-    visualization: "Visualization",
-    cicd: "CI/CD",
-    development: "Development Tools",
-    profiling: "Profiling",
-    modeling: "Modeling",
-    bioinformatics: "Bioinformatics",
-    science: "Scientific Computing",
-    dataStructures: "Data Structures",
-    distribution: "Distribution",
-    optimization: "Optimization",
-    other: "Other"
   };
 
   return (
@@ -194,7 +173,7 @@ export default function ProjectFilters({
               {Object.entries(categorizedTechnologies).map(([category, techs]) => (
                 <div key={category} className="mb-4">
                   <h4 className="text-sm font-medium text-gray-700 mb-2">
-                    {categoryDisplayNames[category] || category}
+                    {getTechnologyCategoryLabel(category)}
                   </h4>
                   <div className="space-y-1">
                     {techs.map((tech) => (
