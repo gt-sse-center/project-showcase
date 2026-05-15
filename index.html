@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://gt-csse.github.io/project-showcase/" />
+    <script>
+      const oldBase = "/project-showcase";
+      const newBase = "https://gt-csse.github.io/project-showcase";
+
+      const path = window.location.pathname.startsWith(oldBase)
+        ? window.location.pathname.slice(oldBase.length)
+        : window.location.pathname;
+
+      window.location.replace(
+        newBase + path + window.location.search + window.location.hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to
+      <a href="https://gt-csse.github.io/project-showcase/">
+        https://gt-csse.github.io/project-showcase/
+      </a>
+    </p>
+  </body>
+</html>
